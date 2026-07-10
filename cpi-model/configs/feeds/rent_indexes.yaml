@@ -1,0 +1,10 @@
+name: rent_indexes
+access: free
+components: [SEHA, SEHC, SEHC01]
+cadence: monthly_quarterly
+availability_lag_days: 30
+feeds:
+  - Zillow ZORI
+  - Apartment List
+  - BLS-Cleveland Fed New Tenant Rent Index
+fallback: distributed lag over CPI shelter history

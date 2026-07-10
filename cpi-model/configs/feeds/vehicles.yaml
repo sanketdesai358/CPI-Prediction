@@ -1,0 +1,12 @@
+name: vehicles
+access: mixed
+components: [SETA01, SETA02]
+cadence: weekly_monthly
+licensed:
+  - J.D. Power PIN
+  - Black Book
+free_fallback:
+  - Manheim headline UVVI
+  - Cox/KBB public ATP and incentive releases
+event_calendar:
+  - Sep-Nov model-year changeover

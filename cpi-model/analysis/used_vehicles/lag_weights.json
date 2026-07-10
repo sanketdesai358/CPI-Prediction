@@ -1,0 +1,54 @@
+{
+  "name": "used_vehicle_manheim_passthrough_kernel",
+  "target": "CPI used cars & trucks SA m/m (CUSR0000SETA02)",
+  "driver": "Manheim UVVI SA m/m (wholesale, mix/mileage-adjusted)",
+  "estimated_on": [
+    "1997-06",
+    "2026-05"
+  ],
+  "n_obs": 348,
+  "manheim_lag_weights": {
+    "m0": 0.125398571973594,
+    "m1": 0.047965565571976884,
+    "m2": 0.2072202464053192,
+    "m3": 0.04206424850831033,
+    "m4": -0.02255456475812653
+  },
+  "manheim_lag_weights_se": {
+    "m0": 0.04972340105754584,
+    "m1": 0.04892990315088981,
+    "m2": 0.05725841698170668,
+    "m3": 0.0376335037198888,
+    "m4": 0.03360781510329257
+  },
+  "persistence_rho": 0.47139116344082005,
+  "intercept": -0.06399898231468754,
+  "cumulative_passthrough": 0.40009406770107386,
+  "long_run_multiplier": 0.7568811567838437,
+  "r2": 0.4738073105634406,
+  "asymmetry": {
+    "cum_up": 0.4052659633706046,
+    "cum_down": 0.38645394721300774,
+    "wald_equal_pvalue": 0.875898586560724
+  },
+  "candidate_pass_through_lags": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "recommended_pass_through_lags": [
+    1,
+    2
+  ],
+  "decision": "keep_incumbent_no_change",
+  "integration_window_C": {
+    "candidate_beats_current": false,
+    "current_mae": 0.8399866029223085,
+    "candidate_mae": 0.9040860499220307,
+    "mae_improvement_pct": -7.631008253788875
+  },
+  "provenance": "live Cox XLSX (https://www.coxautoinc.com/wp-content/uploads/2026/06/May-2026-Manheim-Used-Vehicle-Value-Index.xlsx)",
+  "note": "Manheim UVVI is seasonally adjusted and mix/mileage-adjusted; compared against BLS SA used-cars CPI. Weights are HAC (Newey-West) OLS betas."
+}

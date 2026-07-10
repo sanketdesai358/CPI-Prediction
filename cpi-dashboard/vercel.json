@@ -1,0 +1,13 @@
+{
+  "buildCommand": "pnpm run build:public",
+  "crons": [
+    {
+      "path": "/api/refresh?mode=release",
+      "schedule": "35 13 * * *"
+    },
+    {
+      "path": "/api/refresh?mode=daily",
+      "schedule": "0 14 * * *"
+    }
+  ]
+}

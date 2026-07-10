@@ -1,0 +1,10 @@
+.next
+node_modules
+.vercel
+*.log
+coverage
+.env
+.private-data-backup/
+.public-data-tmp/
+src/data-public/
+work/

@@ -1,0 +1,6 @@
+name: eia_gasoline
+access: free
+components: [SETB01]
+cadence: weekly
+availability_lag_days: 1
+fallback: use CPI-timed gasoline residual trend when API key or feed is unavailable

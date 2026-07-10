@@ -1,0 +1,13 @@
+name: tier3_statistical
+classes:
+  seasonal_ar_partial_pool:
+    lags: [1, 2, 12]
+    shrink_to_parent: true
+  sarima_partial_pool:
+    seasonal_period: 12
+    shrink_to_parent: true
+  ets_partial_pool:
+    damped_trend: true
+    shrink_to_parent: true
+bimonthly_features:
+  - odd_even_staleness
