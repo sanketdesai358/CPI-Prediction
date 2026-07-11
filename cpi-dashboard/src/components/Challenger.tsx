@@ -202,7 +202,7 @@ export function ChallengerCurrentForecastTable({ current }: { current: Challenge
   return (
     <div>
       <div className="mb-3 rounded bg-wash p-3 text-sm text-muted">
-        Forecast month {formatMonth(current.forecastMonth)}. Data through {formatMonth(current.dataThrough)}.
+        Forecast month {formatMonth(current.forecastMonth)}. Data through {formatMonth(current.forecastMonth)}.
         Columns compare Actual CPI, the production model, Tier 1/Tier 3 fallback baselines, HRNN, I-GRU, and Seasonal AR. Actual CPI stays n/a until that month is present in the local BLS cache.
       </div>
       <div className="overflow-x-auto">

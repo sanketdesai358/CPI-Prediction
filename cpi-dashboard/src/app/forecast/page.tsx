@@ -111,7 +111,7 @@ export default function ForecastPage() {
             </div>
             <div className="rounded bg-wash p-3">
               <div className="text-xs text-muted">Data through</div>
-              <div className="text-lg font-semibold">{formatMonth(forecast.dataThrough)}</div>
+              <div className="text-lg font-semibold">{formatMonth(forecast.forecastMonth)}</div>
             </div>
           </div>
         </section>
