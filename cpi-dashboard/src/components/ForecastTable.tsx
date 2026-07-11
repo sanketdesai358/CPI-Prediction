@@ -46,7 +46,7 @@ export function ForecastTable({ rows }: { rows: ForecastComponentRow[] }) {
                     <th className="py-2 pr-4">Component</th>
                     <th className="py-2 pr-4">Model</th>
                     <th className="py-2 pr-4">Weight</th>
-                    <th className="py-2 pr-4">SA m/m</th>
+                    <th className="py-2 pr-4">NSA m/m</th>
                     <th className="py-2 pr-4">Contribution</th>
                     <th className="py-2 pr-4">Driver snapshot</th>
                   </tr>
@@ -62,7 +62,10 @@ export function ForecastTable({ rows }: { rows: ForecastComponentRow[] }) {
                       </td>
                       <td className="max-w-[260px] py-2 pr-4 text-muted">{row.modelType}</td>
                       <td className="py-2 pr-4">{formatWeight(row.model_weight)}</td>
-                      <td className="py-2 pr-4">{formatPercent(row.forecast_sa_mm)}</td>
+                      <td className="py-2 pr-4">
+                        <div>{formatPercent(row.forecast_nsa_mm)}</div>
+                        <div className="text-xs text-muted">SA {formatPercent(row.forecast_sa_mm)}</div>
+                      </td>
                       <td className="py-2 pr-4">{formatPp(row.contribution_pp)}</td>
                       <td className="max-w-[320px] py-2 pr-4 text-muted">{row.driverSnapshot}</td>
                     </tr>
