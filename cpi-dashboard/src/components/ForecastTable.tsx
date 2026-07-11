@@ -5,6 +5,10 @@ import Link from "next/link";
 import type { ForecastComponentRow } from "@/lib/types";
 import { formatPercent, formatPp, formatWeight } from "@/lib/format";
 
+function saContributionPp(row: ForecastComponentRow) {
+  return row.model_weight * row.forecast_sa_mm;
+}
+
 function groupFor(row: ForecastComponentRow) {
   const code = row.itemCode;
   if (code.startsWith("SEH") || code.startsWith("SAH")) return "Housing";
@@ -46,8 +50,8 @@ export function ForecastTable({ rows }: { rows: ForecastComponentRow[] }) {
                     <th className="py-2 pr-4">Component</th>
                     <th className="py-2 pr-4">Model</th>
                     <th className="py-2 pr-4">Weight</th>
-                    <th className="py-2 pr-4">NSA m/m</th>
-                    <th className="py-2 pr-4">Contribution</th>
+                    <th className="py-2 pr-4">SA m/m</th>
+                    <th className="py-2 pr-4">SA contribution</th>
                     <th className="py-2 pr-4">Driver snapshot</th>
                   </tr>
                 </thead>
@@ -63,10 +67,10 @@ export function ForecastTable({ rows }: { rows: ForecastComponentRow[] }) {
                       <td className="max-w-[260px] py-2 pr-4 text-muted">{row.modelType}</td>
                       <td className="py-2 pr-4">{formatWeight(row.model_weight)}</td>
                       <td className="py-2 pr-4">
-                        <div>{formatPercent(row.forecast_nsa_mm)}</div>
-                        <div className="text-xs text-muted">SA {formatPercent(row.forecast_sa_mm)}</div>
+                        <div>{formatPercent(row.forecast_sa_mm)}</div>
+                        <div className="text-xs text-muted">NSA {formatPercent(row.forecast_nsa_mm)}</div>
                       </td>
-                      <td className="py-2 pr-4">{formatPp(row.contribution_pp)}</td>
+                      <td className="py-2 pr-4">{formatPp(saContributionPp(row))}</td>
                       <td className="max-w-[320px] py-2 pr-4 text-muted">{row.driverSnapshot}</td>
                     </tr>
                   ))}

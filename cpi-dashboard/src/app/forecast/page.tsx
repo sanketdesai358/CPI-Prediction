@@ -4,6 +4,11 @@ import { ForecastNav } from "@/components/ForecastNav";
 import { PageTitle, Panel } from "@/components/Shell";
 import { getDashboardData, getForecast } from "@/lib/data";
 import { formatMonth, formatPercent } from "@/lib/format";
+import type { ForecastComponentRow } from "@/lib/types";
+
+function saContributionPp(row: ForecastComponentRow) {
+  return row.model_weight * row.forecast_sa_mm;
+}
 
 export default function ForecastPage() {
   const forecast = getForecast();
@@ -59,7 +64,7 @@ export default function ForecastPage() {
       note: "implied by forecast NSA index"
     }
   ];
-  const topDrivers = forecast.components.slice(0, 8);
+  const topDrivers = [...forecast.components].sort((a, b) => Math.abs(saContributionPp(b)) - Math.abs(saContributionPp(a))).slice(0, 8);
   return (
     <>
       <PageTitle eyebrow="Forecast" title={`Next CPI print: ${formatMonth(forecast.forecastMonth)}`}>
@@ -156,7 +161,7 @@ export default function ForecastPage() {
                   <div className="truncate text-sm font-medium">{row.name}</div>
                   <div className="truncate text-xs text-muted">Tier {row.tier} · {row.modelType}</div>
                 </div>
-                <div className="text-right text-sm font-semibold">{row.contribution_pp >= 0 ? "+" : ""}{row.contribution_pp.toFixed(2)} pp</div>
+                <div className="text-right text-sm font-semibold">{saContributionPp(row) >= 0 ? "+" : ""}{saContributionPp(row).toFixed(2)} pp</div>
               </Link>
             ))}
           </div>
