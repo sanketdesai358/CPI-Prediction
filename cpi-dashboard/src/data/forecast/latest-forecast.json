@@ -1,7 +1,7 @@
 {
   "forecastMonth": "2026-06",
   "generatedAt": "2026-07-10T22:08:47+00:00",
-  "dataThrough": "2026-05",
+  "dataThrough": "2026-06",
   "source": "model output, not BLS data",
   "headline": {
     "nsaMm": -0.0010435522605608191,
