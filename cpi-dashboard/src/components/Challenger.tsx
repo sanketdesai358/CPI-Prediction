@@ -55,27 +55,27 @@ const modelDefinitions = [
   {
     label: "HRNN",
     formula: "Hierarchy-aware recurrent challenger",
-    note: "Uses component CPI history plus parent/child hierarchy shrinkage in this fast research artifact."
+    note: "Uses component CPI history plus hierarchy shrinkage; SETB01 gasoline uses the shared EIA monthly measurement."
   },
   {
     label: "I-GRU",
     formula: "Independent recurrent challenger",
-    note: "Uses each component's own CPI history without hierarchy pooling."
+    note: "Uses each component's own CPI history without hierarchy pooling; SETB01 uses the shared EIA monthly measurement."
   },
   {
     label: "Production Tier 1 fallback",
     formula: "55% last + 30% trailing3 + 15% seasonal",
-    note: "Timeline baseline uses this formula for non-gasoline components; SETB01 gasoline uses EIA gasoline pass-through."
+    note: "Uses this formula for non-gasoline components; SETB01 uses the shared EIA monthly measurement."
   },
   {
     label: "Production Tier 3 fallback",
     formula: "45% last + 25% trailing3 + 20% seasonal + 10% trailing6",
-    note: "Timeline baseline uses this formula for non-gasoline components; SETB01 gasoline uses EIA gasoline pass-through."
+    note: "Uses this formula for non-gasoline components; SETB01 uses the shared EIA monthly measurement."
   },
   {
     label: "Challenger Seasonal AR",
     formula: "65% seasonal + 35% trailing6",
-    note: "Seasonal baseline in the challenger run; seasonal is the same-calendar-month average."
+    note: "Uses same-calendar-month seasonality for non-gasoline components; SETB01 uses the shared EIA monthly measurement."
   }
 ];
 

@@ -2,7 +2,7 @@
 
 Research comparison only. Not used in production forecasts.
 
-Generated: 2026-07-10T23:33:58+00:00
+Generated: 2026-07-11T12:54:21+00:00
 
 ## Implementation status
 
@@ -122,6 +122,7 @@ Deterministic HRNN-style challenger artifact. Full PyTorch MAP checkpoint sweep 
 ## Honest notes
 
 - Production component MAE in this first artifact is a tier-style endogenous proxy, because the existing production backtest artifact stores headline rows but not a full per-component historical forecast panel.
+- SETB01 gasoline uses the same EIA weekly regular gasoline calendar-month measurement in HRNN, I-GRU, Seasonal AR, Production Tier 1 fallback, and Production Tier 3 fallback whenever the monthly EIA comparison is available.
 - Aggregate-node challenger forecasts can look better than bottom-up rows because they forecast published aggregates directly; bottom-up leaf aggregation is the apples-to-apples view.
 - Window A undercredits production external feeds that did not have current local cached histories before modern feed availability.
 - The current BLS hierarchy is applied across history; historical parent changes are documented rather than reconstructed.
