@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChallengerBanner, ChallengerCurrentForecastTable, ChallengerRollingChart } from "@/components/Challenger";
+import { ChallengerBanner, ChallengerCurrentForecastTable, ChallengerModelDefinitions, ChallengerRollingChart } from "@/components/Challenger";
 import { MetricCard, PageTitle, Panel } from "@/components/Shell";
 import { getChallenger } from "@/lib/data";
 import { formatPercent } from "@/lib/format";
@@ -30,7 +30,10 @@ export default function ChallengerPage() {
   return (
     <>
       <ChallengerBanner />
-      <PageTitle eyebrow="Challenger" title="HRNN Research Comparison">
+      <Panel title="Model definitions">
+        <ChallengerModelDefinitions />
+      </Panel>
+      <PageTitle eyebrow="Challenger" title="Model Research Comparison">
         A precomputed research run comparing HRNN, I-GRU, seasonal AR, and fallback baselines. It is not a second production forecast.
       </PageTitle>
       <div className="grid gap-4 md:grid-cols-3 xl:grid-cols-6">
