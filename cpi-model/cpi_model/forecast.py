@@ -66,6 +66,12 @@ def forecast_component(entry: dict[str, Any], model: dict[str, Any], target_mont
     tier = model.get("tier")
     model_type = model.get("model_type", "")
 
+    if entry["itemCode"] == "SEHB":
+        if feed and feed.get("lodgingNsaMm") is not None:
+            return float(feed["lodgingNsaMm"]), str(feed.get("lodgingDriver") or "CoStar/STR ADR primary")
+        fallback = 0.45 * (last or 0.0) + 0.25 * trailing3 + 0.20 * seasonal + 0.10 * trailing6
+        return fallback, "CoStar/STR ADR feed outage; Tier 3 Seasonal AR fallback"
+
     if entry["itemCode"] == "SETB01" and feed:
         if feed.get("forecastNsaMm") is not None:
             return float(feed["forecastNsaMm"]), str(feed.get("forecastDriver") or "EIA gasoline calendar-month average")
@@ -679,7 +685,11 @@ def main() -> None:
     write_food_futures_report(payload)
     write_commodity_report(month, payload, entry_by_code())
     write_food_diff_report(payload)
+    from .archive import export_month
+
+    archive_run = export_month(month)
     print(f"Wrote {run_dir / 'forecast.json'}")
+    print(f"Wrote archive run {archive_run}")
 
 
 if __name__ == "__main__":

@@ -17,6 +17,7 @@ from urllib.request import Request, urlopen
 import pandas as pd
 
 from .cme_futures import collect_cme_futures, food_futures_lag_report
+from .costar_adr import feed_payload as costar_adr_feed_payload, lodging_forecast
 from .data import write_json
 from .math import add_months
 from .paths import ROOT, RUNS_DIR, WORKSPACE
@@ -28,7 +29,7 @@ DATA_DIR = ROOT / "data"
 FEED_CACHE_DIR = DATA_DIR / "feeds"
 AAA_ARCHIVE_DIR = DATA_DIR / "aaa"
 BUNDLED_SITE_PACKAGES = Path.home() / ".cache" / "codex-runtimes" / "codex-primary-runtime" / "dependencies" / "python" / "Lib" / "site-packages"
-LIVE_STATUSES = {"live", "live_current_snapshot", "live_pdf_fallback"}
+LIVE_STATUSES = {"live", "live_cached", "live_current_snapshot", "live_pdf_fallback"}
 
 EIA_API = "https://api.eia.gov/v2"
 FRED_API = "https://api.stlouisfed.org/fred/series/observations"
@@ -186,6 +187,15 @@ TIER_FEEDS: dict[str, dict[str, Any]] = {
         "unit": "dollars per gallon",
         "env": ["EIA_API_KEY"],
         "requires": ["jet_fuel"],
+    },
+    "SEHB": {
+        "name": "Lodging away from home",
+        "tier": 1,
+        "primary": "CoStar/STR U.S. hotel ADR press releases",
+        "secondary": ["Tier 3 Seasonal AR outage fallback"],
+        "unit": "ADR index pass-through",
+        "env": [],
+        "requires": ["costar_adr"],
     },
     "SEME": {
         "name": "Health insurance",
@@ -1505,6 +1515,7 @@ def collect_feeds(*, write_snapshots: bool = False) -> dict[str, dict[str, Any]]
         "bls_food_ap": fetch_bls_food_average_prices(write_snapshots=write_snapshots),
         "hpai": fetch_aphis_hpai(write_snapshots=write_snapshots),
         "food_produce": fetch_usda_produce_basket(write_snapshots=write_snapshots),
+        "costar_adr": costar_adr_feed_payload(attempt_refresh=write_snapshots),
     }
 
 
@@ -1652,6 +1663,7 @@ def build_feed_health(month: str, *, write_snapshots: bool = False) -> dict[str,
     inputs_dir = run_dir / "inputs" if write_snapshots else None
     feeds = collect_feeds(write_snapshots=write_snapshots)
     shelter_signal = shelter_market_rent_signal(month, feeds)
+    lodging_signal = lodging_forecast(month, feeds.get("costar_adr", {}))
     aaa = feeds["aaa"]
     if inputs_dir:
         inputs_dir.mkdir(parents=True, exist_ok=True)
@@ -1681,6 +1693,28 @@ def build_feed_health(month: str, *, write_snapshots: bool = False) -> dict[str,
             row["publicationRule"] = manheim.get("publicationRule")
         if code == "SETG01" and feeds.get("jet_fuel"):
             row["points"] = feeds["jet_fuel"].get("points") or []
+        if code == "SEHB":
+            if lodging_signal:
+                row["lodgingNsaMm"] = lodging_signal["forecastNsaMm"]
+                row["lodgingDriver"] = lodging_signal["driver"]
+                row["lodgingModel"] = lodging_signal["model"]
+                row["lodgingMonthlyNowcast"] = lodging_signal["monthlyNowcast"]
+                row["priorOfficial"] = lodging_signal["priorOfficial"]
+                row["observationsUsed"] = [
+                    {
+                        "date": print_row["week_end"],
+                        "publicationDate": print_row["publication_date"],
+                        "value": print_row["adr"],
+                        "occupancy": print_row.get("occupancy"),
+                        "label": "CoStar/STR weekly U.S. ADR",
+                        "url": print_row["url"],
+                    }
+                    for print_row in lodging_signal["monthlyNowcast"]["weeklyPrints"]
+                ]
+            else:
+                row["status"] = "fallback"
+                row["fallbackUsed"] = True
+                row["details"] = "CoStar ADR unavailable for target month; Tier 3 Seasonal AR outage fallback required."
         if code in {"SEHA", "SEHC", "SEHC01"} and shelter_signal:
             row["shelterMarketNsaMm"] = shelter_signal["value"]
             row["shelterMarketDriver"] = shelter_signal["driver"]
@@ -1710,6 +1744,8 @@ def build_feed_health(month: str, *, write_snapshots: bool = False) -> dict[str,
         "jetFuelEiaDriver": jet_driver,
         "shelterMarketNsaMm": shelter_signal["value"] if shelter_signal else None,
         "shelterMarketDriver": shelter_signal["driver"] if shelter_signal else None,
+        "lodgingCostarNsaMm": lodging_signal["forecastNsaMm"] if lodging_signal else None,
+        "lodgingCostarDriver": lodging_signal["driver"] if lodging_signal else None,
     }
     if write_snapshots:
         write_json(run_dir / "feed_health.json", payload)

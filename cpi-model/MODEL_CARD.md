@@ -1,5 +1,17 @@
 # CPI Model Card
 
+## Lodging away from home: CoStar/STR ADR primary
+
+The production lodging model uses public CoStar/STR U.S. hotel press releases as its primary driver. The source page is `https://www.costar.com/products/str-benchmark/resources/press-releases`. The local public cache currently parses 130 weekly and 31 official monthly U.S. releases, with publication dates from 2022-03-31 through 2026-07-09 and official monthly ADR levels from 2023-10 through 2026-05. The archive advertises older filter years, but older unique releases are not claimed where yearless weekly URL slugs collide or pages are no longer discoverable.
+
+Weekly parsing uses labeled national values (`Occupancy`, `Average daily rate (ADR)`, and `Revenue per available room (RevPAR)`) rather than positional markup. Raw browser-rendered HTML and text are cached under `data/feeds/costar_adr/raw/`. Direct scripted refreshes currently receive HTTP 403 and are reported in feed health; a usable cache is labeled `live_cached`, while an unavailable target-month series is a visible outage that invokes the Tier 3 Seasonal AR fallback.
+
+Weeks crossing month boundaries are allocated one day at a time. For example, 28 June through 4 July contributes three ADR days to June and four to July. Official monthly ADR is retained for history and training after its publication date. The current unpublished month uses the weekly-derived day-weighted level, with the latest published weekly ADR carried forward only for unobserved days. Across 29 months with both constructions, the mean absolute weekly-derived versus official monthly level gap is 0.64%; this is treated as known nowcast/revision error.
+
+The fitted hotels/motels linkage uses `SEHB02` CPI NSA m/m. The current constrained specification has ADR beta 0.013, ADR lag weights 60% at lag 0 and 40% at lag 1, CPI persistence 0.514, and in-sample R-squared 0.315 over 25 complete observations. Occupancy is excluded because its expanding-window MAE does not clear the improvement threshold. From October 2023 through May 2026, official ADR rose 4.3% while the CPI hotels/motels index rose 15.4%, an 11.1 percentage-point level divergence. This is consistent with the caveat that ADR is a changing, mix-weighted average of realized room revenue while CPI prices a more fixed room specification.
+
+The honest common-span Window C comparison currently contains only 13 forecast months: CoStar ADR-primary MAE 2.11% and RMSE 2.52%, versus old hotels/motels Seasonal AR MAE 1.70% and RMSE 2.38%. ADR is adopted as requested despite the weaker short public backtest. For June 2026, five published weekly prints produce a day-weighted ADR of $173.89, +3.19% versus May's official $168.51. The fitted lodging forecast is +2.03% NSA m/m versus +2.61% from the old production `SEHB` Seasonal AR fallback (the narrower `SEHB02` benchmark was +3.00%), reducing the modeled headline contribution by roughly 0.009 percentage point. June is unscored until the 14 July 2026 CPI release.
+
 ## Scope
 
 This model forecasts the next unpublished CPI-U reference month from component-level NSA m/m forecasts, then aggregates headline/core from component contributions. It does not forecast headline directly.

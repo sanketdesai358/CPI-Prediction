@@ -17,6 +17,7 @@ cpi-dashboard/tsconfig.tsbuildinfo
 cpi-model/.pytest_cache/
 cpi-model/**/__pycache__/
 cpi-model/runs/
+cpi-model-archive/
 cpi-model/data/feeds/
 cpi-model/analysis/**/raw/
 cpi-model/analysis/**/*.png

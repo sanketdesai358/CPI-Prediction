@@ -23,6 +23,7 @@ TIER1: dict[str, dict[str, Any]] = {
     "SETA01": {"model_type": "new_vehicle_transaction_proxy", "input_series": ["J.D. Power PIN if licensed", "Cox/KBB ATP fallback"], "pass_through_lags": [0, 1], "event_calendar": ["model-year-changeover"]},
     "SETG01": {"model_type": "airfare_fare_mix_proxy", "input_series": ["web fare scrape fallback", "jet fuel", "capacity"], "pass_through_lags": [0, 1], "event_calendar": ["holiday-travel"]},
     "SETA04": {"model_type": "rental_rate_scrape_proxy", "input_series": ["daily rental-rate scrape fallback"], "pass_through_lags": [0], "event_calendar": []},
+    "SEHB": {"model_type": "costar_adr_pass_through", "input_series": ["CoStar/STR weekly U.S. ADR", "CoStar/STR official monthly ADR"], "pass_through_lags": [0, 1], "event_calendar": ["major events and host-city mix"]},
 }
 
 FOOD_INPUT_CODES = {

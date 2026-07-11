@@ -30,6 +30,7 @@ Generated from the validated registry plus the current BLS history cache. `model
 | SEFP01 | Coffee | 1 | food_commodity_complex_factor | 0.227 | 0.227 | 0.0120 | 0.052 | 0.216 |
 | SEFS01 | Butter and margarine | 1 | food_commodity_complex_factor | 0.062 | 0.062 | 0.0179 | 0.063 | 0.371 |
 | SEHA | Rent of primary residence | 1 | shelter_tier1_cpi_fallback | 7.679 | 7.679 | 0.0016 | 0.850 | 0.084 |
+| SEHB | Lodging away from home | 1 | costar_adr_pass_through | 1.483 | 1.483 | 0.0343 | 0.465 | 0.609 |
 | SEHC | Owners' equivalent rent of residences | 1 | oer_tier1_cpi_fallback | 25.700 | 25.700 | 0.0014 | 0.841 | 0.056 |
 | SEHC01 | Owners' equivalent rent of primary residence | 1 | oer_tier1_cpi_fallback | 24.742 | 0.000 | 0.0014 | 0.840 | 0.055 |
 | SEHE01 | Fuel oil | 1 | measurement_pass_through_fuel_oil | 0.117 | 0.117 | 0.0639 | 0.377 | 0.082 |
@@ -178,7 +179,6 @@ Generated from the validated registry plus the current BLS history cache. `model
 | SEGD03 | Laundry and dry cleaning services | 3 | ets_partial_pool | 0.129 | 0.000 | 0.0039 | 0.159 | 0.064 |
 | SEGD05 | Financial services | 3 | seasonal_ar_partial_pool | 0.242 | 0.000 | 0.0208 | 0.306 | 0.180 |
 | SEGE | Miscellaneous personal goods | 3 | sarima_partial_pool | 0.183 | 0.000 | 0.0150 | 0.052 | 0.302 |
-| SEHB | Lodging away from home | 3 | seasonal_ar_partial_pool | 1.483 | 1.483 | 0.0343 | 0.465 | 0.609 |
 | SEHB02 | Other lodging away from home including hotels and motels | 3 | seasonal_ar_partial_pool | 1.269 | 0.000 | 0.0399 | 0.470 | 0.618 |
 | SEHD | Tenants' and household insurance | 3 | ets_partial_pool | 0.286 | 0.286 | 0.0037 | 0.167 | 0.040 |
 | SEHE | Fuel oil and other fuels | 3 | seasonal_ar_partial_pool | 0.173 | 0.000 | 0.0441 | 0.406 | 0.124 |

@@ -103,3 +103,20 @@ def test_airline_fares_use_guarded_jet_fuel_signal() -> None:
     assert live < fallback
     assert live == max(fallback + 0.12 * feed["jetFuelNsaMm"], -0.08)
     assert "guarded jet-fuel pass-through" in driver
+
+
+def test_lodging_uses_costar_primary_and_seasonal_ar_only_on_outage() -> None:
+    entry = next(row for row in cache_entries() if row["itemCode"] == "SEHB")
+    model = {"tier": 1, "model_type": "costar_adr_pass_through"}
+    live, live_driver = forecast_component(
+        entry,
+        model,
+        "2026-06",
+        {"lodgingNsaMm": 0.0203, "lodgingDriver": "CoStar/STR ADR test"},
+    )
+    fallback, fallback_driver = forecast_component(entry, model, "2026-06", None)
+    assert live == 0.0203
+    assert "CoStar/STR ADR test" in live_driver
+    assert fallback != live
+    assert "feed outage" in fallback_driver
+    assert "Tier 3 Seasonal AR" in fallback_driver

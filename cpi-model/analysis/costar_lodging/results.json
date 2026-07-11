@@ -1,0 +1,717 @@
+{
+  "source": "CoStar/STR public U.S. hotel press releases",
+  "parsedReleases": 161,
+  "weeklyReleases": 130,
+  "monthlyReleases": 31,
+  "publicationSpan": {
+    "start": "2022-03-31",
+    "end": "2026-07-09"
+  },
+  "officialMonthSpan": {
+    "start": "2023-10",
+    "end": "2026-05"
+  },
+  "revision": {
+    "months": 29,
+    "meanAbsoluteGap": 0.006395308714671429,
+    "meanGap": -0.005625674808555887,
+    "rows": [
+      {
+        "month": "2023-12",
+        "weeklyDerivedAdr": 145.95434782608694,
+        "officialAdr": 151.13,
+        "gap": -0.03424635859136538
+      },
+      {
+        "month": "2024-01",
+        "weeklyDerivedAdr": 144.95964285714282,
+        "officialAdr": 146.33,
+        "gap": -0.009364840722047352
+      },
+      {
+        "month": "2024-02",
+        "weeklyDerivedAdr": 157.90206896551726,
+        "officialAdr": 158.23,
+        "gap": -0.0020724959519858865
+      },
+      {
+        "month": "2024-03",
+        "weeklyDerivedAdr": 159.50548387096777,
+        "officialAdr": 159.79,
+        "gap": -0.0017805627951200664
+      },
+      {
+        "month": "2024-04",
+        "weeklyDerivedAdr": 157.81166666666667,
+        "officialAdr": 157.31,
+        "gap": 0.0031890322717351705
+      },
+      {
+        "month": "2024-05",
+        "weeklyDerivedAdr": 159.56580645161287,
+        "officialAdr": 160.4,
+        "gap": -0.005200707907650481
+      },
+      {
+        "month": "2024-06",
+        "weeklyDerivedAdr": 160.83900000000006,
+        "officialAdr": 161.3,
+        "gap": -0.0028580285182886467
+      },
+      {
+        "month": "2024-07",
+        "weeklyDerivedAdr": 161.35903225806453,
+        "officialAdr": 161.69,
+        "gap": -0.002046927713126756
+      },
+      {
+        "month": "2024-08",
+        "weeklyDerivedAdr": 156.42129032258066,
+        "officialAdr": 157.84,
+        "gap": -0.008988277226427699
+      },
+      {
+        "month": "2024-09",
+        "weeklyDerivedAdr": 162.26066666666665,
+        "officialAdr": 162.63,
+        "gap": -0.0022710037098526703
+      },
+      {
+        "month": "2024-10",
+        "weeklyDerivedAdr": 162.71625,
+        "officialAdr": 164.86,
+        "gap": -0.013003457479073166
+      },
+      {
+        "month": "2024-11",
+        "weeklyDerivedAdr": 150.95100000000002,
+        "officialAdr": 152.7,
+        "gap": -0.01145383104125719
+      },
+      {
+        "month": "2024-12",
+        "weeklyDerivedAdr": 152.93249999999998,
+        "officialAdr": 156.67,
+        "gap": -0.023855875406906257
+      },
+      {
+        "month": "2025-01",
+        "weeklyDerivedAdr": 151.10555555555558,
+        "officialAdr": 151.2,
+        "gap": -0.000624632569076744
+      },
+      {
+        "month": "2025-02",
+        "weeklyDerivedAdr": 159.6732142857143,
+        "officialAdr": 159.39,
+        "gap": 0.0017768635781059139
+      },
+      {
+        "month": "2025-03",
+        "weeklyDerivedAdr": 162.2796774193548,
+        "officialAdr": 161.78,
+        "gap": 0.0030886229407516286
+      },
+      {
+        "month": "2025-04",
+        "weeklyDerivedAdr": 161.23733333333334,
+        "officialAdr": 161.28,
+        "gap": -0.0002645502645501896
+      },
+      {
+        "month": "2025-05",
+        "weeklyDerivedAdr": 161.53225806451604,
+        "officialAdr": 162.72,
+        "gap": -0.007299299013544425
+      },
+      {
+        "month": "2025-06",
+        "weeklyDerivedAdr": 162.59700000000004,
+        "officialAdr": 162.51,
+        "gap": 0.0005353516706667616
+      },
+      {
+        "month": "2025-07",
+        "weeklyDerivedAdr": 161.61548387096775,
+        "officialAdr": 161.9,
+        "gap": -0.001757357189822506
+      },
+      {
+        "month": "2025-08",
+        "weeklyDerivedAdr": 157.03483870967742,
+        "officialAdr": 158.93,
+        "gap": -0.011924503179529311
+      },
+      {
+        "month": "2025-09",
+        "weeklyDerivedAdr": 162.20566666666664,
+        "officialAdr": 162.69,
+        "gap": -0.002977031983117273
+      },
+      {
+        "month": "2025-10",
+        "weeklyDerivedAdr": 166.4090322580645,
+        "officialAdr": 167.71,
+        "gap": -0.007757246091082748
+      },
+      {
+        "month": "2025-11",
+        "weeklyDerivedAdr": 153.26695652173913,
+        "officialAdr": 153.77,
+        "gap": -0.0032714019526622895
+      },
+      {
+        "month": "2026-01",
+        "weeklyDerivedAdr": 150.81250000000003,
+        "officialAdr": 152.09,
+        "gap": -0.008399631796962126
+      },
+      {
+        "month": "2026-02",
+        "weeklyDerivedAdr": 162.565,
+        "officialAdr": 162.58,
+        "gap": -9.226227088210415e-05
+      },
+      {
+        "month": "2026-03",
+        "weeklyDerivedAdr": 167.24208333333334,
+        "officialAdr": 168.06,
+        "gap": -0.004866813439644568
+      },
+      {
+        "month": "2026-04",
+        "weeklyDerivedAdr": 166.3263333333333,
+        "officialAdr": 165.9,
+        "gap": 0.0025698211774158874
+      },
+      {
+        "month": "2026-05",
+        "weeklyDerivedAdr": 167.17419354838705,
+        "officialAdr": 168.51,
+        "gap": -0.007927164272820253
+      }
+    ]
+  },
+  "backtest": {
+    "requestedStart": "2022-01",
+    "availableStart": "2024-12",
+    "adrPrimary": {
+      "months": 13,
+      "mae": 0.021107880825124527,
+      "rmse": 0.025221507433085693
+    },
+    "seasonalArFull": {
+      "months": 51,
+      "mae": 0.025465626615078892,
+      "rmse": 0.031172712349186095
+    },
+    "seasonalArCommon": {
+      "months": 13,
+      "mae": 0.017042065769094176,
+      "rmse": 0.023800923175920804
+    },
+    "rows": [
+      {
+        "month": "2022-01",
+        "asOf": "2022-02-11",
+        "actualNsaMm": -0.010445638865019341,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -5.105730127849951e-05,
+        "feedAvailable": false
+      },
+      {
+        "month": "2022-02",
+        "asOf": "2022-03-11",
+        "actualNsaMm": 0.06185813854185415,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -0.0012912562430160883,
+        "feedAvailable": false
+      },
+      {
+        "month": "2022-03",
+        "asOf": "2022-04-11",
+        "actualNsaMm": 0.07416027810395984,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.037523318180554564,
+        "feedAvailable": false
+      },
+      {
+        "month": "2022-04",
+        "asOf": "2022-05-11",
+        "actualNsaMm": 0.033493755328722175,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.046795889365644064,
+        "feedAvailable": false
+      },
+      {
+        "month": "2022-05",
+        "asOf": "2022-06-11",
+        "actualNsaMm": 0.02830246540648194,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.03806487180426279,
+        "feedAvailable": false
+      },
+      {
+        "month": "2022-06",
+        "asOf": "2022-07-11",
+        "actualNsaMm": -0.008396746170893093,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.03183268135907559,
+        "feedAvailable": false
+      },
+      {
+        "month": "2022-07",
+        "asOf": "2022-08-11",
+        "actualNsaMm": -0.024154613792915,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.00561014934975974,
+        "feedAvailable": false
+      },
+      {
+        "month": "2022-08",
+        "asOf": "2022-09-11",
+        "actualNsaMm": -0.0229273202889683,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -0.013259560530302875,
+        "feedAvailable": false
+      },
+      {
+        "month": "2022-09",
+        "asOf": "2022-10-11",
+        "actualNsaMm": -0.040159797747992936,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -0.01880173736865374,
+        "feedAvailable": false
+      },
+      {
+        "month": "2022-10",
+        "asOf": "2022-11-11",
+        "actualNsaMm": -0.004993027227956702,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -0.033592946484323,
+        "feedAvailable": false
+      },
+      {
+        "month": "2022-11",
+        "asOf": "2022-12-11",
+        "actualNsaMm": -0.04987851371526799,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -0.020085647606371947,
+        "feedAvailable": false
+      },
+      {
+        "month": "2022-12",
+        "asOf": "2023-01-11",
+        "actualNsaMm": -0.005139861549361727,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -0.036969657601644654,
+        "feedAvailable": false
+      },
+      {
+        "month": "2023-01",
+        "asOf": "2023-02-11",
+        "actualNsaMm": 0.03947776913623314,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -0.003140328142779919,
+        "feedAvailable": false
+      },
+      {
+        "month": "2023-02",
+        "asOf": "2023-03-11",
+        "actualNsaMm": 0.05167603895900318,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.02442573605932094,
+        "feedAvailable": false
+      },
+      {
+        "month": "2023-03",
+        "asOf": "2023-04-11",
+        "actualNsaMm": 0.08023343898290199,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.03783981805695273,
+        "feedAvailable": false
+      },
+      {
+        "month": "2023-04",
+        "asOf": "2023-05-11",
+        "actualNsaMm": -0.009426893542069867,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.05481434963702752,
+        "feedAvailable": false
+      },
+      {
+        "month": "2023-05",
+        "asOf": "2023-06-11",
+        "actualNsaMm": 0.029590874413505795,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.014230523492137968,
+        "feedAvailable": false
+      },
+      {
+        "month": "2023-06",
+        "asOf": "2023-07-11",
+        "actualNsaMm": 0.004091647069594596,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.028589695164870317,
+        "feedAvailable": false
+      },
+      {
+        "month": "2023-07",
+        "asOf": "2023-08-11",
+        "actualNsaMm": -0.008388993317095562,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.00823076853404851,
+        "feedAvailable": false
+      },
+      {
+        "month": "2023-08",
+        "asOf": "2023-09-11",
+        "actualNsaMm": -0.057667170486847746,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -0.003969011293903484,
+        "feedAvailable": false
+      },
+      {
+        "month": "2023-09",
+        "asOf": "2023-10-11",
+        "actualNsaMm": 0.007140787050923662,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -0.03602958525838784,
+        "feedAvailable": false
+      },
+      {
+        "month": "2023-10",
+        "asOf": "2023-11-11",
+        "actualNsaMm": -0.07328121743587672,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -0.009124747330193831,
+        "feedAvailable": false
+      },
+      {
+        "month": "2023-11",
+        "asOf": "2023-12-11",
+        "actualNsaMm": -0.05489541628728525,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -0.05577267340169907,
+        "feedAvailable": false
+      },
+      {
+        "month": "2023-12",
+        "asOf": "2024-01-11",
+        "actualNsaMm": -0.01334053473785516,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -0.04155223988435981,
+        "feedAvailable": false
+      },
+      {
+        "month": "2024-01",
+        "asOf": "2024-02-11",
+        "actualNsaMm": 0.050705508491632724,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -0.014350629861531943,
+        "feedAvailable": false
+      },
+      {
+        "month": "2024-02",
+        "asOf": "2024-03-11",
+        "actualNsaMm": 0.036690920517970606,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.0284736614698578,
+        "feedAvailable": false
+      },
+      {
+        "month": "2024-03",
+        "asOf": "2024-04-11",
+        "actualNsaMm": 0.0649325480269162,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.0305271293498392,
+        "feedAvailable": false
+      },
+      {
+        "month": "2024-04",
+        "asOf": "2024-05-11",
+        "actualNsaMm": 0.010038691474623749,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.044107674002756746,
+        "feedAvailable": false
+      },
+      {
+        "month": "2024-05",
+        "asOf": "2024-06-11",
+        "actualNsaMm": 0.01695289093832006,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.02180418007584185,
+        "feedAvailable": false
+      },
+      {
+        "month": "2024-06",
+        "asOf": "2024-07-11",
+        "actualNsaMm": -0.007709298654781956,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.021483202225394075,
+        "feedAvailable": false
+      },
+      {
+        "month": "2024-07",
+        "asOf": "2024-08-11",
+        "actualNsaMm": -0.0076658953195314445,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.0017958919164232112,
+        "feedAvailable": false
+      },
+      {
+        "month": "2024-08",
+        "asOf": "2024-09-11",
+        "actualNsaMm": -0.01169601082948415,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -0.006947623007415378,
+        "feedAvailable": false
+      },
+      {
+        "month": "2024-09",
+        "asOf": "2024-10-11",
+        "actualNsaMm": -0.048178478618413983,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -0.011218414308986865,
+        "feedAvailable": false
+      },
+      {
+        "month": "2024-10",
+        "asOf": "2024-11-11",
+        "actualNsaMm": -0.04226426134657175,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -0.035831075551849466,
+        "feedAvailable": false
+      },
+      {
+        "month": "2024-11",
+        "asOf": "2024-12-11",
+        "actualNsaMm": -0.012167567196892073,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -0.04005921745006936,
+        "feedAvailable": false
+      },
+      {
+        "month": "2024-12",
+        "asOf": "2025-01-11",
+        "actualNsaMm": -0.026768926594431485,
+        "adrPrimaryNsaMm": -0.01199023183572608,
+        "seasonalArNsaMm": -0.01978450208883608,
+        "feedAvailable": true
+      },
+      {
+        "month": "2025-01",
+        "asOf": "2025-02-11",
+        "actualNsaMm": 0.04655052339014037,
+        "adrPrimaryNsaMm": -0.007572205783180268,
+        "seasonalArNsaMm": -0.014132753760937238,
+        "feedAvailable": true
+      },
+      {
+        "month": "2025-02",
+        "asOf": "2025-03-11",
+        "actualNsaMm": 0.03486954144525541,
+        "adrPrimaryNsaMm": 0.016935177904158417,
+        "seasonalArNsaMm": 0.029242345909495343,
+        "feedAvailable": true
+      },
+      {
+        "month": "2025-03",
+        "asOf": "2025-04-11",
+        "actualNsaMm": 0.009943558925413844,
+        "adrPrimaryNsaMm": 0.034600245134043986,
+        "seasonalArNsaMm": 0.028558416578611835,
+        "feedAvailable": true
+      },
+      {
+        "month": "2025-04",
+        "asOf": "2025-05-11",
+        "actualNsaMm": 0.02435402078225638,
+        "adrPrimaryNsaMm": 0.009813286044181236,
+        "seasonalArNsaMm": 0.014270699260848613,
+        "feedAvailable": true
+      },
+      {
+        "month": "2025-05",
+        "asOf": "2025-06-11",
+        "actualNsaMm": 0.023173760320938826,
+        "adrPrimaryNsaMm": 0.016233124406588532,
+        "seasonalArNsaMm": 0.024079854605948872,
+        "feedAvailable": true
+      },
+      {
+        "month": "2025-06",
+        "asOf": "2025-07-11",
+        "actualNsaMm": -0.0274788760957276,
+        "adrPrimaryNsaMm": 0.016693386814720244,
+        "seasonalArNsaMm": 0.019961725907535328,
+        "feedAvailable": true
+      },
+      {
+        "month": "2025-07",
+        "asOf": "2025-08-11",
+        "actualNsaMm": -0.01999462748648947,
+        "adrPrimaryNsaMm": -0.007060050717017662,
+        "seasonalArNsaMm": -0.008272966099855904,
+        "feedAvailable": true
+      },
+      {
+        "month": "2025-08",
+        "asOf": "2025-09-11",
+        "actualNsaMm": -0.00011631258114610903,
+        "adrPrimaryNsaMm": -0.005513565888725841,
+        "seasonalArNsaMm": -0.015473789788405875,
+        "feedAvailable": true
+      },
+      {
+        "month": "2025-09",
+        "asOf": "2025-10-11",
+        "actualNsaMm": -0.018399353506576895,
+        "adrPrimaryNsaMm": 0.0038417260871211646,
+        "seasonalArNsaMm": -0.00911917819948008,
+        "feedAvailable": true
+      },
+      {
+        "month": "2025-12",
+        "asOf": "2026-01-11",
+        "actualNsaMm": 0.014604522956463481,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": -0.015569159999063569,
+        "feedAvailable": false
+      },
+      {
+        "month": "2026-01",
+        "asOf": "2026-02-11",
+        "actualNsaMm": 0.031943549250852854,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.013150046383887374,
+        "feedAvailable": false
+      },
+      {
+        "month": "2026-02",
+        "asOf": "2026-03-11",
+        "actualNsaMm": 0.04476845875617493,
+        "adrPrimaryNsaMm": null,
+        "seasonalArNsaMm": 0.02540566420270261,
+        "feedAvailable": false
+      },
+      {
+        "month": "2026-03",
+        "asOf": "2026-04-11",
+        "actualNsaMm": 0.05298708662790955,
+        "adrPrimaryNsaMm": 0.022457542733003842,
+        "seasonalArNsaMm": 0.03703545529006284,
+        "feedAvailable": true
+      },
+      {
+        "month": "2026-04",
+        "asOf": "2026-05-11",
+        "actualNsaMm": 0.046326968674670746,
+        "adrPrimaryNsaMm": 0.030387768776175397,
+        "seasonalArNsaMm": 0.03904776630141055,
+        "feedAvailable": true
+      },
+      {
+        "month": "2026-05",
+        "asOf": "2026-06-11",
+        "actualNsaMm": 0.030040312477554298,
+        "adrPrimaryNsaMm": 0.01982562245971259,
+        "seasonalArNsaMm": 0.04165724720836972,
+        "feedAvailable": true
+      }
+    ]
+  },
+  "june2026": {
+    "adrPrimaryNsaMm": 0.020276923781625822,
+    "seasonalArProductionNsaMm": 0.02563598135630858,
+    "seasonalArHotelsMotelsNsaMm": 0.030013934764335486,
+    "difference": -0.005359057574682757,
+    "headlineContributionDifferencePp": -0.007948371286815529,
+    "driver": "CoStar/STR ADR primary: 2026-06 weekly-derived $173.89 vs 2026-05 official $168.51 (+3.19%); 5 weekly prints, 0 carried days; pass-through +2.03%",
+    "model": {
+      "features": [
+        "intercept",
+        "adr_blend",
+        "cpi_persistence"
+      ],
+      "coefficients": [
+        0.004510257730962047,
+        0.012905151071051224,
+        0.513919523903831
+      ],
+      "adrBeta": 0.012905151071051224,
+      "adrLagWeights": {
+        "lag0": 0.6,
+        "lag1": 0.4
+      },
+      "r2": 0.31503316381545554,
+      "observations": 25,
+      "walkForwardMae": 0.020088946168677187,
+      "occupancyCandidateWalkForwardMae": 0.020008466299657586,
+      "occupancyCandidateR2": 0.33206960211171677,
+      "occupancyIncluded": false
+    },
+    "weeklyPrints": [
+      {
+        "cadence": "weekly",
+        "title": "U.S. hotel results for week ending 6 June",
+        "url": "https://www.costar.com/products/str-benchmark/resources/press-releases/us-hotel-results-week-ending-6-june",
+        "publication_date": "2026-06-12",
+        "adr": 168.43,
+        "occupancy": 67.9,
+        "revpar": 114.3,
+        "month": null,
+        "week_start": "2026-05-31",
+        "week_end": "2026-06-06"
+      },
+      {
+        "cadence": "weekly",
+        "title": "U.S. hotel results for week ending 13 June",
+        "url": "https://www.costar.com/products/str-benchmark/resources/press-releases/us-hotel-results-week-ending-13-june",
+        "publication_date": "2026-06-18",
+        "adr": 172.04,
+        "occupancy": 69.9,
+        "revpar": 120.34,
+        "month": null,
+        "week_start": "2026-06-07",
+        "week_end": "2026-06-13"
+      },
+      {
+        "cadence": "weekly",
+        "title": "U.S. hotel results for week ending 20 June",
+        "url": "https://www.costar.com/products/str-benchmark/resources/press-releases/us-hotel-results-week-ending-20-june",
+        "publication_date": "2026-06-25",
+        "adr": 178.03,
+        "occupancy": 71.3,
+        "revpar": 126.86,
+        "month": null,
+        "week_start": "2026-06-14",
+        "week_end": "2026-06-20"
+      },
+      {
+        "cadence": "weekly",
+        "title": "U.S. hotel results for week ending 27 June",
+        "url": "https://www.costar.com/products/str-benchmark/resources/press-releases/us-hotel-results-week-ending-27-june",
+        "publication_date": "2026-07-02",
+        "adr": 178.82,
+        "occupancy": 72.2,
+        "revpar": 129.09,
+        "month": null,
+        "week_start": "2026-06-21",
+        "week_end": "2026-06-27"
+      },
+      {
+        "cadence": "weekly",
+        "title": "U.S. hotel results for week ending 4 July",
+        "url": "https://www.costar.com/products/str-benchmark/resources/press-releases/us-hotel-results-week-ending-4-july",
+        "publication_date": "2026-07-09",
+        "adr": 167.95,
+        "occupancy": 63.5,
+        "revpar": 106.66,
+        "month": null,
+        "week_start": "2026-06-28",
+        "week_end": "2026-07-04"
+      }
+    ]
+  }
+}
