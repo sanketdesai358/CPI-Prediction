@@ -1,17 +1,12 @@
 import Link from "next/link";
 import { ForecastTable } from "@/components/ForecastTable";
 import { ForecastNav } from "@/components/ForecastNav";
-import { MetricCard, PageTitle, Panel } from "@/components/Shell";
-import { getDashboardData, getFeedHealth, getForecast } from "@/lib/data";
+import { PageTitle, Panel } from "@/components/Shell";
+import { getDashboardData, getForecast } from "@/lib/data";
 import { formatMonth, formatPercent } from "@/lib/format";
-
-function statusLabel(status: string) {
-  return status.replaceAll("_", " ");
-}
 
 export default function ForecastPage() {
   const forecast = getForecast();
-  const feedHealth = getFeedHealth();
   const data = getDashboardData();
   if (!forecast) {
     return (
@@ -130,60 +125,6 @@ export default function ForecastPage() {
         </Panel>
       </div>
       <div className="mt-4 grid gap-4 lg:grid-cols-[1fr_1fr]">
-        {feedHealth ? (
-          <Panel title="Feed health">
-            <div className="grid gap-2 text-sm sm:grid-cols-3">
-              <div className="rounded bg-wash p-3">
-                <div className="text-xs uppercase text-muted">Live</div>
-                <div className="text-2xl font-semibold text-ink">{feedHealth.summary.live}</div>
-              </div>
-              <div className="rounded bg-wash p-3">
-                <div className="text-xs uppercase text-muted">Partial</div>
-                <div className="text-2xl font-semibold text-ink">{feedHealth.summary.partial}</div>
-              </div>
-              <div className="rounded bg-wash p-3">
-                <div className="text-xs uppercase text-muted">Fallback / blocked</div>
-                <div className="text-2xl font-semibold text-ink">{feedHealth.summary.fallbackOrBlocked}</div>
-              </div>
-            </div>
-            <div className="mt-3 max-h-80 overflow-y-auto rounded border border-line">
-              <table className="min-w-full text-left text-xs">
-                <thead className="border-b border-line bg-wash uppercase text-muted">
-                  <tr>
-                    <th className="px-3 py-2">Component</th>
-                    <th className="px-3 py-2">Status</th>
-                    <th className="px-3 py-2">Last obs</th>
-                    <th className="px-3 py-2">Input values</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {feedHealth.components.map((row) => (
-                    <tr key={row.itemCode} className="border-b border-line/70 align-top">
-                      <td className="px-3 py-2">
-                        <div className="font-medium text-ink">{row.name}</div>
-                        <div className="text-muted">{row.primaryFeed}</div>
-                      </td>
-                      <td className="px-3 py-2">
-                        <span className={`rounded px-2 py-1 ${row.fallbackUsed ? "bg-amber-50 text-amber-800" : "bg-teal/10 text-teal"}`}>
-                          {statusLabel(row.status)}
-                        </span>
-                      </td>
-                      <td className="px-3 py-2">{row.lastObservationDate ?? "n/a"}</td>
-                      <td className="max-w-[320px] px-3 py-2 text-muted">
-                        {row.observationsUsed.length
-                          ? row.observationsUsed.map((obs) => `${obs.label}: ${obs.value}`).join("; ")
-                          : row.details}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="mt-2 text-xs text-muted">
-              A fallback flag means the dashboard is not using a complete live feed for that component yet.
-            </p>
-          </Panel>
-        ) : null}
         <Panel title="SA forecast ranges">
           <div className="overflow-x-auto">
             <table className="min-w-full text-left text-sm">
@@ -227,60 +168,6 @@ export default function ForecastPage() {
           </Link>
         </Panel>
       </div>
-      {forecast.foodForwardPath ? (
-        <div className="mt-4">
-          <Panel title="Food forward path">
-            <div className="mb-3 rounded bg-wash p-3 text-sm text-muted">
-              <div className="font-medium text-ink">Model output, not BLS data.</div>
-              <div>{forecast.foodForwardPath.note}</div>
-              <div className="mt-1 text-xs uppercase">Futures status: {statusLabel(forecast.foodForwardPath.status)}</div>
-            </div>
-            <div className="overflow-x-auto">
-              <table className="min-w-full text-left text-sm">
-                <thead className="border-b border-line text-xs uppercase text-muted">
-                  <tr>
-                    <th className="py-2 pr-4">Horizon</th>
-                    <th className="py-2 pr-4">Food m/m</th>
-                    <th className="py-2 pr-4">P10 / P90</th>
-                    <th className="py-2 pr-4">Headline contribution</th>
-                    <th className="py-2 pr-4">Largest food drivers</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {forecast.foodForwardPath.horizons.map((row) => (
-                    <tr key={row.horizon} className="border-b border-line/70 align-top">
-                      <td className="py-2 pr-4 font-medium">{row.label}</td>
-                      <td className="py-2 pr-4">{formatPercent(row.foodNsaMm)}</td>
-                      <td className="py-2 pr-4 text-muted">
-                        {formatPercent(row.interval.p10)} / {formatPercent(row.interval.p90)}
-                      </td>
-                      <td className="py-2 pr-4">{row.headlineContributionPp.toFixed(3)} pp</td>
-                      <td className="max-w-[520px] py-2 pr-4 text-muted">
-                        {row.components
-                          .slice(0, 4)
-                          .map((item) => `${item.name}: ${item.contributionPp.toFixed(3)} pp`)
-                          .join("; ")}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            {forecast.foodForwardPath.lagReport?.rows?.length ? (
-              <div className="mt-4 grid gap-2 md:grid-cols-2">
-                {forecast.foodForwardPath.lagReport.rows.map((row) => (
-                  <div key={row.component} className="rounded border border-line p-3 text-xs">
-                    <div className="font-semibold text-ink">{row.component}</div>
-                    <div className="text-muted">Features: {row.features.join(", ")}</div>
-                    <div className="text-muted">Expected lag peak: {row.expectedLagPeak}</div>
-                    <div className={row.kept ? "text-teal" : "text-amber-700"}>{statusLabel(row.decision)}</div>
-                  </div>
-                ))}
-              </div>
-            ) : null}
-          </Panel>
-        </div>
-      ) : null}
       <div className="mt-4">
         <Panel title="Full component forecast table">
           <ForecastTable rows={forecast.components} />
