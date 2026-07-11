@@ -25,17 +25,6 @@
       "scaffoldDriver": "free fallback: recent CPI-timed movement + same-month seasonal average"
     },
     {
-      "itemCode": "SEHC",
-      "name": "Owners' equivalent rent of residences",
-      "modelWeight": 25.69980547861173,
-      "liveNsaMm": 0.0025387208282107608,
-      "scaffoldNsaMm": 0.0030664124955471516,
-      "deltaContributionPp": -0.013561573203229536,
-      "flagged": false,
-      "liveDriver": "75% lagged BLS shelter history (0.31%) + 25% lagged external rent overlay (0.10%): lagged external shelter overlay (2024-12 to 2025-12): Zillow ZORI 0.15% avg m/m over 13 lagged obs; Apartment List -0.14% avg m/m over 13 lagged obs; BLS/Cleveland Fed NTRI 0.33% avg m/m over 4 lagged obs",
-      "scaffoldDriver": "distributed lag over trailing BLS shelter history fallback"
-    },
-    {
       "itemCode": "SETA02",
       "name": "Used cars and trucks",
       "modelWeight": 2.6284059095687615,
@@ -45,17 +34,6 @@
       "flagged": false,
       "liveDriver": "SETA02 SA model: rho 0.47 * prior CPI SA +0.10 pp + Manheim m2 signal -0.39 pp * volatility scale 0.71 + level gap z=-1.04, mean-reversion adj +0.02 pp; timing m0 2026-06 unavailable in Manheim feed; m2 2026-04 -1.56% pub 2026-05-07; omitted unavailable m0. Compared against CUSR0000SETA02; no asymmetry term kept. SA forecast converted to NSA using the component's historical SA/NSA offset.",
       "scaffoldDriver": "free fallback: recent CPI-timed movement + same-month seasonal average"
-    },
-    {
-      "itemCode": "SEHA",
-      "name": "Rent of primary residence",
-      "modelWeight": 7.679331455775074,
-      "liveNsaMm": 0.0023303379135784447,
-      "scaffoldNsaMm": 0.0027885686093707305,
-      "deltaContributionPp": -0.003518905396199399,
-      "flagged": false,
-      "liveDriver": "75% lagged BLS shelter history (0.28%) + 25% lagged external rent overlay (0.10%): lagged external shelter overlay (2024-12 to 2025-12): Zillow ZORI 0.15% avg m/m over 13 lagged obs; Apartment List -0.14% avg m/m over 13 lagged obs; BLS/Cleveland Fed NTRI 0.33% avg m/m over 4 lagged obs",
-      "scaffoldDriver": "distributed lag over trailing BLS shelter history fallback"
     },
     {
       "itemCode": "SEFJ01",
@@ -94,11 +72,22 @@
       "itemCode": "SEFH",
       "name": "Eggs",
       "modelWeight": 0.11296121927431853,
-      "liveNsaMm": -0.02067869563092095,
+      "liveNsaMm": -0.02051761706513093,
       "scaffoldNsaMm": -0.020743290475006903,
-      "deltaContributionPp": 7.296712346783595e-06,
+      "deltaContributionPp": 2.54923435373829e-05,
       "flagged": false,
-      "liveDriver": "EGGS commodity-complex factor: cuts USDA combined regional caged white Large eggs midpoint, USDA combined regional caged white Extra Large eggs midpoint, USDA combined regional caged white Medium eggs midpoint; lag 0, loading 1.00; live cut adjustment 0.19 pp",
+      "liveDriver": "EGGS commodity-complex factor: cuts USDA combined regional caged white Large eggs midpoint, USDA combined regional caged white Extra Large eggs midpoint, USDA combined regional caged white Medium eggs midpoint; lag 0, loading 1.00; live cut adjustment 0.21 pp",
+      "scaffoldDriver": "free fallback: recent CPI-timed movement + same-month seasonal average"
+    },
+    {
+      "itemCode": "SEHC",
+      "name": "Owners' equivalent rent of residences",
+      "modelWeight": 25.69980547861173,
+      "liveNsaMm": 0.003035564381365119,
+      "scaffoldNsaMm": 0.003035564381365119,
+      "deltaContributionPp": 0.0,
+      "flagged": false,
+      "liveDriver": "free fallback: recent CPI-timed movement + same-month seasonal average",
       "scaffoldDriver": "free fallback: recent CPI-timed movement + same-month seasonal average"
     },
     {
@@ -118,6 +107,17 @@
       "modelWeight": 2.5055086171748027,
       "liveNsaMm": 0.013931806117004572,
       "scaffoldNsaMm": 0.013931806117004572,
+      "deltaContributionPp": 0.0,
+      "flagged": false,
+      "liveDriver": "free fallback: recent CPI-timed movement + same-month seasonal average",
+      "scaffoldDriver": "free fallback: recent CPI-timed movement + same-month seasonal average"
+    },
+    {
+      "itemCode": "SEHA",
+      "name": "Rent of primary residence",
+      "modelWeight": 7.679331455775074,
+      "liveNsaMm": 0.003122086940113231,
+      "scaffoldNsaMm": 0.003122086940113231,
       "deltaContributionPp": 0.0,
       "flagged": false,
       "liveDriver": "free fallback: recent CPI-timed movement + same-month seasonal average",

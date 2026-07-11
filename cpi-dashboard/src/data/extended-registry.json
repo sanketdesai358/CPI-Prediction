@@ -6038,28 +6038,12 @@
       "series": "https://download.bls.gov/pub/time.series/cu/cu.series",
       "methodology_spec": "SPEC.md section 3"
     },
-    "tier": 2,
-    "model_type": "shelter_distributed_lag_state_space",
+    "tier": 1,
+    "model_type": "shelter_tier1_cpi_fallback",
     "input_series": [
-      "ZORI",
-      "Apartment List",
-      "BLS-Cleveland Fed New Tenant Rent Index"
+      "CPI rent history"
     ],
-    "pass_through_lags": [
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18
-    ],
+    "pass_through_lags": [],
     "event_calendar": [
       "six-panel-rotation"
     ],
@@ -6226,28 +6210,12 @@
       "series": "https://download.bls.gov/pub/time.series/cu/cu.series",
       "methodology_spec": "SPEC.md section 3"
     },
-    "tier": 2,
-    "model_type": "oer_distributed_lag_state_space",
+    "tier": 1,
+    "model_type": "oer_tier1_cpi_fallback",
     "input_series": [
-      "ZORI",
-      "Apartment List",
-      "BLS-Cleveland Fed New Tenant Rent Index"
+      "CPI OER history"
     ],
-    "pass_through_lags": [
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18
-    ],
+    "pass_through_lags": [],
     "event_calendar": [
       "owner-stock-reweighting"
     ],
@@ -6288,28 +6256,12 @@
       "series": "https://download.bls.gov/pub/time.series/cu/cu.series",
       "methodology_spec": "SPEC.md section 3"
     },
-    "tier": 2,
-    "model_type": "oer_distributed_lag_state_space",
+    "tier": 1,
+    "model_type": "oer_tier1_cpi_fallback",
     "input_series": [
-      "ZORI",
-      "Apartment List",
-      "BLS-Cleveland Fed New Tenant Rent Index"
+      "CPI OER history"
     ],
-    "pass_through_lags": [
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18
-    ],
+    "pass_through_lags": [],
     "event_calendar": [
       "owner-stock-reweighting"
     ],

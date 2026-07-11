@@ -1,9 +1,9 @@
 {
   "forecastMonth": "2026-06",
-  "generatedAt": "2026-07-10T11:53:41+00:00",
+  "generatedAt": "2026-07-10T22:09:47+00:00",
   "summary": {
-    "componentsTracked": 40,
-    "live": 31,
+    "componentsTracked": 37,
+    "live": 28,
     "partial": 3,
     "fallbackOrBlocked": 6
   },
@@ -21590,180 +21590,6 @@
       ]
     },
     {
-      "itemCode": "SEHA",
-      "name": "Rent of primary residence",
-      "tier": 2,
-      "primaryFeed": "Zillow ZORI + Apartment List + NTRI",
-      "secondaryFeeds": [],
-      "status": "live",
-      "fallbackUsed": false,
-      "lastObservationDate": "2026-06",
-      "latestValue": 1385.0,
-      "unit": "rent index growth",
-      "observationsUsed": [
-        {
-          "date": "2026-05",
-          "value": 1950.8681283538576,
-          "label": "Zillow ZORI"
-        },
-        {
-          "date": "2026-06",
-          "value": 1385.0,
-          "label": "United States"
-        },
-        {
-          "date": "2025q3",
-          "value": 215.6,
-          "label": "BLS NTRI latest"
-        }
-      ],
-      "details": null,
-      "shelterMarketNsaMm": 0.0009556458262015878,
-      "shelterMarketDriver": "lagged external shelter overlay (2024-12 to 2025-12): Zillow ZORI 0.15% avg m/m over 13 lagged obs; Apartment List -0.14% avg m/m over 13 lagged obs; BLS/Cleveland Fed NTRI 0.33% avg m/m over 4 lagged obs",
-      "shelterMarketPieces": [
-        {
-          "feed": "Zillow ZORI",
-          "windowStart": "2024-12",
-          "windowEnd": "2025-12",
-          "observations": 13,
-          "value": 0.0015128343867131416,
-          "weight": 0.4
-        },
-        {
-          "feed": "Apartment List",
-          "windowStart": "2024-12",
-          "windowEnd": "2025-12",
-          "observations": 13,
-          "value": -0.001388459641371379,
-          "weight": 0.35
-        },
-        {
-          "feed": "BLS/Cleveland Fed NTRI",
-          "windowStart": "2024-12",
-          "windowEnd": "2025-12",
-          "observations": 4,
-          "value": 0.0033458917839852553,
-          "weight": 0.25
-        }
-      ]
-    },
-    {
-      "itemCode": "SEHC",
-      "name": "Owners' equivalent rent",
-      "tier": 2,
-      "primaryFeed": "Zillow ZORI + Apartment List + NTRI",
-      "secondaryFeeds": [],
-      "status": "live",
-      "fallbackUsed": false,
-      "lastObservationDate": "2026-06",
-      "latestValue": 1385.0,
-      "unit": "rent index growth",
-      "observationsUsed": [
-        {
-          "date": "2026-05",
-          "value": 1950.8681283538576,
-          "label": "Zillow ZORI"
-        },
-        {
-          "date": "2026-06",
-          "value": 1385.0,
-          "label": "United States"
-        },
-        {
-          "date": "2025q3",
-          "value": 215.6,
-          "label": "BLS NTRI latest"
-        }
-      ],
-      "details": null,
-      "shelterMarketNsaMm": 0.0009556458262015878,
-      "shelterMarketDriver": "lagged external shelter overlay (2024-12 to 2025-12): Zillow ZORI 0.15% avg m/m over 13 lagged obs; Apartment List -0.14% avg m/m over 13 lagged obs; BLS/Cleveland Fed NTRI 0.33% avg m/m over 4 lagged obs",
-      "shelterMarketPieces": [
-        {
-          "feed": "Zillow ZORI",
-          "windowStart": "2024-12",
-          "windowEnd": "2025-12",
-          "observations": 13,
-          "value": 0.0015128343867131416,
-          "weight": 0.4
-        },
-        {
-          "feed": "Apartment List",
-          "windowStart": "2024-12",
-          "windowEnd": "2025-12",
-          "observations": 13,
-          "value": -0.001388459641371379,
-          "weight": 0.35
-        },
-        {
-          "feed": "BLS/Cleveland Fed NTRI",
-          "windowStart": "2024-12",
-          "windowEnd": "2025-12",
-          "observations": 4,
-          "value": 0.0033458917839852553,
-          "weight": 0.25
-        }
-      ]
-    },
-    {
-      "itemCode": "SEHC01",
-      "name": "Owners' equivalent rent of primary residence",
-      "tier": 2,
-      "primaryFeed": "Zillow ZORI + Apartment List + NTRI",
-      "secondaryFeeds": [],
-      "status": "live",
-      "fallbackUsed": false,
-      "lastObservationDate": "2026-06",
-      "latestValue": 1385.0,
-      "unit": "rent index growth",
-      "observationsUsed": [
-        {
-          "date": "2026-05",
-          "value": 1950.8681283538576,
-          "label": "Zillow ZORI"
-        },
-        {
-          "date": "2026-06",
-          "value": 1385.0,
-          "label": "United States"
-        },
-        {
-          "date": "2025q3",
-          "value": 215.6,
-          "label": "BLS NTRI latest"
-        }
-      ],
-      "details": null,
-      "shelterMarketNsaMm": 0.0009556458262015878,
-      "shelterMarketDriver": "lagged external shelter overlay (2024-12 to 2025-12): Zillow ZORI 0.15% avg m/m over 13 lagged obs; Apartment List -0.14% avg m/m over 13 lagged obs; BLS/Cleveland Fed NTRI 0.33% avg m/m over 4 lagged obs",
-      "shelterMarketPieces": [
-        {
-          "feed": "Zillow ZORI",
-          "windowStart": "2024-12",
-          "windowEnd": "2025-12",
-          "observations": 13,
-          "value": 0.0015128343867131416,
-          "weight": 0.4
-        },
-        {
-          "feed": "Apartment List",
-          "windowStart": "2024-12",
-          "windowEnd": "2025-12",
-          "observations": 13,
-          "value": -0.001388459641371379,
-          "weight": 0.35
-        },
-        {
-          "feed": "BLS/Cleveland Fed NTRI",
-          "windowStart": "2024-12",
-          "windowEnd": "2025-12",
-          "observations": 4,
-          "value": 0.0033458917839852553,
-          "weight": 0.25
-        }
-      ]
-    },
-    {
       "itemCode": "SEME",
       "name": "Health insurance",
       "tier": 2,
@@ -21835,38 +21661,38 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-04",
-      "latestValue": 64.25,
+      "lastObservationDate": "2026-07-11",
+      "latestValue": 79.0,
       "unit": "cents per dozen / retail dollars",
       "observationsUsed": [
         {
-          "date": "2026-07-04",
-          "value": 64.25,
+          "date": "2026-07-11",
+          "value": 79.0,
           "label": "USDA combined regional caged white Extra Large eggs average"
         },
         {
-          "date": "2026-07-04",
-          "value": 61.5,
+          "date": "2026-07-11",
+          "value": 76.0,
           "label": "USDA combined regional caged white Extra Large eggs midpoint"
         },
         {
-          "date": "2026-07-04",
-          "value": 58.19,
+          "date": "2026-07-11",
+          "value": 72.94,
           "label": "USDA combined regional caged white Large eggs average"
         },
         {
-          "date": "2026-07-04",
-          "value": 56.5,
+          "date": "2026-07-11",
+          "value": 71.0,
           "label": "USDA combined regional caged white Large eggs midpoint"
         },
         {
-          "date": "2026-07-04",
-          "value": 50.75,
+          "date": "2026-07-11",
+          "value": 47.75,
           "label": "USDA combined regional caged white Medium eggs average"
         },
         {
-          "date": "2026-07-04",
-          "value": 50.0,
+          "date": "2026-07-11",
+          "value": 47.0,
           "label": "USDA combined regional caged white Medium eggs midpoint"
         },
         {
@@ -21887,23 +21713,23 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-09",
-      "latestValue": 380.81,
+      "lastObservationDate": "2026-07-10",
+      "latestValue": 382.68,
       "unit": "dollars per cwt / retail dollars per lb",
       "observationsUsed": [
         {
-          "date": "2026-07-09",
-          "value": 380.81,
+          "date": "2026-07-10",
+          "value": 382.68,
           "label": "USDA boxed beef Choice cutout"
         },
         {
-          "date": "2026-07-09",
-          "value": 363.49,
+          "date": "2026-07-10",
+          "value": 368.33,
           "label": "USDA boxed beef Select cutout"
         },
         {
-          "date": "2026-07-09",
-          "value": 17.32,
+          "date": "2026-07-10",
+          "value": 14.35,
           "label": "USDA boxed beef Choice/Select spread"
         },
         {
@@ -21924,43 +21750,43 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-09",
-      "latestValue": 98.81,
+      "lastObservationDate": "2026-07-10",
+      "latestValue": 101.34,
       "unit": "dollars per cwt / retail dollars per lb",
       "observationsUsed": [
         {
-          "date": "2026-07-09",
-          "value": 98.81,
+          "date": "2026-07-10",
+          "value": 101.34,
           "label": "USDA pork cutout carcass"
         },
         {
-          "date": "2026-07-09",
-          "value": 89.89,
+          "date": "2026-07-10",
+          "value": 90.8,
           "label": "USDA pork cutout loin"
         },
         {
-          "date": "2026-07-09",
-          "value": 115.95,
+          "date": "2026-07-10",
+          "value": 118.01,
           "label": "USDA pork cutout butt"
         },
         {
-          "date": "2026-07-09",
-          "value": 66.81,
+          "date": "2026-07-10",
+          "value": 71.37,
           "label": "USDA pork cutout picnic"
         },
         {
-          "date": "2026-07-09",
-          "value": 170.73,
+          "date": "2026-07-10",
+          "value": 173.42,
           "label": "USDA pork cutout rib"
         },
         {
-          "date": "2026-07-09",
-          "value": 97.63,
+          "date": "2026-07-10",
+          "value": 97.92,
           "label": "USDA pork cutout ham"
         },
         {
-          "date": "2026-07-09",
-          "value": 132.43,
+          "date": "2026-07-10",
+          "value": 140.88,
           "label": "USDA pork cutout belly"
         },
         {
@@ -21982,33 +21808,33 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-03",
-      "latestValue": 119.05,
+      "lastObservationDate": "2026-07-10",
+      "latestValue": 118.85,
       "unit": "cents per lb / retail dollars per lb",
       "observationsUsed": [
         {
-          "date": "2026-07-03",
-          "value": 119.05,
+          "date": "2026-07-10",
+          "value": 118.85,
           "label": "USDA chicken National composite whole bird"
         },
         {
-          "date": "2026-07-03",
-          "value": 117.59,
+          "date": "2026-07-10",
+          "value": 117.42,
           "label": "USDA chicken National composite WOGS"
         },
         {
-          "date": "2026-07-03",
-          "value": 125.46,
+          "date": "2026-07-10",
+          "value": 125.24,
           "label": "USDA chicken Boneless skinless breast"
         },
         {
-          "date": "2026-07-03",
-          "value": 60.14,
+          "date": "2026-07-10",
+          "value": 59.55,
           "label": "USDA chicken Leg quarters bulk"
         },
         {
-          "date": "2026-07-03",
-          "value": 95.14,
+          "date": "2026-07-10",
+          "value": 107.47,
           "label": "USDA chicken Whole wings"
         },
         {
@@ -22310,13 +22136,13 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-09",
-      "latestValue": 132.43,
+      "lastObservationDate": "2026-07-10",
+      "latestValue": 140.88,
       "unit": "dollars per cwt / retail dollars per lb",
       "observationsUsed": [
         {
-          "date": "2026-07-09",
-          "value": 132.43,
+          "date": "2026-07-10",
+          "value": 140.88,
           "label": "USDA pork cutout belly"
         },
         {
@@ -22335,13 +22161,13 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-09",
-      "latestValue": 97.63,
+      "lastObservationDate": "2026-07-10",
+      "latestValue": 97.92,
       "unit": "dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-07-09",
-          "value": 97.63,
+          "date": "2026-07-10",
+          "value": 97.92,
           "label": "USDA pork cutout ham"
         }
       ],
@@ -22355,13 +22181,13 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-09",
-      "latestValue": 89.89,
+      "lastObservationDate": "2026-07-10",
+      "latestValue": 90.8,
       "unit": "dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-07-09",
-          "value": 89.89,
+          "date": "2026-07-10",
+          "value": 90.8,
           "label": "USDA pork cutout loin"
         }
       ],
@@ -22375,13 +22201,13 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-09",
-      "latestValue": 98.81,
+      "lastObservationDate": "2026-07-10",
+      "latestValue": 101.34,
       "unit": "dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-07-09",
-          "value": 98.81,
+          "date": "2026-07-10",
+          "value": 101.34,
           "label": "USDA pork cutout carcass"
         }
       ],
@@ -22397,23 +22223,23 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-09",
-      "latestValue": 330.31,
+      "lastObservationDate": "2026-07-10",
+      "latestValue": 331.59,
       "unit": "dollars per cwt / retail dollars per lb",
       "observationsUsed": [
         {
-          "date": "2026-07-09",
-          "value": 330.31,
+          "date": "2026-07-10",
+          "value": 331.59,
           "label": "USDA boxed beef Choice primal Chuck"
         },
         {
-          "date": "2026-07-09",
-          "value": 324.48,
+          "date": "2026-07-10",
+          "value": 322.27,
           "label": "USDA boxed beef Choice primal Round"
         },
         {
-          "date": "2026-07-09",
-          "value": 17.32,
+          "date": "2026-07-10",
+          "value": 14.35,
           "label": "USDA boxed beef Choice/Select spread"
         },
         {
@@ -22432,23 +22258,23 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-09",
-      "latestValue": 330.31,
+      "lastObservationDate": "2026-07-10",
+      "latestValue": 331.59,
       "unit": "dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-07-09",
-          "value": 330.31,
+          "date": "2026-07-10",
+          "value": 331.59,
           "label": "USDA boxed beef Choice primal Chuck"
         },
         {
-          "date": "2026-07-09",
-          "value": 324.48,
+          "date": "2026-07-10",
+          "value": 322.27,
           "label": "USDA boxed beef Choice primal Round"
         },
         {
-          "date": "2026-07-09",
-          "value": 17.32,
+          "date": "2026-07-10",
+          "value": 14.35,
           "label": "USDA boxed beef Choice/Select spread"
         }
       ],
@@ -22462,23 +22288,23 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-09",
-      "latestValue": 483.58,
+      "lastObservationDate": "2026-07-10",
+      "latestValue": 477.15,
       "unit": "dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-07-09",
-          "value": 483.58,
+          "date": "2026-07-10",
+          "value": 477.15,
           "label": "USDA boxed beef Choice primal Loin"
         },
         {
-          "date": "2026-07-09",
-          "value": 552.42,
+          "date": "2026-07-10",
+          "value": 571.65,
           "label": "USDA boxed beef Choice primal Rib"
         },
         {
-          "date": "2026-07-09",
-          "value": 17.32,
+          "date": "2026-07-10",
+          "value": 14.35,
           "label": "USDA boxed beef Choice/Select spread"
         }
       ],
@@ -22492,18 +22318,18 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-09",
-      "latestValue": 380.81,
+      "lastObservationDate": "2026-07-10",
+      "latestValue": 382.68,
       "unit": "dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-07-09",
-          "value": 380.81,
+          "date": "2026-07-10",
+          "value": 382.68,
           "label": "USDA boxed beef Choice cutout"
         },
         {
-          "date": "2026-07-09",
-          "value": 17.32,
+          "date": "2026-07-10",
+          "value": 14.35,
           "label": "USDA boxed beef Choice/Select spread"
         }
       ],
@@ -22520,33 +22346,33 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-03",
-      "latestValue": 119.05,
+      "lastObservationDate": "2026-07-10",
+      "latestValue": 118.85,
       "unit": "cents per lb / retail dollars per lb",
       "observationsUsed": [
         {
-          "date": "2026-07-03",
-          "value": 119.05,
+          "date": "2026-07-10",
+          "value": 118.85,
           "label": "USDA chicken National composite whole bird"
         },
         {
-          "date": "2026-07-03",
-          "value": 117.59,
+          "date": "2026-07-10",
+          "value": 117.42,
           "label": "USDA chicken National composite WOGS"
         },
         {
-          "date": "2026-07-03",
-          "value": 125.46,
+          "date": "2026-07-10",
+          "value": 125.24,
           "label": "USDA chicken Boneless skinless breast"
         },
         {
-          "date": "2026-07-03",
-          "value": 60.14,
+          "date": "2026-07-10",
+          "value": 59.55,
           "label": "USDA chicken Leg quarters bulk"
         },
         {
-          "date": "2026-07-03",
-          "value": 95.14,
+          "date": "2026-07-10",
+          "value": 107.47,
           "label": "USDA chicken Whole wings"
         },
         {
@@ -22567,23 +22393,23 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-03",
-      "latestValue": 125.46,
+      "lastObservationDate": "2026-07-10",
+      "latestValue": 125.24,
       "unit": "cents per lb",
       "observationsUsed": [
         {
-          "date": "2026-07-03",
-          "value": 125.46,
+          "date": "2026-07-10",
+          "value": 125.24,
           "label": "USDA chicken Boneless skinless breast"
         },
         {
-          "date": "2026-07-03",
-          "value": 60.14,
+          "date": "2026-07-10",
+          "value": 59.55,
           "label": "USDA chicken Leg quarters bulk"
         },
         {
-          "date": "2026-07-03",
-          "value": 95.14,
+          "date": "2026-07-10",
+          "value": 107.47,
           "label": "USDA chicken Whole wings"
         }
       ],

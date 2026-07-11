@@ -51,6 +51,18 @@ type MajorProductionAggregate = {
   componentCount: number;
 };
 
+type MajorCurrentAggregate = {
+  actual: ChallengerCurrentForecast["rows"][number]["actual"];
+  production: ChallengerCurrentForecast["rows"][number]["production"];
+  productionTier1: ChallengerCurrentForecast["rows"][number]["production"];
+  productionTier3: ChallengerCurrentForecast["rows"][number]["production"];
+  hrnn: ChallengerCurrentForecast["rows"][number]["production"];
+  iGru: ChallengerCurrentForecast["rows"][number]["production"];
+  seasonalAr: ChallengerCurrentForecast["rows"][number]["production"];
+  weight: number | null;
+  componentCount: number;
+};
+
 type CurrentForecastRow = ChallengerCurrentForecast["rows"][number];
 type CurrentMajorRow = NonNullable<ChallengerCurrentForecast["majorRows"]>[number];
 type CurrentComponentRow = NonNullable<ChallengerCurrentForecast["componentRows"]>[number];
@@ -66,7 +78,7 @@ function compactMonth(month: string) {
 }
 
 function isUnderMajor(itemCode: string, majorCode: string, byCode: Map<string, ComponentEntry>) {
-  if (majorCode === "SAT1" && itemCode === "SETB01") return false;
+  if (majorCode === "SAT1" && isUnderCode(itemCode, "SETB", byCode)) return false;
   if (itemCode === majorCode) return true;
   let cursor = byCode.get(itemCode);
   while (cursor?.parent) {
@@ -76,9 +88,34 @@ function isUnderMajor(itemCode: string, majorCode: string, byCode: Map<string, C
   return false;
 }
 
+function isUnderCode(itemCode: string, ancestorCode: string, byCode: Map<string, ComponentEntry>) {
+  if (itemCode === ancestorCode) return true;
+  let cursor = byCode.get(itemCode);
+  while (cursor?.parent) {
+    if (cursor.parent === ancestorCode) return true;
+    cursor = byCode.get(cursor.parent);
+  }
+  return false;
+}
+
 function isInSpecialMajor(itemCode: string, majorCode: string) {
   if (majorCode !== "SA0E") return false;
   return itemCode.startsWith("SETB") || itemCode === "SEHE" || itemCode.startsWith("SEHF");
+}
+
+function blankMeasureSet() {
+  return { saMm: null, nsaMm: null, saYoy: null, nsaYoy: null };
+}
+
+function displayedMajorWeight(majorCode: string, byCode: Map<string, ComponentEntry>, fallback: number | null | undefined) {
+  if (majorCode === "SAT1") {
+    const privateTransportation = byCode.get("SAT1")?.currentRi;
+    const motorFuel = byCode.get("SETB")?.currentRi;
+    if (typeof privateTransportation === "number" && typeof motorFuel === "number") {
+      return privateTransportation - motorFuel;
+    }
+  }
+  return fallback ?? null;
 }
 
 function aggregateProductionMajors(
@@ -108,7 +145,7 @@ function aggregateProductionMajors(
     out[major.itemCode] = {
       saMm: weightSum ? saSum / weightSum : null,
       nsaMm: weightSum ? nsaSum / weightSum : null,
-      weight: major.weight,
+      weight: displayedMajorWeight(major.itemCode, byCode, weightSum || major.weight),
       componentCount: components.length
     };
   }
@@ -119,8 +156,75 @@ function hasProductionAggregate(row: ChallengerMajorComponentRow, productionMajo
   return (productionMajors[row.itemCode]?.componentCount ?? 0) > 0;
 }
 
+function aggregateCurrentMajors(
+  current: ChallengerCurrentForecast | null,
+  entries: ComponentEntry[],
+  diagnostics: ChallengerMajorComponentRow[]
+): Record<string, MajorCurrentAggregate> {
+  const byCode = new Map(entries.map((entry) => [entry.itemCode, entry]));
+  const componentRows = current?.componentRows ?? [];
+  const models = ["actual", "production", "productionTier1", "productionTier3", "hrnn", "iGru", "seasonalAr"] as const;
+  const measures = ["saMm", "nsaMm", "saYoy", "nsaYoy"] as const;
+  const out: Record<string, MajorCurrentAggregate> = {};
+  for (const major of diagnostics) {
+    const rows = componentRows.filter(
+      (row) => isUnderMajor(row.series, major.itemCode, byCode) || isInSpecialMajor(row.series, major.itemCode)
+    );
+    const aggregate: MajorCurrentAggregate = {
+      actual: blankMeasureSet(),
+      production: blankMeasureSet(),
+      productionTier1: blankMeasureSet(),
+      productionTier3: blankMeasureSet(),
+      hrnn: blankMeasureSet(),
+      iGru: blankMeasureSet(),
+      seasonalAr: blankMeasureSet(),
+      weight: null,
+      componentCount: rows.length
+    };
+    let weightSum = 0;
+    const weighted: Record<string, Record<string, number>> = {};
+    for (const model of models) {
+      weighted[model] = {};
+      for (const measure of measures) weighted[model][measure] = 0;
+    }
+    const availableWeights: Record<string, Record<string, number>> = {};
+    for (const model of models) {
+      availableWeights[model] = {};
+      for (const measure of measures) availableWeights[model][measure] = 0;
+    }
+    for (const row of rows) {
+      const weight = row.weight ?? byCode.get(row.series)?.currentRi ?? 0;
+      if (!Number.isFinite(weight) || weight <= 0) continue;
+      weightSum += weight;
+      for (const model of models) {
+        const measureSet = row[model];
+        if (!measureSet) continue;
+        for (const measure of measures) {
+          const value = measureSet[measure];
+          if (value === null || value === undefined || Number.isNaN(value)) continue;
+          weighted[model][measure] += weight * value;
+          availableWeights[model][measure] += weight;
+        }
+      }
+    }
+    aggregate.weight = displayedMajorWeight(major.itemCode, byCode, weightSum || major.weight);
+    for (const model of models) {
+      for (const measure of measures) {
+        aggregate[model][measure] = availableWeights[model][measure] ? weighted[model][measure] / availableWeights[model][measure] : null;
+      }
+    }
+    out[major.itemCode] = aggregate;
+  }
+  return out;
+}
+
 function measureValue(
-  row: CurrentForecastRow | CurrentMajorRow | CurrentComponentRow | undefined,
+  row:
+    | CurrentForecastRow
+    | CurrentMajorRow
+    | CurrentComponentRow
+    | Partial<Record<ChallengerVariant | "actual", ChallengerCurrentForecast["rows"][number]["production"]>>
+    | undefined,
   model: ChallengerVariant,
   measure: "saMm" | "nsaMm" | "saYoy" | "nsaYoy"
 ) {
@@ -151,6 +255,10 @@ export function ForecastModelDivergence({
     () => aggregateProductionMajors(forecast, entries, diagnostics),
     [forecast, entries, diagnostics]
   );
+  const currentMajors = useMemo(
+    () => aggregateCurrentMajors(current, entries, diagnostics),
+    [current, entries, diagnostics]
+  );
   const diagnosticsWithProduction = diagnostics.filter((row) => hasProductionAggregate(row, productionMajors));
   return (
     <div className="grid gap-4">
@@ -169,7 +277,7 @@ export function ForecastModelDivergence({
           dashboard hierarchy or an explicit code group is available.
           Delta is challenger minus your production model.
         </p>
-        <MajorCurrentDivergenceTable current={current} diagnostics={diagnosticsWithProduction} productionMajors={productionMajors} />
+        <MajorCurrentDivergenceTable currentMajors={currentMajors} diagnostics={diagnosticsWithProduction} productionMajors={productionMajors} />
       </section>
       <section className="rounded border border-line bg-white p-4 shadow-subtle">
         <h2 className="mb-2 text-base font-semibold">All production component discrepancies</h2>
@@ -242,15 +350,14 @@ function CurrentHeadlineCoreTable({ current }: { current: ChallengerCurrentForec
 }
 
 function MajorCurrentDivergenceTable({
-  current,
+  currentMajors,
   diagnostics,
   productionMajors
 }: {
-  current: ChallengerCurrentForecast | null;
+  currentMajors: Record<string, MajorCurrentAggregate>;
   diagnostics: ChallengerMajorComponentRow[];
   productionMajors: Record<string, MajorProductionAggregate>;
 }) {
-  const currentByCode = new Map((current?.majorRows ?? []).map((row) => [row.series, row]));
   if (!diagnostics.length) {
     return <div className="rounded border border-line bg-wash p-4 text-sm text-muted">No major-component diagnostics have been generated yet.</div>;
   }
@@ -270,7 +377,7 @@ function MajorCurrentDivergenceTable({
         <tbody>
           {diagnostics.map((diagnostic) => {
             const production = productionMajors[diagnostic.itemCode];
-            const currentRow = currentByCode.get(diagnostic.itemCode);
+            const currentRow = currentMajors[diagnostic.itemCode];
             const productionSa = production?.saMm ?? null;
             return (
               <tr key={diagnostic.itemCode} className="border-b border-line/70 align-top">
@@ -278,7 +385,7 @@ function MajorCurrentDivergenceTable({
                   <div className="font-medium">{diagnostic.name}</div>
                   <div className="text-xs text-muted">{diagnostic.itemCode}</div>
                 </td>
-                <td className="py-3 pr-4">{formatWeight(diagnostic.weight)}</td>
+                <td className="py-3 pr-4">{formatWeight(currentRow?.weight ?? diagnostic.weight)}</td>
                 <td className="py-3 pr-4">
                   <div className="font-semibold">SA {formatPercent(productionSa, 3)}</div>
                   <div className="text-xs text-muted">NSA {formatPercent(production?.nsaMm ?? null, 3)}</div>

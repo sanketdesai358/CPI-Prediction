@@ -29,6 +29,9 @@ Generated from the validated registry plus the current BLS history cache. `model
 | SEFJ04 | Other dairy and related products | 1 | food_commodity_complex_factor | 0.189 | 0.189 | 0.0094 | 0.146 | 0.264 |
 | SEFP01 | Coffee | 1 | food_commodity_complex_factor | 0.227 | 0.227 | 0.0120 | 0.052 | 0.216 |
 | SEFS01 | Butter and margarine | 1 | food_commodity_complex_factor | 0.062 | 0.062 | 0.0179 | 0.063 | 0.371 |
+| SEHA | Rent of primary residence | 1 | shelter_tier1_cpi_fallback | 7.679 | 7.679 | 0.0016 | 0.850 | 0.084 |
+| SEHC | Owners' equivalent rent of residences | 1 | oer_tier1_cpi_fallback | 25.700 | 25.700 | 0.0014 | 0.841 | 0.056 |
+| SEHC01 | Owners' equivalent rent of primary residence | 1 | oer_tier1_cpi_fallback | 24.742 | 0.000 | 0.0014 | 0.840 | 0.055 |
 | SEHE01 | Fuel oil | 1 | measurement_pass_through_fuel_oil | 0.117 | 0.117 | 0.0639 | 0.377 | 0.082 |
 | SEHF01 | Electricity | 1 | tariff_event_electricity | 2.506 | 2.506 | 0.0141 | 0.290 | 0.728 |
 | SEHF02 | Utility (piped) gas service | 1 | distributed_lag_utility_gas | 0.734 | 0.734 | 0.0246 | 0.254 | 0.142 |
@@ -39,9 +42,6 @@ Generated from the validated registry plus the current BLS history cache. `model
 | SETG01 | Airline fares | 1 | airfare_fare_mix_proxy | 1.107 | 1.107 | 0.0530 | 0.472 | 0.485 |
 | SEEB01 | College tuition and fees | 2 | tuition_aug_sep_event | 1.308 | 0.000 | 0.0037 | 0.492 | 0.756 |
 | SEED03 | Wireless telephone services | 2 | wireless_plan_launch_event | 1.328 | 0.000 | 0.0091 | 0.228 | 0.080 |
-| SEHA | Rent of primary residence | 2 | shelter_distributed_lag_state_space | 7.679 | 7.679 | 0.0016 | 0.850 | 0.084 |
-| SEHC | Owners' equivalent rent of residences | 2 | oer_distributed_lag_state_space | 25.700 | 25.700 | 0.0014 | 0.841 | 0.056 |
-| SEHC01 | Owners' equivalent rent of primary residence | 2 | oer_distributed_lag_state_space | 24.742 | 0.000 | 0.0014 | 0.840 | 0.055 |
 | SEHG | Water and sewer and trash collection services | 2 | municipal_fee_calendar_step | 1.133 | 0.000 | 0.0025 | 0.088 | 0.371 |
 | SEME | Health insurance | 2 | health_insurance_retained_earnings_step | 0.826 | 0.826 | 0.0156 | 0.843 | 0.009 |
 | SETE | Motor vehicle insurance | 2 | insurance_filing_momentum | 2.617 | 2.617 | 0.0163 | 0.347 | 0.116 |

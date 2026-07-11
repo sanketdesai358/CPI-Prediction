@@ -60,6 +60,23 @@ def test_projection_display_resolves_oer_parent_child_duplicate() -> None:
     assert projections["SEHC01"]["displayInHeatmap"] is False
 
 
+def test_shelter_uses_tier1_cpi_history_fallback_not_external_rent_overlay() -> None:
+    payload = forecast_payload()
+    components = {row["itemCode"]: row for row in payload["components"]}
+    for code in ("SEHA", "SEHC"):
+        assert components[code]["tier"] == 1
+        assert "free fallback: recent CPI-timed movement" in components[code]["driverSnapshot"]
+        assert "external rent overlay" not in components[code]["driverSnapshot"]
+        assert "Zillow" not in components[code]["driverSnapshot"]
+        assert components[code].get("feedStatus") is None
+    projections = {row["itemCode"]: row for row in payload["projectionComponents"]}
+    sehc01 = projections["SEHC01"]
+    assert sehc01["projectionSource"] == "model"
+    assert "free fallback: recent CPI-timed movement" in sehc01["projectionSourceDetail"]
+    assert "external rent overlay" not in sehc01["projectionSourceDetail"]
+    assert "Zillow" not in sehc01["projectionSourceDetail"]
+
+
 def test_airline_fares_use_guarded_jet_fuel_signal() -> None:
     entry = {
         "itemCode": "SETG01",

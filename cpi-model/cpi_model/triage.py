@@ -16,6 +16,9 @@ TIER1: dict[str, dict[str, Any]] = {
     "SEHE01": {"model_type": "measurement_pass_through_fuel_oil", "input_series": ["EIA heating oil retail"], "pass_through_lags": [0, 1], "event_calendar": ["winter-demand-overlay"]},
     "SEHF02": {"model_type": "distributed_lag_utility_gas", "input_series": ["Henry Hub", "EIA retail natural gas"], "pass_through_lags": [1, 2, 3], "event_calendar": ["tariff-filings"]},
     "SEHF01": {"model_type": "tariff_event_electricity", "input_series": ["EIA retail electricity", "state tariff filings"], "pass_through_lags": [0, 1], "event_calendar": ["tariff-filings"]},
+    "SEHA": {"model_type": "shelter_tier1_cpi_fallback", "input_series": ["CPI rent history"], "pass_through_lags": [], "event_calendar": ["six-panel-rotation"]},
+    "SEHC": {"model_type": "oer_tier1_cpi_fallback", "input_series": ["CPI OER history"], "pass_through_lags": [], "event_calendar": ["owner-stock-reweighting"]},
+    "SEHC01": {"model_type": "oer_tier1_cpi_fallback", "input_series": ["CPI OER history"], "pass_through_lags": [], "event_calendar": ["owner-stock-reweighting"]},
     "SETA02": {"model_type": "used_vehicle_lag_kernel", "input_series": ["Manheim UVVI SA", "Black Book fallback"], "pass_through_lags": [0, 2], "event_calendar": ["Manheim final timing guard", "retail-wholesale level-gap guard"]},
     "SETA01": {"model_type": "new_vehicle_transaction_proxy", "input_series": ["J.D. Power PIN if licensed", "Cox/KBB ATP fallback"], "pass_through_lags": [0, 1], "event_calendar": ["model-year-changeover"]},
     "SETG01": {"model_type": "airfare_fare_mix_proxy", "input_series": ["web fare scrape fallback", "jet fuel", "capacity"], "pass_through_lags": [0, 1], "event_calendar": ["holiday-travel"]},
@@ -45,9 +48,6 @@ FOOD_INPUT_CODES = {
 }
 
 TIER2: dict[str, dict[str, Any]] = {
-    "SEHA": {"model_type": "shelter_distributed_lag_state_space", "input_series": ["ZORI", "Apartment List", "BLS-Cleveland Fed New Tenant Rent Index"], "pass_through_lags": list(range(6, 19)), "event_calendar": ["six-panel-rotation"]},
-    "SEHC": {"model_type": "oer_distributed_lag_state_space", "input_series": ["ZORI", "Apartment List", "BLS-Cleveland Fed New Tenant Rent Index"], "pass_through_lags": list(range(6, 19)), "event_calendar": ["owner-stock-reweighting"]},
-    "SEHC01": {"model_type": "oer_distributed_lag_state_space", "input_series": ["ZORI", "Apartment List", "BLS-Cleveland Fed New Tenant Rent Index"], "pass_through_lags": list(range(6, 19)), "event_calendar": ["owner-stock-reweighting"]},
     "SEME": {"model_type": "health_insurance_retained_earnings_step", "input_series": ["NAIC industry reports", "DMHC commercial insurance"], "pass_through_lags": [10], "event_calendar": ["April retained-earnings update", "October retained-earnings update"]},
     "SEEB01": {"model_type": "tuition_aug_sep_event", "input_series": ["announced tuition data fallback"], "pass_through_lags": [0], "event_calendar": ["August academic-year reset", "September academic-year reset"]},
     "SETE": {"model_type": "insurance_filing_momentum", "input_series": ["rate-filing tracker if licensed", "AR fallback"], "pass_through_lags": [0, 1, 2], "event_calendar": ["filing-effective-dates"]},

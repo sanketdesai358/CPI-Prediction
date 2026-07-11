@@ -1,28 +1,28 @@
 {
   "forecastMonth": "2026-06",
-  "generatedAt": "2026-07-10T11:52:47+00:00",
+  "generatedAt": "2026-07-10T22:08:47+00:00",
   "dataThrough": "2026-05",
   "source": "model output, not BLS data",
   "headline": {
-    "nsaMm": -0.0012322230756118971,
-    "saMm": -0.0019541995318512455,
-    "nsaYoy": 0.037664360248857554,
-    "saYoy": 0.03699453511457018,
+    "nsaMm": -0.0010435522605608191,
+    "saMm": -0.0017655287168001673,
+    "nsaYoy": 0.03786037876799764,
+    "saYoy": 0.037190568807665025,
     "saInterval": {
-      "p10": -0.005520406256105529,
-      "p50": -0.0019541995318512455,
-      "p90": 0.0016120071924030379
+      "p10": -0.0053317354410544505,
+      "p50": -0.0017655287168001673,
+      "p90": 0.001800678007454116
     }
   },
   "core": {
-    "nsaMm": 0.002749391508753449,
-    "saMm": 0.0026170766710370192,
-    "nsaYoy": 0.02865150117600468,
-    "saYoy": 0.02851343299338205,
+    "nsaMm": 0.002991383422620292,
+    "saMm": 0.002859068584903862,
+    "nsaYoy": 0.028899744004750705,
+    "saYoy": 0.02876167525842943,
     "saInterval": {
-      "p10": 0.000610920777945877,
-      "p50": 0.0026170766710370192,
-      "p90": 0.004623232564128161
+      "p10": 0.0008529126918127199,
+      "p50": 0.002859068584903862,
+      "p90": 0.004865224477995004
     }
   },
   "baseEffects": [
@@ -118,8 +118,8 @@
     }
   ],
   "feedHealth": {
-    "componentsTracked": 40,
-    "live": 31,
+    "componentsTracked": 37,
+    "live": 28,
     "partial": 3,
     "fallbackOrBlocked": 6
   },
@@ -295,101 +295,28 @@
     {
       "itemCode": "SEHC",
       "name": "Owners' equivalent rent of residences",
-      "tier": 2,
-      "modelType": "oer_distributed_lag_state_space",
+      "tier": 1,
+      "modelType": "oer_tier1_cpi_fallback",
       "model_weight": 25.69980547861173,
       "blsCurrentRi": 25.69980547861173,
-      "forecast_nsa_mm": 0.0025387208282107608,
-      "forecast_sa_mm": 0.0024256148498764895,
-      "fallback_nsa_mm": 0.0030664124955471516,
-      "fallback_driver": "distributed lag over trailing BLS shelter history fallback",
+      "forecast_nsa_mm": 0.003035564381365119,
+      "forecast_sa_mm": 0.0029224584030308476,
+      "fallback_nsa_mm": 0.003035564381365119,
+      "fallback_driver": "free fallback: recent CPI-timed movement + same-month seasonal average",
       "is_core": true,
-      "driverSnapshot": "75% lagged BLS shelter history (0.31%) + 25% lagged external rent overlay (0.10%): lagged external shelter overlay (2024-12 to 2025-12): Zillow ZORI 0.15% avg m/m over 13 lagged obs; Apartment List -0.14% avg m/m over 13 lagged obs; BLS/Cleveland Fed NTRI 0.33% avg m/m over 4 lagged obs",
-      "feedStatus": {
-        "itemCode": "SEHC",
-        "name": "Owners' equivalent rent",
-        "tier": 2,
-        "primaryFeed": "Zillow ZORI + Apartment List + NTRI",
-        "secondaryFeeds": [],
-        "status": "live",
-        "fallbackUsed": false,
-        "lastObservationDate": "2026-06",
-        "latestValue": 1385.0,
-        "unit": "rent index growth",
-        "observationsUsed": [
-          {
-            "date": "2026-05",
-            "value": 1950.8681283538576,
-            "label": "Zillow ZORI"
-          },
-          {
-            "date": "2026-06",
-            "value": 1385.0,
-            "label": "United States"
-          },
-          {
-            "date": "2025q3",
-            "value": 215.6,
-            "label": "BLS NTRI latest"
-          }
-        ],
-        "details": null,
-        "shelterMarketNsaMm": 0.0009556458262015878,
-        "shelterMarketDriver": "lagged external shelter overlay (2024-12 to 2025-12): Zillow ZORI 0.15% avg m/m over 13 lagged obs; Apartment List -0.14% avg m/m over 13 lagged obs; BLS/Cleveland Fed NTRI 0.33% avg m/m over 4 lagged obs",
-        "shelterMarketPieces": [
-          {
-            "feed": "Zillow ZORI",
-            "windowStart": "2024-12",
-            "windowEnd": "2025-12",
-            "observations": 13,
-            "value": 0.0015128343867131416,
-            "weight": 0.4
-          },
-          {
-            "feed": "Apartment List",
-            "windowStart": "2024-12",
-            "windowEnd": "2025-12",
-            "observations": 13,
-            "value": -0.001388459641371379,
-            "weight": 0.35
-          },
-          {
-            "feed": "BLS/Cleveland Fed NTRI",
-            "windowStart": "2024-12",
-            "windowEnd": "2025-12",
-            "observations": 4,
-            "value": 0.0033458917839852553,
-            "weight": 0.25
-          }
-        ]
-      },
+      "driverSnapshot": "free fallback: recent CPI-timed movement + same-month seasonal average",
+      "feedStatus": null,
       "inputSeries": [
-        "ZORI",
-        "Apartment List",
-        "BLS-Cleveland Fed New Tenant Rent Index"
+        "CPI OER history"
       ],
-      "passThroughLags": [
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18
-      ],
+      "passThroughLags": [],
       "eventCalendar": [
         "owner-stock-reweighting"
       ],
       "sigma": 0.0014407004469082108,
-      "component_yoy": 0.03276240084157589,
+      "component_yoy": 0.03327422280928438,
       "commodityModel": null,
-      "contribution_pp": 0.06524463144951662
+      "contribution_pp": 0.0780134141188859
     },
     {
       "itemCode": "SEHB",
@@ -21988,6 +21915,32 @@
       "contribution_pp": 0.02820297256413846
     },
     {
+      "itemCode": "SEHA",
+      "name": "Rent of primary residence",
+      "tier": 1,
+      "modelType": "shelter_tier1_cpi_fallback",
+      "model_weight": 7.679331455775074,
+      "blsCurrentRi": 7.679331455775074,
+      "forecast_nsa_mm": 0.003122086940113231,
+      "forecast_sa_mm": 0.0032275123987160897,
+      "fallback_nsa_mm": 0.003122086940113231,
+      "fallback_driver": "free fallback: recent CPI-timed movement + same-month seasonal average",
+      "is_core": true,
+      "driverSnapshot": "free fallback: recent CPI-timed movement + same-month seasonal average",
+      "feedStatus": null,
+      "inputSeries": [
+        "CPI rent history"
+      ],
+      "passThroughLags": [],
+      "eventCalendar": [
+        "six-panel-rotation"
+      ],
+      "sigma": 0.0015869300582730904,
+      "component_yoy": 0.030326321045223148,
+      "commodityModel": null,
+      "contribution_pp": 0.02397554044687608
+    },
+    {
       "itemCode": "SETE",
       "name": "Motor vehicle insurance",
       "tier": 2,
@@ -22054,105 +22007,6 @@
       "component_yoy": -0.00012878182698317087,
       "commodityModel": null,
       "contribution_pp": 0.02047697733255352
-    },
-    {
-      "itemCode": "SEHA",
-      "name": "Rent of primary residence",
-      "tier": 2,
-      "modelType": "shelter_distributed_lag_state_space",
-      "model_weight": 7.679331455775074,
-      "blsCurrentRi": 7.679331455775074,
-      "forecast_nsa_mm": 0.0023303379135784447,
-      "forecast_sa_mm": 0.0024357633721813036,
-      "fallback_nsa_mm": 0.0027885686093707305,
-      "fallback_driver": "distributed lag over trailing BLS shelter history fallback",
-      "is_core": true,
-      "driverSnapshot": "75% lagged BLS shelter history (0.28%) + 25% lagged external rent overlay (0.10%): lagged external shelter overlay (2024-12 to 2025-12): Zillow ZORI 0.15% avg m/m over 13 lagged obs; Apartment List -0.14% avg m/m over 13 lagged obs; BLS/Cleveland Fed NTRI 0.33% avg m/m over 4 lagged obs",
-      "feedStatus": {
-        "itemCode": "SEHA",
-        "name": "Rent of primary residence",
-        "tier": 2,
-        "primaryFeed": "Zillow ZORI + Apartment List + NTRI",
-        "secondaryFeeds": [],
-        "status": "live",
-        "fallbackUsed": false,
-        "lastObservationDate": "2026-06",
-        "latestValue": 1385.0,
-        "unit": "rent index growth",
-        "observationsUsed": [
-          {
-            "date": "2026-05",
-            "value": 1950.8681283538576,
-            "label": "Zillow ZORI"
-          },
-          {
-            "date": "2026-06",
-            "value": 1385.0,
-            "label": "United States"
-          },
-          {
-            "date": "2025q3",
-            "value": 215.6,
-            "label": "BLS NTRI latest"
-          }
-        ],
-        "details": null,
-        "shelterMarketNsaMm": 0.0009556458262015878,
-        "shelterMarketDriver": "lagged external shelter overlay (2024-12 to 2025-12): Zillow ZORI 0.15% avg m/m over 13 lagged obs; Apartment List -0.14% avg m/m over 13 lagged obs; BLS/Cleveland Fed NTRI 0.33% avg m/m over 4 lagged obs",
-        "shelterMarketPieces": [
-          {
-            "feed": "Zillow ZORI",
-            "windowStart": "2024-12",
-            "windowEnd": "2025-12",
-            "observations": 13,
-            "value": 0.0015128343867131416,
-            "weight": 0.4
-          },
-          {
-            "feed": "Apartment List",
-            "windowStart": "2024-12",
-            "windowEnd": "2025-12",
-            "observations": 13,
-            "value": -0.001388459641371379,
-            "weight": 0.35
-          },
-          {
-            "feed": "BLS/Cleveland Fed NTRI",
-            "windowStart": "2024-12",
-            "windowEnd": "2025-12",
-            "observations": 4,
-            "value": 0.0033458917839852553,
-            "weight": 0.25
-          }
-        ]
-      },
-      "inputSeries": [
-        "ZORI",
-        "Apartment List",
-        "BLS-Cleveland Fed New Tenant Rent Index"
-      ],
-      "passThroughLags": [
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18
-      ],
-      "eventCalendar": [
-        "six-panel-rotation"
-      ],
-      "sigma": 0.0015869300582730904,
-      "component_yoy": 0.029513100129921588,
-      "commodityModel": null,
-      "contribution_pp": 0.017895437242328206
     },
     {
       "itemCode": "SAG",
@@ -22857,12 +22711,12 @@
       "modelType": "food_commodity_complex_factor",
       "model_weight": 0.11296121927431853,
       "blsCurrentRi": 0.11296121927431853,
-      "forecast_nsa_mm": -0.02067869563092095,
-      "forecast_sa_mm": 0.01017492255858262,
+      "forecast_nsa_mm": -0.02051761706513093,
+      "forecast_sa_mm": 0.010336001124372642,
       "fallback_nsa_mm": -0.020743290475006903,
       "fallback_driver": "free fallback: recent CPI-timed movement + same-month seasonal average",
       "is_core": false,
-      "driverSnapshot": "EGGS commodity-complex factor: cuts USDA combined regional caged white Large eggs midpoint, USDA combined regional caged white Extra Large eggs midpoint, USDA combined regional caged white Medium eggs midpoint; lag 0, loading 1.00; live cut adjustment 0.19 pp",
+      "driverSnapshot": "EGGS commodity-complex factor: cuts USDA combined regional caged white Large eggs midpoint, USDA combined regional caged white Extra Large eggs midpoint, USDA combined regional caged white Medium eggs midpoint; lag 0, loading 1.00; live cut adjustment 0.21 pp",
       "feedStatus": {
         "itemCode": "SEFH",
         "name": "Eggs",
@@ -22874,38 +22728,38 @@
         ],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-07-04",
-        "latestValue": 64.25,
+        "lastObservationDate": "2026-07-11",
+        "latestValue": 79.0,
         "unit": "cents per dozen / retail dollars",
         "observationsUsed": [
           {
-            "date": "2026-07-04",
-            "value": 64.25,
+            "date": "2026-07-11",
+            "value": 79.0,
             "label": "USDA combined regional caged white Extra Large eggs average"
           },
           {
-            "date": "2026-07-04",
-            "value": 61.5,
+            "date": "2026-07-11",
+            "value": 76.0,
             "label": "USDA combined regional caged white Extra Large eggs midpoint"
           },
           {
-            "date": "2026-07-04",
-            "value": 58.19,
+            "date": "2026-07-11",
+            "value": 72.94,
             "label": "USDA combined regional caged white Large eggs average"
           },
           {
-            "date": "2026-07-04",
-            "value": 56.5,
+            "date": "2026-07-11",
+            "value": 71.0,
             "label": "USDA combined regional caged white Large eggs midpoint"
           },
           {
-            "date": "2026-07-04",
-            "value": 50.75,
+            "date": "2026-07-11",
+            "value": 47.75,
             "label": "USDA combined regional caged white Medium eggs average"
           },
           {
-            "date": "2026-07-04",
-            "value": 50.0,
+            "date": "2026-07-11",
+            "value": 47.0,
             "label": "USDA combined regional caged white Medium eggs midpoint"
           },
           {
@@ -22931,7 +22785,7 @@
         "commodity-complex-pass-through"
       ],
       "sigma": 0.052086251472540625,
-      "component_yoy": -0.288659973653247,
+      "component_yoy": -0.28854297259269446,
       "commodityModel": {
         "complex": "EGGS",
         "latentFactor": "USDA combined regional caged white Large eggs midpoint",
@@ -22943,7 +22797,7 @@
         "selectedLag": 0,
         "estimatedLoading": 1.0,
         "lagCorrelation": 1.0,
-        "liveCutAdjustment": 0.001946902654867257,
+        "liveCutAdjustment": 0.0021079812206572773,
         "validation": {
           "validator": "eggs",
           "wholesaleApCorrelation": null,
@@ -22973,7 +22827,7 @@
           }
         }
       },
-      "contribution_pp": -0.002335890671471354
+      "contribution_pp": -0.0023176950402807547
     },
     {
       "itemCode": "SEHG01",
@@ -23250,23 +23104,23 @@
         ],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-07-03",
-        "latestValue": 125.46,
+        "lastObservationDate": "2026-07-10",
+        "latestValue": 125.24,
         "unit": "cents per lb",
         "observationsUsed": [
           {
-            "date": "2026-07-03",
-            "value": 125.46,
+            "date": "2026-07-10",
+            "value": 125.24,
             "label": "USDA chicken Boneless skinless breast"
           },
           {
-            "date": "2026-07-03",
-            "value": 60.14,
+            "date": "2026-07-10",
+            "value": 59.55,
             "label": "USDA chicken Leg quarters bulk"
           },
           {
-            "date": "2026-07-03",
-            "value": 95.14,
+            "date": "2026-07-10",
+            "value": 107.47,
             "label": "USDA chicken Whole wings"
           }
         ],
@@ -23352,13 +23206,13 @@
         "secondaryFeeds": [],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-07-09",
-        "latestValue": 97.63,
+        "lastObservationDate": "2026-07-10",
+        "latestValue": 97.92,
         "unit": "dollars per cwt",
         "observationsUsed": [
           {
-            "date": "2026-07-09",
-            "value": 97.63,
+            "date": "2026-07-10",
+            "value": 97.92,
             "label": "USDA pork cutout ham"
           }
         ],
@@ -23465,33 +23319,33 @@
         ],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-07-03",
-        "latestValue": 119.05,
+        "lastObservationDate": "2026-07-10",
+        "latestValue": 118.85,
         "unit": "cents per lb / retail dollars per lb",
         "observationsUsed": [
           {
-            "date": "2026-07-03",
-            "value": 119.05,
+            "date": "2026-07-10",
+            "value": 118.85,
             "label": "USDA chicken National composite whole bird"
           },
           {
-            "date": "2026-07-03",
-            "value": 117.59,
+            "date": "2026-07-10",
+            "value": 117.42,
             "label": "USDA chicken National composite WOGS"
           },
           {
-            "date": "2026-07-03",
-            "value": 125.46,
+            "date": "2026-07-10",
+            "value": 125.24,
             "label": "USDA chicken Boneless skinless breast"
           },
           {
-            "date": "2026-07-03",
-            "value": 60.14,
+            "date": "2026-07-10",
+            "value": 59.55,
             "label": "USDA chicken Leg quarters bulk"
           },
           {
-            "date": "2026-07-03",
-            "value": 95.14,
+            "date": "2026-07-10",
+            "value": 107.47,
             "label": "USDA chicken Whole wings"
           },
           {
@@ -23531,7 +23385,7 @@
         "selectedLag": 0,
         "estimatedLoading": 1.079682026686608,
         "lagCorrelation": 0.9368473197875358,
-        "liveCutAdjustment": -0.0013081898362032763,
+        "liveCutAdjustment": -0.0011059318468657974,
         "validation": {
           "validator": "chicken",
           "wholesaleApCorrelation": null,
@@ -24134,23 +23988,23 @@
         "secondaryFeeds": [],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-07-09",
-        "latestValue": 483.58,
+        "lastObservationDate": "2026-07-10",
+        "latestValue": 477.15,
         "unit": "dollars per cwt",
         "observationsUsed": [
           {
-            "date": "2026-07-09",
-            "value": 483.58,
+            "date": "2026-07-10",
+            "value": 477.15,
             "label": "USDA boxed beef Choice primal Loin"
           },
           {
-            "date": "2026-07-09",
-            "value": 552.42,
+            "date": "2026-07-10",
+            "value": 571.65,
             "label": "USDA boxed beef Choice primal Rib"
           },
           {
-            "date": "2026-07-09",
-            "value": 17.32,
+            "date": "2026-07-10",
+            "value": 14.35,
             "label": "USDA boxed beef Choice/Select spread"
           }
         ],
@@ -24678,13 +24532,13 @@
         ],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-07-09",
-        "latestValue": 132.43,
+        "lastObservationDate": "2026-07-10",
+        "latestValue": 140.88,
         "unit": "dollars per cwt / retail dollars per lb",
         "observationsUsed": [
           {
-            "date": "2026-07-09",
-            "value": 132.43,
+            "date": "2026-07-10",
+            "value": 140.88,
             "label": "USDA pork cutout belly"
           },
           {
@@ -24793,23 +24647,23 @@
         "secondaryFeeds": [],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-07-09",
-        "latestValue": 330.31,
+        "lastObservationDate": "2026-07-10",
+        "latestValue": 331.59,
         "unit": "dollars per cwt",
         "observationsUsed": [
           {
-            "date": "2026-07-09",
-            "value": 330.31,
+            "date": "2026-07-10",
+            "value": 331.59,
             "label": "USDA boxed beef Choice primal Chuck"
           },
           {
-            "date": "2026-07-09",
-            "value": 324.48,
+            "date": "2026-07-10",
+            "value": 322.27,
             "label": "USDA boxed beef Choice primal Round"
           },
           {
-            "date": "2026-07-09",
-            "value": 17.32,
+            "date": "2026-07-10",
+            "value": 14.35,
             "label": "USDA boxed beef Choice/Select spread"
           }
         ],
@@ -24895,13 +24749,13 @@
         "secondaryFeeds": [],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-07-09",
-        "latestValue": 89.89,
+        "lastObservationDate": "2026-07-10",
+        "latestValue": 90.8,
         "unit": "dollars per cwt",
         "observationsUsed": [
           {
-            "date": "2026-07-09",
-            "value": 89.89,
+            "date": "2026-07-10",
+            "value": 90.8,
             "label": "USDA pork cutout loin"
           }
         ],
@@ -25290,13 +25144,13 @@
         "secondaryFeeds": [],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-07-09",
-        "latestValue": 98.81,
+        "lastObservationDate": "2026-07-10",
+        "latestValue": 101.34,
         "unit": "dollars per cwt",
         "observationsUsed": [
           {
-            "date": "2026-07-09",
-            "value": 98.81,
+            "date": "2026-07-10",
+            "value": 101.34,
             "label": "USDA pork cutout carcass"
           }
         ],
@@ -25400,18 +25254,18 @@
         "secondaryFeeds": [],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-07-09",
-        "latestValue": 380.81,
+        "lastObservationDate": "2026-07-10",
+        "latestValue": 382.68,
         "unit": "dollars per cwt",
         "observationsUsed": [
           {
-            "date": "2026-07-09",
-            "value": 380.81,
+            "date": "2026-07-10",
+            "value": 382.68,
             "label": "USDA boxed beef Choice cutout"
           },
           {
-            "date": "2026-07-09",
-            "value": 17.32,
+            "date": "2026-07-10",
+            "value": 14.35,
             "label": "USDA boxed beef Choice/Select spread"
           }
         ],
@@ -25765,23 +25619,23 @@
         ],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-07-09",
-        "latestValue": 330.31,
+        "lastObservationDate": "2026-07-10",
+        "latestValue": 331.59,
         "unit": "dollars per cwt / retail dollars per lb",
         "observationsUsed": [
           {
-            "date": "2026-07-09",
-            "value": 330.31,
+            "date": "2026-07-10",
+            "value": 331.59,
             "label": "USDA boxed beef Choice primal Chuck"
           },
           {
-            "date": "2026-07-09",
-            "value": 324.48,
+            "date": "2026-07-10",
+            "value": 322.27,
             "label": "USDA boxed beef Choice primal Round"
           },
           {
-            "date": "2026-07-09",
-            "value": 17.32,
+            "date": "2026-07-10",
+            "value": 14.35,
             "label": "USDA boxed beef Choice/Select spread"
           },
           {
@@ -26254,9 +26108,9 @@
       "name": "All items",
       "parent": null,
       "weight": 100.0,
-      "forecast_nsa_mm": -0.0012207010680689817,
-      "forecast_sa_mm": -0.00194267752430833,
-      "contribution_pp": -0.12207010680689817,
+      "forecast_nsa_mm": -0.0010320305594994606,
+      "forecast_sa_mm": -0.0017540070157388088,
+      "contribution_pp": -0.10320305594994607,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 8 child projections",
       "childProjectionCount": 8,
@@ -26371,9 +26225,9 @@
       "name": "Housing",
       "parent": "SA0",
       "weight": 43.8962864294109,
-      "forecast_nsa_mm": 0.0034298175983139387,
-      "forecast_sa_mm": 0.0012099432960353484,
-      "contribution_pp": 0.15055625569622283,
+      "forecast_nsa_mm": 0.0038592126289459894,
+      "forecast_sa_mm": 0.001639338326667399,
+      "contribution_pp": 0.169405102952213,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 3 child projections",
       "childProjectionCount": 3,
@@ -26397,9 +26251,9 @@
       "name": "Shelter",
       "parent": "SAH",
       "weight": 35.14878994234159,
-      "forecast_nsa_mm": 0.003503514908538285,
-      "forecast_sa_mm": 0.003253772677063415,
-      "contribution_pp": 0.12314430958007427,
+      "forecast_nsa_mm": 0.004039774733937678,
+      "forecast_sa_mm": 0.0037900325024628084,
+      "contribution_pp": 0.14199319353755432,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 4 child projections",
       "childProjectionCount": 4,
@@ -26449,11 +26303,11 @@
       "name": "Owners' equivalent rent of residences",
       "parent": "SAH1",
       "weight": 25.69980547861173,
-      "forecast_nsa_mm": 0.0025387208282107608,
-      "forecast_sa_mm": 0.0024256148498764895,
-      "contribution_pp": 0.06524463144951662,
+      "forecast_nsa_mm": 0.003035564381365119,
+      "forecast_sa_mm": 0.0029224584030308476,
+      "contribution_pp": 0.0780134141188859,
       "projectionSource": "model",
-      "projectionSourceDetail": "75% lagged BLS shelter history (0.31%) + 25% lagged external rent overlay (0.10%): lagged external shelter overlay (2024-12 to 2025-12): Zillow ZORI 0.15% avg m/m over 13 lagged obs; Apartment List -0.14% avg m/m over 13 lagged obs; BLS/Cleveland Fed NTRI 0.33% avg m/m over 4 lagged obs",
+      "projectionSourceDetail": "free fallback: recent CPI-timed movement + same-month seasonal average",
       "childProjectionCount": 0,
       "displayInHeatmap": true
     },
@@ -26462,11 +26316,11 @@
       "name": "Owners' equivalent rent of primary residence",
       "parent": "SEHC",
       "weight": 24.74247758750211,
-      "forecast_nsa_mm": 0.0025321397006048993,
-      "forecast_sa_mm": 0.00242679381539869,
-      "contribution_pp": 0.06265140979064102,
+      "forecast_nsa_mm": 0.003014391268683708,
+      "forecast_sa_mm": 0.0029090453834774987,
+      "contribution_pp": 0.07458350840536869,
       "projectionSource": "model",
-      "projectionSourceDetail": "75% lagged BLS shelter history (0.31%) + 25% lagged external rent overlay (0.10%): lagged external shelter overlay (2024-12 to 2025-12): Zillow ZORI 0.15% avg m/m over 13 lagged obs; Apartment List -0.14% avg m/m over 13 lagged obs; BLS/Cleveland Fed NTRI 0.33% avg m/m over 4 lagged obs",
+      "projectionSourceDetail": "free fallback: recent CPI-timed movement + same-month seasonal average",
       "childProjectionCount": 0,
       "displayInHeatmap": false
     },
@@ -26540,9 +26394,9 @@
       "name": "Food and beverages",
       "parent": "SA0",
       "weight": 14.267778104267595,
-      "forecast_nsa_mm": 0.002006511291682354,
-      "forecast_sa_mm": 0.002436718134741354,
-      "contribution_pp": 0.02862845787343118,
+      "forecast_nsa_mm": 0.002007786695716236,
+      "forecast_sa_mm": 0.002437993538775236,
+      "contribution_pp": 0.0286466550551799,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 1 child projections",
       "childProjectionCount": 1,
@@ -26553,9 +26407,9 @@
       "name": "Food",
       "parent": "SAF",
       "weight": 13.44732815019565,
-      "forecast_nsa_mm": 0.002006511291682354,
-      "forecast_sa_mm": 0.0024566323423947695,
-      "contribution_pp": 0.026982215776325553,
+      "forecast_nsa_mm": 0.002007786695716236,
+      "forecast_sa_mm": 0.0024579077464286516,
+      "contribution_pp": 0.02699936655289325,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 3 child projections",
       "childProjectionCount": 3,
@@ -26657,9 +26511,9 @@
       "name": "Food at home",
       "parent": "SAF1",
       "weight": 8.187304713798872,
-      "forecast_nsa_mm": 0.001246762038550623,
-      "forecast_sa_mm": 0.0020338947259834796,
-      "contribution_pp": 0.010207620715211006,
+      "forecast_nsa_mm": 0.001248984491199191,
+      "forecast_sa_mm": 0.0020361171786320476,
+      "contribution_pp": 0.010225816612256822,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 6 child projections",
       "childProjectionCount": 6,
@@ -26696,11 +26550,11 @@
       "name": "Rent of primary residence",
       "parent": "SAH1",
       "weight": 7.679331455775074,
-      "forecast_nsa_mm": 0.0023303379135784447,
-      "forecast_sa_mm": 0.0024357633721813036,
-      "contribution_pp": 0.017895437242328206,
+      "forecast_nsa_mm": 0.003122086940113231,
+      "forecast_sa_mm": 0.0032275123987160897,
+      "contribution_pp": 0.02397554044687608,
       "projectionSource": "model",
-      "projectionSourceDetail": "75% lagged BLS shelter history (0.28%) + 25% lagged external rent overlay (0.10%): lagged external shelter overlay (2024-12 to 2025-12): Zillow ZORI 0.15% avg m/m over 13 lagged obs; Apartment List -0.14% avg m/m over 13 lagged obs; BLS/Cleveland Fed NTRI 0.33% avg m/m over 4 lagged obs",
+      "projectionSourceDetail": "free fallback: recent CPI-timed movement + same-month seasonal average",
       "childProjectionCount": 0,
       "displayInHeatmap": true
     },
@@ -27112,9 +26966,9 @@
       "name": "Meats, poultry, fish, and eggs",
       "parent": "SAF11",
       "weight": 1.9431507502703,
-      "forecast_nsa_mm": 0.0018020897742346209,
-      "forecast_sa_mm": 0.001278315969886039,
-      "contribution_pp": 0.0035017320968584393,
+      "forecast_nsa_mm": 0.001811453877543805,
+      "forecast_sa_mm": 0.0012876800731952231,
+      "contribution_pp": 0.003519927961229289,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 2 child projections",
       "childProjectionCount": 2,
@@ -29218,11 +29072,11 @@
       "name": "Eggs",
       "parent": "SAF112",
       "weight": 0.11296121927431853,
-      "forecast_nsa_mm": -0.02067869563092095,
-      "forecast_sa_mm": 0.01017492255858262,
-      "contribution_pp": -0.002335890671471354,
+      "forecast_nsa_mm": -0.02051761706513093,
+      "forecast_sa_mm": 0.010336001124372642,
+      "contribution_pp": -0.0023176950402807547,
       "projectionSource": "model",
-      "projectionSourceDetail": "EGGS commodity-complex factor: cuts USDA combined regional caged white Large eggs midpoint, USDA combined regional caged white Extra Large eggs midpoint, USDA combined regional caged white Medium eggs midpoint; lag 0, loading 1.00; live cut adjustment 0.19 pp",
+      "projectionSourceDetail": "EGGS commodity-complex factor: cuts USDA combined regional caged white Large eggs midpoint, USDA combined regional caged white Extra Large eggs midpoint, USDA combined regional caged white Medium eggs midpoint; lag 0, loading 1.00; live cut adjustment 0.21 pp",
       "childProjectionCount": 0,
       "displayInHeatmap": true
     },
@@ -31458,12 +31312,12 @@
       {
         "horizon": 1,
         "label": "t+1",
-        "foodNsaMm": 0.0019233512700510276,
-        "headlineContributionPp": 0.02626164020227838,
+        "foodNsaMm": 0.0019246838825645743,
+        "headlineContributionPp": 0.02627983583346898,
         "interval": {
-          "p10": 0.0004233512700510275,
-          "p50": 0.0019233512700510276,
-          "p90": 0.0034233512700510274
+          "p10": 0.0004246838825645743,
+          "p50": 0.0019246838825645743,
+          "p90": 0.0034246838825645744
         },
         "components": [
           {
@@ -31541,12 +31395,12 @@
           {
             "itemCode": "SEFH",
             "name": "Eggs",
-            "nsaMm": -0.02067869563092095,
-            "contributionPp": -0.002335890671471354,
+            "nsaMm": -0.02051761706513093,
+            "contributionPp": -0.0023176950402807547,
             "interval": {
-              "p10": -0.022178695630920953,
-              "p50": -0.02067869563092095,
-              "p90": -0.01917869563092095
+              "p10": -0.02201761706513093,
+              "p50": -0.02051761706513093,
+              "p90": -0.01901761706513093
             },
             "futuresFeaturesKept": false
           },
@@ -31615,12 +31469,12 @@
       {
         "horizon": 2,
         "label": "t+2",
-        "foodNsaMm": 0.0017310161430459253,
-        "headlineContributionPp": 0.023635476182050547,
+        "foodNsaMm": 0.0017322154943081173,
+        "headlineContributionPp": 0.023651852250122087,
         "interval": {
-          "p10": -0.0012689838569540748,
-          "p50": 0.0017310161430459253,
-          "p90": 0.004731016143045925
+          "p10": -0.0012677845056918828,
+          "p50": 0.0017322154943081173,
+          "p90": 0.0047322154943081176
         },
         "components": [
           {
@@ -31698,12 +31552,12 @@
           {
             "itemCode": "SEFH",
             "name": "Eggs",
-            "nsaMm": -0.018610826067828858,
-            "contributionPp": -0.0021023016043242187,
+            "nsaMm": -0.018465855358617837,
+            "contributionPp": -0.002085925536252679,
             "interval": {
-              "p10": -0.021610826067828857,
-              "p50": -0.018610826067828858,
-              "p90": -0.015610826067828858
+              "p10": -0.021465855358617836,
+              "p50": -0.018465855358617837,
+              "p90": -0.015465855358617837
             },
             "futuresFeaturesKept": false
           },
@@ -31772,12 +31626,12 @@
       {
         "horizon": 3,
         "label": "t+3",
-        "foodNsaMm": 0.0015386810160408226,
-        "headlineContributionPp": 0.02100931216182271,
+        "foodNsaMm": 0.0015397471060516598,
+        "headlineContributionPp": 0.021023868666775188,
         "interval": {
-          "p10": -0.002961318983959178,
-          "p50": 0.0015386810160408226,
-          "p90": 0.006038681016040823
+          "p10": -0.0029602528939483407,
+          "p50": 0.0015397471060516598,
+          "p90": 0.00603974710605166
         },
         "components": [
           {
@@ -31855,12 +31709,12 @@
           {
             "itemCode": "SEFH",
             "name": "Eggs",
-            "nsaMm": -0.01654295650473676,
-            "contributionPp": -0.0018687125371770832,
+            "nsaMm": -0.016414093652104746,
+            "contributionPp": -0.001854156032224604,
             "interval": {
-              "p10": -0.02104295650473676,
-              "p50": -0.01654295650473676,
-              "p90": -0.01204295650473676
+              "p10": -0.020914093652104747,
+              "p50": -0.016414093652104746,
+              "p90": -0.011914093652104746
             },
             "futuresFeaturesKept": false
           },
@@ -31929,12 +31783,12 @@
       {
         "horizon": 4,
         "label": "t+4",
-        "foodNsaMm": 0.0013463458890357193,
-        "headlineContributionPp": 0.018383148141594866,
+        "foodNsaMm": 0.0013472787177952021,
+        "headlineContributionPp": 0.018395885083428286,
         "interval": {
-          "p10": -0.004653654110964281,
-          "p50": 0.0013463458890357193,
-          "p90": 0.007346345889035719
+          "p10": -0.004652721282204798,
+          "p50": 0.0013472787177952021,
+          "p90": 0.007347278717795202
         },
         "components": [
           {
@@ -32012,12 +31866,12 @@
           {
             "itemCode": "SEFH",
             "name": "Eggs",
-            "nsaMm": -0.014475086941644665,
-            "contributionPp": -0.0016351234700299477,
+            "nsaMm": -0.014362331945591651,
+            "contributionPp": -0.0016223865281965284,
             "interval": {
-              "p10": -0.020475086941644665,
-              "p50": -0.014475086941644665,
-              "p90": -0.008475086941644665
+              "p10": -0.02036233194559165,
+              "p50": -0.014362331945591651,
+              "p90": -0.00836233194559165
             },
             "futuresFeaturesKept": false
           },
@@ -32086,12 +31940,12 @@
       {
         "horizon": 5,
         "label": "t+5",
-        "foodNsaMm": 0.0011540107620306166,
-        "headlineContributionPp": 0.01575698412136703,
+        "foodNsaMm": 0.0011548103295387449,
+        "headlineContributionPp": 0.01576790150008139,
         "interval": {
-          "p10": -0.006345989237969384,
-          "p50": 0.0011540107620306166,
-          "p90": 0.008654010762030616
+          "p10": -0.006345189670461255,
+          "p50": 0.0011548103295387449,
+          "p90": 0.008654810329538744
         },
         "components": [
           {
@@ -32169,12 +32023,12 @@
           {
             "itemCode": "SEFH",
             "name": "Eggs",
-            "nsaMm": -0.012407217378552571,
-            "contributionPp": -0.0014015344028828125,
+            "nsaMm": -0.012310570239078557,
+            "contributionPp": -0.0013906170241684529,
             "interval": {
-              "p10": -0.01990721737855257,
-              "p50": -0.012407217378552571,
-              "p90": -0.004907217378552571
+              "p10": -0.019810570239078555,
+              "p50": -0.012310570239078557,
+              "p90": -0.004810570239078557
             },
             "futuresFeaturesKept": false
           },
@@ -32243,12 +32097,12 @@
       {
         "horizon": 6,
         "label": "t+6",
-        "foodNsaMm": 0.0009616756350255138,
-        "headlineContributionPp": 0.01313082010113919,
+        "foodNsaMm": 0.0009623419412822872,
+        "headlineContributionPp": 0.01313991791673449,
         "interval": {
-          "p10": -0.008038324364974488,
-          "p50": 0.0009616756350255138,
-          "p90": 0.009961675635025515
+          "p10": -0.008037658058717714,
+          "p50": 0.0009623419412822872,
+          "p90": 0.009962341941282288
         },
         "components": [
           {
@@ -32326,12 +32180,12 @@
           {
             "itemCode": "SEFH",
             "name": "Eggs",
-            "nsaMm": -0.010339347815460476,
-            "contributionPp": -0.001167945335735677,
+            "nsaMm": -0.010258808532565465,
+            "contributionPp": -0.0011588475201403773,
             "interval": {
-              "p10": -0.019339347815460477,
-              "p50": -0.010339347815460476,
-              "p90": -0.0013393478154604746
+              "p10": -0.019258808532565466,
+              "p50": -0.010258808532565465,
+              "p90": -0.001258808532565464
             },
             "futuresFeaturesKept": false
           },
