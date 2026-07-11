@@ -42,6 +42,15 @@ function modelValueKey(model: ModelComparisonModelKey, measure: "SaMm" | "NsaMm"
   return `${model}${measure}`;
 }
 
+function roundedTenthPct(value: unknown) {
+  if (typeof value !== "number" || Number.isNaN(value)) return null;
+  return Math.round(value * 1000) / 10;
+}
+
+function hitRateLabel(hits: number, count: number) {
+  return count ? `${((hits / count) * 100).toFixed(1)}%` : "n/a";
+}
+
 const modelDefinitions = [
   {
     label: "HRNN",
@@ -371,7 +380,7 @@ export function ChallengerComponentChart({ rows }: { rows: ChallengerSeriesRow[]
 
 export function ModelComparisonTimeline({ result }: { result: ModelComparisonResult }) {
   const [basis, setBasis] = useState<"Sa" | "Nsa">("Sa");
-  const [range, setRange] = useState<"full" | "common" | "5y">("common");
+  const [range, setRange] = useState<"full" | "allInputs" | "common" | "5y">("allInputs");
   const [enabled, setEnabled] = useState<Record<ModelComparisonModelKey, boolean>>({
     productionTier1: true,
     productionTier3: true,
@@ -381,7 +390,7 @@ export function ModelComparisonTimeline({ result }: { result: ModelComparisonRes
   });
   const models = Object.entries(result.models) as Array<[ModelComparisonModelKey, { label: string; color: string }]>;
   const data = useMemo(() => {
-    const cutoff = range === "common" ? result.commonStart : range === "5y" ? "2021-06" : "0000-00";
+    const cutoff = range === "allInputs" ? "2017-07" : range === "common" ? result.commonStart : range === "5y" ? "2021-06" : "0000-00";
     return result.rows
       .filter((row) => row.month >= cutoff)
       .map((row) => ({
@@ -393,6 +402,33 @@ export function ModelComparisonTimeline({ result }: { result: ModelComparisonRes
   const mmMeasure = `${basis}Mm` as "SaMm" | "NsaMm";
   const yoyMeasure = `${basis}Yoy` as "SaYoy" | "NsaYoy";
   const errorMeasure = `${basis}YoyErrorBp` as "SaYoyErrorBp" | "NsaYoyErrorBp";
+  const hitRates = useMemo(() => {
+    return models.map(([key, spec]) => {
+      const mmKey = modelValueKey(key, mmMeasure);
+      const yoyKey = modelValueKey(key, yoyMeasure);
+      let mmHits = 0;
+      let mmCount = 0;
+      let yoyHits = 0;
+      let yoyCount = 0;
+      for (const row of data) {
+        const values = row as Record<string, unknown>;
+        const actualMm = roundedTenthPct(values[`actual${basis}Mm`]);
+        const predictedMm = roundedTenthPct(values[mmKey]);
+        if (actualMm !== null && predictedMm !== null) {
+          mmCount += 1;
+          if (actualMm === predictedMm) mmHits += 1;
+        }
+        const actualYoy = roundedTenthPct(values[`actual${basis}Yoy`]);
+        const predictedYoy = roundedTenthPct(values[yoyKey]);
+        if (actualYoy !== null && predictedYoy !== null) {
+          yoyCount += 1;
+          if (actualYoy === predictedYoy) yoyHits += 1;
+        }
+      }
+      return { key, label: spec.label, color: spec.color, mmHits, mmCount, yoyHits, yoyCount };
+    });
+  }, [basis, data, mmMeasure, models, yoyMeasure]);
+  const rangeLabel = range === "allInputs" ? "Full period, Jul 2017-present" : range === "common" ? "2022-present" : range === "5y" ? "Last 5y" : "Full span";
   const pctFormatter = (value: unknown) => [`${Number(value).toFixed(3)}%`, basis === "Sa" ? "SA" : "NSA"];
   const bpFormatter = (value: unknown) => [`${Number(value).toFixed(2)} bp`, "predicted - actual"];
   return (
@@ -407,13 +443,13 @@ export function ModelComparisonTimeline({ result }: { result: ModelComparisonRes
             {item === "Sa" ? "SA" : "NSA"} m/m
           </button>
         ))}
-        {(["full", "common", "5y"] as const).map((item) => (
+        {(["full", "allInputs", "common", "5y"] as const).map((item) => (
           <button
             key={item}
             className={`rounded border px-3 py-1 text-sm ${range === item ? "border-sky bg-sky text-white" : "border-line bg-white"}`}
             onClick={() => setRange(item)}
           >
-            {item === "full" ? "Full span" : item === "common" ? "2022-present" : "Last 5y"}
+            {item === "full" ? "Full span" : item === "allInputs" ? "Full period" : item === "common" ? "2022-present" : "Last 5y"}
           </button>
         ))}
         {models.map(([key, spec]) => (
@@ -426,6 +462,38 @@ export function ModelComparisonTimeline({ result }: { result: ModelComparisonRes
             <span style={{ color: spec.color }}>{spec.label}</span>
           </label>
         ))}
+      </div>
+      <div className="mb-4 rounded border border-line bg-wash p-3">
+        <div className="mb-2 text-sm font-semibold">
+          Rounded-to-tenth hit rates, {basis === "Sa" ? "SA" : "NSA"} basis - {rangeLabel}
+        </div>
+        <div className="mb-2 text-xs text-muted">
+          Hit = model and actual round to the same one-decimal CPI print, e.g. 0.24% and 0.18% both round to 0.2%.
+        </div>
+        <div className="overflow-x-auto">
+          <table className="min-w-full text-left text-sm">
+            <thead className="border-b border-line text-xs uppercase text-muted">
+              <tr>
+                <th className="py-2 pr-4">Model</th>
+                <th className="py-2 pr-4">m/m hit rate</th>
+                <th className="py-2 pr-4">m/m hits</th>
+                <th className="py-2 pr-4">y/y hit rate</th>
+                <th className="py-2 pr-4">y/y hits</th>
+              </tr>
+            </thead>
+            <tbody>
+              {hitRates.map((row) => (
+                <tr key={row.key} className="border-b border-line/70">
+                  <td className="py-2 pr-4 font-medium" style={{ color: row.color }}>{row.label}</td>
+                  <td className="py-2 pr-4">{hitRateLabel(row.mmHits, row.mmCount)}</td>
+                  <td className="py-2 pr-4 text-muted">{row.mmHits}/{row.mmCount}</td>
+                  <td className="py-2 pr-4">{hitRateLabel(row.yoyHits, row.yoyCount)}</td>
+                  <td className="py-2 pr-4 text-muted">{row.yoyHits}/{row.yoyCount}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
       <div className="grid gap-4">
         <div>
