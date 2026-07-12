@@ -51,6 +51,21 @@ def test_latest_projection_components_cover_all_leaf_components() -> None:
     assert offenders == []
 
 
+def test_projection_contributions_use_sa_momentum() -> None:
+    payload = forecast_payload()
+    offenders = []
+    for row in payload["projectionComponents"]:
+        weight = row.get("weight")
+        sa_mm = row.get("forecast_sa_mm")
+        contribution = row.get("contribution_pp")
+        if weight is None or sa_mm is None or contribution is None:
+            continue
+        expected = float(weight) * float(sa_mm)
+        if abs(float(contribution) - expected) > 1e-12:
+            offenders.append(f"{row['itemCode']} {row['name']}")
+    assert offenders == []
+
+
 def test_projection_display_resolves_oer_parent_child_duplicate() -> None:
     payload = forecast_payload()
     projections = {row["itemCode"]: row for row in payload["projectionComponents"]}

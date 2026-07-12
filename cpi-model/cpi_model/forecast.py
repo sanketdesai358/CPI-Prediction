@@ -285,7 +285,8 @@ def build_projection_components(
             "weight": entry.get("currentRi"),
             "forecast_nsa_mm": nsa_mm,
             "forecast_sa_mm": sa_mm,
-            "contribution_pp": (entry.get("currentRi") or 0.0) * nsa_mm,
+            # Projection components feed the heatmap's SA contribution view.
+            "contribution_pp": (entry.get("currentRi") or 0.0) * sa_mm,
             "projectionSource": source,
             "projectionSourceDetail": detail,
             "childProjectionCount": child_count,
