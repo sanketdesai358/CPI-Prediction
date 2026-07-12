@@ -11,14 +11,13 @@ export const metadata: Metadata = {
 };
 
 const nav = [
-  { href: "/forecast", label: "Forecast" },
   { href: "/", label: "Overview" },
-  { href: "/components", label: "Components" },
-  { href: "/component-trends", label: "Component Trends" },
-  { href: "/challenger", label: "Challenger" },
+  { href: "/forecast", label: "Forecast" },
   { href: "/heatmap", label: "Heatmap" },
-  { href: "/contributions", label: "Contributions" },
-  { href: "/methodology", label: "Methodology" }
+  { href: "/challenger", label: "Challenger Models" },
+  { href: "/component-trends", label: "Underlying Trends" },
+  { href: "/contributions", label: "Past mo Contributions" },
+  { href: "/components", label: "Past mo Components" }
 ];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

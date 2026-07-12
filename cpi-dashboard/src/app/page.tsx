@@ -28,9 +28,9 @@ export default function OverviewPage() {
 
   return (
     <>
-      <PageTitle eyebrow="Overview" title="Headline, core, weights, and contribution pressure">
-        Latest published reference month is {formatMonth(data.refMonth)}. All calculations are sourced from BLS
-        CPI-U U.S. city average series and the current relative-importance vintage.
+      <PageTitle eyebrow="Overview" title={`${formatMonth(data.refMonth)} Print`}>
+        Headline, core, weights, and contribution pressure from the latest published BLS CPI-U U.S. city average
+        report, using the current relative-importance vintage.
       </PageTitle>
 
       <div className="grid gap-3 md:grid-cols-4">
