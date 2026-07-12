@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { getDashboardData } from "@/lib/data";
-import { formatMonth } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "CPI Component Dashboard",
@@ -48,8 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="mt-8 border-t border-line bg-white">
           <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 text-xs text-muted md:flex-row md:items-center md:justify-between">
             <span>
-              Data as of {formatMonth(data.refMonth)}, released {data.releaseDate}. Source: U.S. Bureau of
-              Labor Statistics.
+              Data as of June 2026, released {data.releaseDate}. Source: U.S. Bureau of Labor Statistics.
             </span>
             <span>Generated {data.generatedAt}</span>
           </div>
