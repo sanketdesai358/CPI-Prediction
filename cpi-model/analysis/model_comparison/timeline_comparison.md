@@ -6,13 +6,13 @@ Y/y = 11 actual months + 1 forecast month.
 
 ## Model availability
 
-| Model | Start | End | Months | Full SA m/m MAE | Full SA y/y MAE | Common 2022+ SA m/m MAE | Common 2022+ SA y/y MAE |
-|---|---|---|---:|---:|---:|---:|---:|
-| Production Tier 1 fallback | 2015-06 | 2026-05 | 131 | 0.144% | 0.147% | 0.116% | 0.121% |
-| Production Tier 3 fallback | 2015-06 | 2026-05 | 131 | 0.138% | 0.141% | 0.108% | 0.113% |
-| HRNN | 2017-07 | 2026-05 | 105 | 0.126% | 0.131% | 0.120% | 0.126% |
-| I-GRU | 2017-07 | 2026-05 | 105 | 0.125% | 0.129% | 0.116% | 0.121% |
-| Challenger Seasonal AR | 2017-07 | 2026-05 | 105 | 0.117% | 0.121% | 0.107% | 0.112% |
+| Model | Start | End | Months | Full SA m/m MAE | Full SA m/m RMSE | Full SA y/y MAE | Full SA y/y RMSE | Common 2022+ SA m/m MAE | Common SA m/m RMSE | Common SA y/y MAE | Common SA y/y RMSE |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Production Tier 1 fallback | 2015-06 | 2026-05 | 131 | 0.144% | 0.297% | 0.147% | 0.300% | 0.116% | 0.158% | 0.121% | 0.165% |
+| Production Tier 3 fallback | 2015-06 | 2026-05 | 131 | 0.138% | 0.294% | 0.141% | 0.296% | 0.108% | 0.150% | 0.113% | 0.157% |
+| HRNN | 2017-07 | 2026-05 | 105 | 0.126% | 0.173% | 0.131% | 0.179% | 0.120% | 0.169% | 0.126% | 0.178% |
+| I-GRU | 2017-07 | 2026-05 | 105 | 0.125% | 0.169% | 0.129% | 0.176% | 0.116% | 0.158% | 0.121% | 0.165% |
+| Challenger Seasonal AR | 2017-07 | 2026-05 | 105 | 0.117% | 0.169% | 0.121% | 0.177% | 0.107% | 0.146% | 0.112% | 0.155% |
 
 ## Notes
 

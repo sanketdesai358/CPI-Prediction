@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ChallengerBanner, ChallengerCurrentForecastTable, ChallengerModelDefinitions, ChallengerRollingChart } from "@/components/Challenger";
-import { MetricCard, PageTitle, Panel } from "@/components/Shell";
+import { PageTitle, Panel } from "@/components/Shell";
 import { getChallenger } from "@/lib/data";
 import { formatPercent } from "@/lib/format";
 
@@ -21,11 +21,11 @@ export default function ChallengerPage() {
     );
   }
   const scoreboard = [
-    { label: "Tier 1 fallback", value: metric(result, "productionTier1HeadlineNsaMmMae") },
-    { label: "Tier 3 fallback", value: metric(result, "productionTier3HeadlineNsaMmMae") },
-    { label: "HRNN", value: metric(result, "hrnnHeadlineNsaMmMae") },
-    { label: "I-GRU", value: metric(result, "iGruHeadlineNsaMmMae") },
-    { label: "Seasonal AR", value: metric(result, "seasonalArHeadlineNsaMmMae") }
+    { label: "Tier 1 fallback", key: "productionTier1" },
+    { label: "Tier 3 fallback", key: "productionTier3" },
+    { label: "HRNN", key: "hrnn" },
+    { label: "I-GRU", key: "iGru" },
+    { label: "Seasonal AR", key: "seasonalAr" }
   ];
   return (
     <>
@@ -36,9 +36,15 @@ export default function ChallengerPage() {
       <PageTitle eyebrow="Challenger" title="Model Research Comparison">
         A precomputed research run comparing HRNN, I-GRU, seasonal AR, and fallback baselines. It is not a second production forecast.
       </PageTitle>
-      <div className="grid gap-4 md:grid-cols-3 xl:grid-cols-6">
+      <div className="grid gap-4 md:grid-cols-3 xl:grid-cols-5">
         {scoreboard.map((row) => (
-          <MetricCard key={row.label} label={`${row.label} window C headline MAE`} value={formatPercent(row.value, 3)} />
+          <div key={row.label} className="rounded border border-line bg-white p-4 shadow-subtle">
+            <div className="text-xs font-medium uppercase tracking-wide text-muted">{row.label}</div>
+            <div className="mt-3 grid grid-cols-2 gap-3 text-sm">
+              <div><div className="text-muted">Window C MAE</div><div className="mt-1 text-lg font-semibold">{formatPercent(metric(result, `${row.key}HeadlineNsaMmMae`), 3)}</div></div>
+              <div><div className="text-muted">Window C RMSE</div><div className="mt-1 text-lg font-semibold">{formatPercent(metric(result, `${row.key}HeadlineNsaMmRmse`), 3)}</div></div>
+            </div>
+          </div>
         ))}
       </div>
       <div className="mt-4">

@@ -14,6 +14,7 @@ const nav = [
   { href: "/forecast", label: "Forecast" },
   { href: "/", label: "Overview" },
   { href: "/components", label: "Components" },
+  { href: "/component-trends", label: "Component Trends" },
   { href: "/challenger", label: "Challenger" },
   { href: "/heatmap", label: "Heatmap" },
   { href: "/contributions", label: "Contributions" },

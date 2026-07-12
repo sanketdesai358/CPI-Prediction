@@ -408,24 +408,50 @@ export function ModelComparisonTimeline({ result }: { result: ModelComparisonRes
       const yoyKey = modelValueKey(key, yoyMeasure);
       let mmHits = 0;
       let mmCount = 0;
+      let mmAbsoluteError = 0;
+      let mmSquaredError = 0;
       let yoyHits = 0;
       let yoyCount = 0;
+      let yoyAbsoluteError = 0;
+      let yoySquaredError = 0;
       for (const row of data) {
         const values = row as Record<string, unknown>;
+        const actualMmValue = values[`actual${basis}Mm`];
+        const predictedMmValue = values[mmKey];
         const actualMm = roundedTenthPct(values[`actual${basis}Mm`]);
         const predictedMm = roundedTenthPct(values[mmKey]);
-        if (actualMm !== null && predictedMm !== null) {
+        if (actualMm !== null && predictedMm !== null && typeof actualMmValue === "number" && typeof predictedMmValue === "number") {
           mmCount += 1;
           if (actualMm === predictedMm) mmHits += 1;
+          const error = predictedMmValue - actualMmValue;
+          mmAbsoluteError += Math.abs(error);
+          mmSquaredError += error ** 2;
         }
+        const actualYoyValue = values[`actual${basis}Yoy`];
+        const predictedYoyValue = values[yoyKey];
         const actualYoy = roundedTenthPct(values[`actual${basis}Yoy`]);
         const predictedYoy = roundedTenthPct(values[yoyKey]);
-        if (actualYoy !== null && predictedYoy !== null) {
+        if (actualYoy !== null && predictedYoy !== null && typeof actualYoyValue === "number" && typeof predictedYoyValue === "number") {
           yoyCount += 1;
           if (actualYoy === predictedYoy) yoyHits += 1;
+          const error = predictedYoyValue - actualYoyValue;
+          yoyAbsoluteError += Math.abs(error);
+          yoySquaredError += error ** 2;
         }
       }
-      return { key, label: spec.label, color: spec.color, mmHits, mmCount, yoyHits, yoyCount };
+      return {
+        key,
+        label: spec.label,
+        color: spec.color,
+        mmHits,
+        mmCount,
+        mmMae: mmCount ? mmAbsoluteError / mmCount : null,
+        mmRmse: mmCount ? Math.sqrt(mmSquaredError / mmCount) : null,
+        yoyHits,
+        yoyCount,
+        yoyMae: yoyCount ? yoyAbsoluteError / yoyCount : null,
+        yoyRmse: yoyCount ? Math.sqrt(yoySquaredError / yoyCount) : null
+      };
     });
   }, [basis, data, mmMeasure, models, yoyMeasure]);
   const rangeLabel = range === "allInputs" ? "Full period, Jul 2017-present" : range === "common" ? "2022-present" : range === "5y" ? "Last 5y" : "Full span";
@@ -465,7 +491,7 @@ export function ModelComparisonTimeline({ result }: { result: ModelComparisonRes
       </div>
       <div className="mb-4 rounded border border-line bg-wash p-3">
         <div className="mb-2 text-sm font-semibold">
-          Rounded-to-tenth hit rates, {basis === "Sa" ? "SA" : "NSA"} basis - {rangeLabel}
+          Rounded-to-tenth hit rates, MAE, and RMSE, {basis === "Sa" ? "SA" : "NSA"} basis - {rangeLabel}
         </div>
         <div className="mb-2 text-xs text-muted">
           Hit = model and actual round to the same one-decimal CPI print, e.g. 0.24% and 0.18% both round to 0.2%.
@@ -477,8 +503,12 @@ export function ModelComparisonTimeline({ result }: { result: ModelComparisonRes
                 <th className="py-2 pr-4">Model</th>
                 <th className="py-2 pr-4">m/m hit rate</th>
                 <th className="py-2 pr-4">m/m hits</th>
+                <th className="py-2 pr-4">m/m MAE</th>
+                <th className="py-2 pr-4">m/m RMSE</th>
                 <th className="py-2 pr-4">y/y hit rate</th>
                 <th className="py-2 pr-4">y/y hits</th>
+                <th className="py-2 pr-4">y/y MAE</th>
+                <th className="py-2 pr-4">y/y RMSE</th>
               </tr>
             </thead>
             <tbody>
@@ -487,8 +517,12 @@ export function ModelComparisonTimeline({ result }: { result: ModelComparisonRes
                   <td className="py-2 pr-4 font-medium" style={{ color: row.color }}>{row.label}</td>
                   <td className="py-2 pr-4">{hitRateLabel(row.mmHits, row.mmCount)}</td>
                   <td className="py-2 pr-4 text-muted">{row.mmHits}/{row.mmCount}</td>
+                  <td className="py-2 pr-4">{formatPercent(row.mmMae, 3)}</td>
+                  <td className="py-2 pr-4">{formatPercent(row.mmRmse, 3)}</td>
                   <td className="py-2 pr-4">{hitRateLabel(row.yoyHits, row.yoyCount)}</td>
                   <td className="py-2 pr-4 text-muted">{row.yoyHits}/{row.yoyCount}</td>
+                  <td className="py-2 pr-4">{formatPercent(row.yoyMae, 3)}</td>
+                  <td className="py-2 pr-4">{formatPercent(row.yoyRmse, 3)}</td>
                 </tr>
               ))}
             </tbody>

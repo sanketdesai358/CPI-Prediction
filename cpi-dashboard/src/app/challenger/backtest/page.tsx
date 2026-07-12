@@ -28,7 +28,7 @@ export default function ChallengerBacktestPage() {
     <>
       <ChallengerBanner />
       <PageTitle eyebrow="Challenger" title="Backtest">
-        Window A/B/C full-window summary tables, plus trailing 24-month MAE and hierarchy-level normalized error diagnostics.
+        Window A/B/C full-window MAE and RMSE summaries, plus trailing 24-month MAE and hierarchy-level normalized error diagnostics.
       </PageTitle>
       <div className="grid gap-4">
         <Panel title="Model definitions">
@@ -41,16 +41,16 @@ export default function ChallengerBacktestPage() {
               <div className="overflow-x-auto">
                 <table className="min-w-full text-left text-sm">
                   <thead className="border-b border-line text-xs uppercase text-muted">
-                    <tr><th className="py-2 pr-4">Model</th><th className="py-2 pr-4">Headline NSA MAE</th><th className="py-2 pr-4">Headline SA MAE</th><th className="py-2 pr-4">Core NSA MAE</th><th className="py-2 pr-4">Core SA MAE</th></tr>
+                    <tr><th className="py-2 pr-4">Model</th><th className="py-2 pr-4">Headline NSA<br />MAE / RMSE</th><th className="py-2 pr-4">Headline SA<br />MAE / RMSE</th><th className="py-2 pr-4">Core NSA<br />MAE / RMSE</th><th className="py-2 pr-4">Core SA<br />MAE / RMSE</th></tr>
                   </thead>
                   <tbody>
                     {variants.map(([key, label]) => (
                       <tr key={key} className="border-b border-line/70">
                         <td className="py-2 pr-4 font-medium">{label}</td>
-                        <td className="py-2 pr-4">{formatPercent(item.metrics[`${key}HeadlineNsaMmMae`], 3)}</td>
-                        <td className="py-2 pr-4">{formatPercent(item.metrics[`${key}HeadlineSaMmMae`], 3)}</td>
-                        <td className="py-2 pr-4">{formatPercent(item.metrics[`${key}CoreNsaMmMae`], 3)}</td>
-                        <td className="py-2 pr-4">{formatPercent(item.metrics[`${key}CoreSaMmMae`], 3)}</td>
+                        <td className="py-2 pr-4">{formatPercent(item.metrics[`${key}HeadlineNsaMmMae`], 3)} / {formatPercent(item.metrics[`${key}HeadlineNsaMmRmse`], 3)}</td>
+                        <td className="py-2 pr-4">{formatPercent(item.metrics[`${key}HeadlineSaMmMae`], 3)} / {formatPercent(item.metrics[`${key}HeadlineSaMmRmse`], 3)}</td>
+                        <td className="py-2 pr-4">{formatPercent(item.metrics[`${key}CoreNsaMmMae`], 3)} / {formatPercent(item.metrics[`${key}CoreNsaMmRmse`], 3)}</td>
+                        <td className="py-2 pr-4">{formatPercent(item.metrics[`${key}CoreSaMmMae`], 3)} / {formatPercent(item.metrics[`${key}CoreSaMmRmse`], 3)}</td>
                       </tr>
                     ))}
                   </tbody>

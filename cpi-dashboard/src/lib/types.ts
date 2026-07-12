@@ -453,13 +453,21 @@ export type ModelComparisonSummaryRow = {
   end: string | null;
   months: number;
   fullSaMmMae?: number | null;
+  fullSaMmRmse?: number | null;
   fullNsaMmMae?: number | null;
+  fullNsaMmRmse?: number | null;
   fullSaYoyMae?: number | null;
+  fullSaYoyRmse?: number | null;
   fullNsaYoyMae?: number | null;
+  fullNsaYoyRmse?: number | null;
   commonSaMmMae?: number | null;
+  commonSaMmRmse?: number | null;
   commonNsaMmMae?: number | null;
+  commonNsaMmRmse?: number | null;
   commonSaYoyMae?: number | null;
+  commonSaYoyRmse?: number | null;
   commonNsaYoyMae?: number | null;
+  commonNsaYoyRmse?: number | null;
 };
 
 export type ModelComparisonResult = {

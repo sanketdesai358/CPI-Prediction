@@ -24,6 +24,7 @@ export default function ForecastBacktestPage() {
               <div className="mb-3 grid gap-3 md:grid-cols-5">
                 <div className="rounded border border-line p-3 text-sm"><div className="text-muted">Available span</div><div className="font-medium">{result.availableStart} to {result.availableEnd}</div></div>
                 <div className="rounded border border-line p-3 text-sm"><div className="text-muted">Model MAE</div><div className="font-medium">{formatPercent(result.metrics.headlineNsaMae)}</div></div>
+                <div className="rounded border border-line p-3 text-sm"><div className="text-muted">Model RMSE</div><div className="font-medium">{formatPercent(result.metrics.headlineNsaRmse)}</div></div>
                 <div className="rounded border border-line p-3 text-sm"><div className="text-muted">Seasonal RW</div><div className="font-medium">{formatPercent(result.metrics.seasonalRwMae)}</div></div>
                 <div className="rounded border border-line p-3 text-sm"><div className="text-muted">AR(1)</div><div className="font-medium">{formatPercent(result.metrics.ar1Mae)}</div></div>
                 <div className="rounded border border-line p-3 text-sm"><div className="text-muted">P10-P90 coverage</div><div className="font-medium">{formatPercent(result.metrics.intervalCoverage, 0)}</div></div>

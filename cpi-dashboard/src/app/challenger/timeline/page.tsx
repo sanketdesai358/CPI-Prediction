@@ -28,7 +28,7 @@ export default function ChallengerTimelinePage() {
         <Panel title="Interactive timeline">
           <ModelComparisonTimeline result={result} />
         </Panel>
-        <Panel title="Availability and MAE table">
+        <Panel title="Availability, MAE, and RMSE table">
           <div className="mb-3 rounded bg-wash p-3 text-sm text-muted">
             Production Tier 1 and Tier 3 fallback formulas are included as walk-forward baselines. The full live-feed production model remains omitted until a true historical replay exists. Common-span metrics start at {result.commonStart}; only rows shared by the displayed models are directly comparable.
           </div>
@@ -40,10 +40,10 @@ export default function ChallengerTimelinePage() {
                   <th className="py-2 pr-4">Start</th>
                   <th className="py-2 pr-4">End</th>
                   <th className="py-2 pr-4">Months</th>
-                  <th className="py-2 pr-4">Full SA m/m MAE</th>
-                  <th className="py-2 pr-4">Full SA y/y MAE</th>
-                  <th className="py-2 pr-4">Common SA m/m MAE</th>
-                  <th className="py-2 pr-4">Common SA y/y MAE</th>
+                  <th className="py-2 pr-4">Full SA m/m<br />MAE / RMSE</th>
+                  <th className="py-2 pr-4">Full SA y/y<br />MAE / RMSE</th>
+                  <th className="py-2 pr-4">Common SA m/m<br />MAE / RMSE</th>
+                  <th className="py-2 pr-4">Common SA y/y<br />MAE / RMSE</th>
                 </tr>
               </thead>
               <tbody>
@@ -53,10 +53,10 @@ export default function ChallengerTimelinePage() {
                     <td className="py-2 pr-4">{row.start ?? "n/a"}</td>
                     <td className="py-2 pr-4">{row.end ?? "n/a"}</td>
                     <td className="py-2 pr-4">{row.months}</td>
-                    <td className="py-2 pr-4">{formatPercent(row.fullSaMmMae ?? null, 3)}</td>
-                    <td className="py-2 pr-4">{formatPercent(row.fullSaYoyMae ?? null, 3)}</td>
-                    <td className="py-2 pr-4">{formatPercent(row.commonSaMmMae ?? null, 3)}</td>
-                    <td className="py-2 pr-4">{formatPercent(row.commonSaYoyMae ?? null, 3)}</td>
+                    <td className="py-2 pr-4">{formatPercent(row.fullSaMmMae ?? null, 3)} / {formatPercent(row.fullSaMmRmse ?? null, 3)}</td>
+                    <td className="py-2 pr-4">{formatPercent(row.fullSaYoyMae ?? null, 3)} / {formatPercent(row.fullSaYoyRmse ?? null, 3)}</td>
+                    <td className="py-2 pr-4">{formatPercent(row.commonSaMmMae ?? null, 3)} / {formatPercent(row.commonSaMmRmse ?? null, 3)}</td>
+                    <td className="py-2 pr-4">{formatPercent(row.commonSaYoyMae ?? null, 3)} / {formatPercent(row.commonSaYoyRmse ?? null, 3)}</td>
                   </tr>
                 ))}
               </tbody>

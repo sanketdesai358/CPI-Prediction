@@ -317,6 +317,10 @@ def mae(values: list[tuple[float, float]]) -> float | None:
     return None if not values else sum(abs(a - b) for a, b in values) / len(values)
 
 
+def rmse(values: list[tuple[float, float]]) -> float | None:
+    return None if not values else math.sqrt(sum((a - b) ** 2 for a, b in values) / len(values))
+
+
 def model_summary(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     common_start = "2022-01"
     summary = []
@@ -333,13 +337,21 @@ def model_summary(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "end": months[-1],
                 "months": len(months),
                 "fullSaMmMae": mae(clean_pairs(rows, model, "SaMm", "actualSaMm")),
+                "fullSaMmRmse": rmse(clean_pairs(rows, model, "SaMm", "actualSaMm")),
                 "fullNsaMmMae": mae(clean_pairs(rows, model, "NsaMm", "actualNsaMm")),
+                "fullNsaMmRmse": rmse(clean_pairs(rows, model, "NsaMm", "actualNsaMm")),
                 "fullSaYoyMae": mae(clean_pairs(rows, model, "SaYoy", "actualSaYoy")),
+                "fullSaYoyRmse": rmse(clean_pairs(rows, model, "SaYoy", "actualSaYoy")),
                 "fullNsaYoyMae": mae(clean_pairs(rows, model, "NsaYoy", "actualNsaYoy")),
+                "fullNsaYoyRmse": rmse(clean_pairs(rows, model, "NsaYoy", "actualNsaYoy")),
                 "commonSaMmMae": mae(clean_pairs(rows, model, "SaMm", "actualSaMm", start=common_start)),
+                "commonSaMmRmse": rmse(clean_pairs(rows, model, "SaMm", "actualSaMm", start=common_start)),
                 "commonNsaMmMae": mae(clean_pairs(rows, model, "NsaMm", "actualNsaMm", start=common_start)),
+                "commonNsaMmRmse": rmse(clean_pairs(rows, model, "NsaMm", "actualNsaMm", start=common_start)),
                 "commonSaYoyMae": mae(clean_pairs(rows, model, "SaYoy", "actualSaYoy", start=common_start)),
+                "commonSaYoyRmse": rmse(clean_pairs(rows, model, "SaYoy", "actualSaYoy", start=common_start)),
                 "commonNsaYoyMae": mae(clean_pairs(rows, model, "NsaYoy", "actualNsaYoy", start=common_start)),
+                "commonNsaYoyRmse": rmse(clean_pairs(rows, model, "NsaYoy", "actualNsaYoy", start=common_start)),
             }
         )
     return summary
@@ -413,14 +425,15 @@ def write_markdown(payload: dict[str, Any]) -> None:
         "",
         "## Model availability",
         "",
-        "| Model | Start | End | Months | Full SA m/m MAE | Full SA y/y MAE | Common 2022+ SA m/m MAE | Common 2022+ SA y/y MAE |",
-        "|---|---|---|---:|---:|---:|---:|---:|",
+        "| Model | Start | End | Months | Full SA m/m MAE | Full SA m/m RMSE | Full SA y/y MAE | Full SA y/y RMSE | Common 2022+ SA m/m MAE | Common SA m/m RMSE | Common SA y/y MAE | Common SA y/y RMSE |",
+        "|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for row in payload["summary"]:
         fmt = lambda value: "n/a" if value is None else f"{value * 100:.3f}%"
         lines.append(
             f"| {row['label']} | {row.get('start') or 'n/a'} | {row.get('end') or 'n/a'} | {row.get('months', 0)} | "
-            f"{fmt(row.get('fullSaMmMae'))} | {fmt(row.get('fullSaYoyMae'))} | {fmt(row.get('commonSaMmMae'))} | {fmt(row.get('commonSaYoyMae'))} |"
+            f"{fmt(row.get('fullSaMmMae'))} | {fmt(row.get('fullSaMmRmse'))} | {fmt(row.get('fullSaYoyMae'))} | {fmt(row.get('fullSaYoyRmse'))} | "
+            f"{fmt(row.get('commonSaMmMae'))} | {fmt(row.get('commonSaMmRmse'))} | {fmt(row.get('commonSaYoyMae'))} | {fmt(row.get('commonSaYoyRmse'))} |"
         )
     lines.extend(["", "## Notes", ""])
     for note in payload["notes"]:

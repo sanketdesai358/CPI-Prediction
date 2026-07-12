@@ -8,6 +8,7 @@
     "build:public": "node scripts/build-public.mjs",
     "start": "next start",
     "typecheck": "tsc --noEmit",
+    "test:component-trends": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types scripts/test-component-trends.mjs",
     "refresh:data": "node scripts/refresh-data.mjs",
     "refresh:calendar": "node scripts/refresh-calendar.mjs",
     "seed:cache": "python scripts/generate_dashboard_cache.py"

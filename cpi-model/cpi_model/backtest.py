@@ -161,6 +161,7 @@ def build_window(window: str, start: str) -> dict[str, Any]:
             "headlineNsaMae": mae(rows, "forecastNsaMm", "actualNsaMm"),
             "headlineNsaRmse": rmse(rows, "forecastNsaMm", "actualNsaMm"),
             "headlineSaMae": mae(rows, "forecastSaMm", "actualSaMm"),
+            "headlineSaRmse": rmse(rows, "forecastSaMm", "actualSaMm"),
             "seasonalRwMae": mae(rows, "benchSeasonalRw", "actualNsaMm"),
             "ar1Mae": mae(rows, "benchAr1", "actualNsaMm"),
             "componentRwMae": mae(rows, "benchComponentRw", "actualNsaMm"),
