@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { addMonths, format as formatDate } from "date-fns";
 import { ForecastTable } from "@/components/ForecastTable";
 import { ForecastNav } from "@/components/ForecastNav";
 import { PageTitle, Panel } from "@/components/Shell";
@@ -8,6 +9,28 @@ import type { ForecastComponentRow } from "@/lib/types";
 
 function saContributionPp(row: ForecastComponentRow) {
   return row.model_weight * row.forecast_sa_mm;
+}
+
+function impliedYoyInterval(
+  entry: { history: Array<{ month: string; saIndex: number | null; nsaIndex: number | null }> } | undefined,
+  forecastMonth: string,
+  interval: { p10: number; p90: number },
+  measure: "sa" | "nsa",
+  forecastSaMm: number,
+  forecastNsaMm: number
+) {
+  if (!entry) return { p10: null, p90: null };
+  const previousMonth = formatDate(addMonths(new Date(`${forecastMonth}-01T00:00:00Z`), -1), "yyyy-MM");
+  const yearAgoMonth = formatDate(addMonths(new Date(`${forecastMonth}-01T00:00:00Z`), -12), "yyyy-MM");
+  const previous = entry.history.find((point) => point.month === previousMonth)?.[`${measure}Index`];
+  const yearAgo = entry.history.find((point) => point.month === yearAgoMonth)?.[`${measure}Index`];
+  if (previous === null || previous === undefined || yearAgo === null || yearAgo === undefined || yearAgo === 0) {
+    return { p10: null, p90: null };
+  }
+
+  const nsaConversion = (1 + forecastNsaMm) / (1 + forecastSaMm);
+  const toYoy = (mm: number) => ((previous * (1 + (measure === "sa" ? mm : (1 + mm) * nsaConversion - 1))) / yearAgo) - 1;
+  return { p10: toYoy(interval.p10), p90: toYoy(interval.p90) };
 }
 
 export default function ForecastPage() {
@@ -22,6 +45,40 @@ export default function ForecastPage() {
   }
   const countdownDate = new Date(`${data.nextRelease.releaseDate}T12:30:00Z`);
   const days = Math.max(0, Math.ceil((countdownDate.valueOf() - Date.now()) / 86_400_000));
+  const headlineEntry = data.entries.find((entry) => entry.itemCode === "SA0");
+  const coreEntry = data.entries.find((entry) => entry.itemCode === "SA0L1E");
+  const headlineSaYoyInterval = impliedYoyInterval(
+    headlineEntry,
+    forecast.forecastMonth,
+    forecast.headline.saInterval,
+    "sa",
+    forecast.headline.saMm,
+    forecast.headline.nsaMm
+  );
+  const headlineNsaYoyInterval = impliedYoyInterval(
+    headlineEntry,
+    forecast.forecastMonth,
+    forecast.headline.saInterval,
+    "nsa",
+    forecast.headline.saMm,
+    forecast.headline.nsaMm
+  );
+  const coreSaYoyInterval = impliedYoyInterval(
+    coreEntry,
+    forecast.forecastMonth,
+    forecast.core.saInterval,
+    "sa",
+    forecast.core.saMm,
+    forecast.core.nsaMm
+  );
+  const coreNsaYoyInterval = impliedYoyInterval(
+    coreEntry,
+    forecast.forecastMonth,
+    forecast.core.saInterval,
+    "nsa",
+    forecast.core.saMm,
+    forecast.core.nsaMm
+  );
   const saRanges: Array<{ label: string; p10: number | null; p50: number | null; p90: number | null; note?: string }> = [
     {
       label: "Headline SA m/m",
@@ -37,31 +94,31 @@ export default function ForecastPage() {
     },
     {
       label: "Headline SA y/y",
-      p10: null,
+      p10: headlineSaYoyInterval.p10,
       p50: forecast.headline.saYoy ?? null,
-      p90: null,
-      note: "implied by forecast SA index"
+      p90: headlineSaYoyInterval.p90,
+      note: "11 actual months + 1 forecast month"
     },
     {
       label: "Headline NSA y/y",
-      p10: null,
+      p10: headlineNsaYoyInterval.p10,
       p50: forecast.headline.nsaYoy,
-      p90: null,
-      note: "implied by forecast NSA index"
+      p90: headlineNsaYoyInterval.p90,
+      note: "11 actual months + 1 forecast month"
     },
     {
       label: "Core SA y/y",
-      p10: null,
+      p10: coreSaYoyInterval.p10,
       p50: forecast.core.saYoy ?? null,
-      p90: null,
-      note: "implied by forecast SA index"
+      p90: coreSaYoyInterval.p90,
+      note: "11 actual months + 1 forecast month"
     },
     {
       label: "Core NSA y/y",
-      p10: null,
+      p10: coreNsaYoyInterval.p10,
       p50: forecast.core.nsaYoy,
-      p90: null,
-      note: "implied by forecast NSA index"
+      p90: coreNsaYoyInterval.p90,
+      note: "11 actual months + 1 forecast month"
     }
   ];
   const topDrivers = [...forecast.components].sort((a, b) => Math.abs(saContributionPp(b)) - Math.abs(saContributionPp(a))).slice(0, 8);
@@ -151,7 +208,7 @@ export default function ForecastPage() {
               </tbody>
             </table>
           </div>
-          <p className="mt-2 text-xs text-muted">Intervals are model uncertainty bands around seasonally adjusted m/m forecasts. Y/y rows are implied levels without a separate uncertainty band.</p>
+          <p className="mt-2 text-xs text-muted">Y/y P10/P90 hold the prior 11 actual months fixed and apply the m/m interval to the forecast month. NSA bounds use the model&apos;s existing SA-to-NSA conversion.</p>
         </Panel>
         <Panel title="Top forecast drivers">
           <div className="space-y-2">
