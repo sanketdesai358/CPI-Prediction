@@ -1016,12 +1016,17 @@ def _candidate_manheim_urls() -> list[str]:
         year = month_index // 12
         month = month_index % 12 + 1
         label = datetime(year, month, 1).strftime("%B-%Y")
+        month_name = datetime(year, month, 1).strftime("%B")
         upload_index = year * 12 + month
         upload_year = upload_index // 12
         upload_month = upload_index % 12 + 1
         candidates.append(
             f"https://www.coxautoinc.com/wp-content/uploads/{upload_year}/{upload_month:02d}/"
             f"{label}-Manheim-Used-Vehicle-Value-Index.xlsx"
+        )
+        candidates.append(
+            f"https://www.coxautoinc.com/wp-content/uploads/{upload_year}/{upload_month:02d}/"
+            f"Manheim-Used-Vehicle-Value-Index-Data.{month_name}_.xlsx"
         )
     candidates.extend(
         [
