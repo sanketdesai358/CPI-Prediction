@@ -134,6 +134,15 @@ TIER_FEEDS: dict[str, dict[str, Any]] = {
         "env": ["EIA_API_KEY"],
         "requires": ["gasoline_regular", "gasoline_all_grades", "rbob"],
     },
+    "SETB02": {
+        "name": "Other motor fuels",
+        "tier": 1,
+        "primary": "EIA weekly U.S. No. 2 diesel retail",
+        "secondary": [],
+        "unit": "dollars per gallon",
+        "env": ["EIA_API_KEY"],
+        "requires": ["diesel"],
+    },
     "SEHE01": {
         "name": "Fuel oil",
         "tier": 1,
@@ -1607,6 +1616,30 @@ def eia_gasoline_forecast_mm(month: str, feeds: dict[str, dict[str, Any]]) -> tu
     return None, None
 
 
+def eia_liquid_forecast_mm(
+    month: str,
+    feeds: dict[str, dict[str, Any]],
+    key: str,
+    label: str,
+    count_label: str,
+) -> tuple[float | None, str | None]:
+    feed = feeds.get(key, {})
+    if feed.get("status") != "live":
+        return None, None
+    points = feed.get("points") or []
+    current = monthly_average(points, month)
+    prior = monthly_average(points, add_months(month, -1))
+    if current is None or prior in {None, 0}:
+        return None, None
+    move = current / prior - 1.0
+    values = [point for point in points if point["date"].startswith(month)]
+    driver = (
+        f"{label} calendar-month average ${current:.3f}/gal "
+        f"vs prior ${prior:.3f}/gal using {len(values)} {count_label}"
+    )
+    return move, driver
+
+
 def eia_jet_fuel_forecast_mm(month: str, feeds: dict[str, dict[str, Any]]) -> tuple[float | None, str | None]:
     jet = feeds.get("jet_fuel", {})
     if jet.get("status") != "live":
@@ -1741,10 +1774,20 @@ def build_feed_health(month: str, *, write_snapshots: bool = False) -> dict[str,
         "foodFuturesLagReport": food_futures_lag_report(feeds.get("cme_futures", {})),
     }
     gas_move, gas_driver = eia_gasoline_forecast_mm(month, feeds)
+    diesel_move, diesel_driver = eia_liquid_forecast_mm(
+        month, feeds, "diesel", "EIA weekly U.S. No. 2 diesel retail", "weekly prints"
+    )
+    heating_oil_move, heating_oil_driver = eia_liquid_forecast_mm(
+        month, feeds, "heating_oil", "EIA New York Harbor No. 2 heating oil spot", "daily prints"
+    )
     jet_move, jet_driver = eia_jet_fuel_forecast_mm(month, feeds)
     payload["derived"] = {
         "gasolineEiaNsaMm": gas_move,
         "gasolineEiaDriver": gas_driver,
+        "dieselEiaNsaMm": diesel_move,
+        "dieselEiaDriver": diesel_driver,
+        "heatingOilEiaNsaMm": heating_oil_move,
+        "heatingOilEiaDriver": heating_oil_driver,
         "jetFuelEiaNsaMm": jet_move,
         "jetFuelEiaDriver": jet_driver,
         "shelterMarketNsaMm": shelter_signal["value"] if shelter_signal else None,

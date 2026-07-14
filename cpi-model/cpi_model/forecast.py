@@ -13,6 +13,7 @@ from .commodity_complex import (
     write_cut_series,
 )
 from .data import cache_entries, entry_by_code, history_mm, latest_month, load_dashboard_cache, load_registry, write_json
+from .energy_liquids import measurement_forecast
 from .feeds import build_feed_health, feed_health_by_code
 from .math import add_months, month_name, normal_interval, pct_change, safe_mean, safe_std
 from .paths import RUNS_DIR
@@ -85,6 +86,20 @@ def forecast_component(entry: dict[str, Any], model: dict[str, Any], target_mont
                 0.55 * (last or 0.0) + 0.30 * trailing3 + 0.15 * seasonal,
                 live + "fallback used because EIA calendar-month gasoline feed is unavailable",
             )
+    if entry["itemCode"] in {"SETB02", "SEHE01"} and feed:
+        measurement = feed.get("liquidMeasurementNsaMm")
+        if measurement is not None:
+            eia_key = str(feed["liquidMeasurementSeries"])
+            forecast, diagnostics = measurement_forecast(entry, target_month, eia_key, float(measurement))
+            return (
+                forecast,
+                f"{feed.get('liquidMeasurementDriver')}; fitted retail pass-through beta "
+                f"{diagnostics['beta']:.3f} on {diagnostics['observations']} prior months; "
+                f"NSA forecast {forecast * 100:.2f}%",
+            )
+        if feed.get("fallbackUsed"):
+            fallback = 0.55 * (last or 0.0) + 0.30 * trailing3 + 0.15 * seasonal
+            return fallback, "EIA liquid-fuel calendar-month measurement unavailable; Tier 1 CPI-history fallback"
     if entry["itemCode"] == "SETG01" and feed and feed.get("jetFuelNsaMm") is not None:
         fallback = 0.55 * (last or 0.0) + 0.30 * trailing3 + 0.15 * seasonal
         jet_move = float(feed["jetFuelNsaMm"])
@@ -384,6 +399,16 @@ def build_forecast(month: str) -> dict[str, Any]:
     if feed_health.get("derived", {}).get("gasolineEiaNsaMm") is not None and "SETB01" in feeds_by_code:
         feeds_by_code["SETB01"]["forecastNsaMm"] = feed_health["derived"]["gasolineEiaNsaMm"]
         feeds_by_code["SETB01"]["forecastDriver"] = feed_health["derived"].get("gasolineEiaDriver")
+    liquid_measurements = {
+        "SETB02": ("dieselEiaNsaMm", "dieselEiaDriver", "diesel"),
+        "SEHE01": ("heatingOilEiaNsaMm", "heatingOilEiaDriver", "heating_oil"),
+    }
+    for code, (value_key, driver_key, series_key) in liquid_measurements.items():
+        value = feed_health.get("derived", {}).get(value_key)
+        if value is not None and code in feeds_by_code:
+            feeds_by_code[code]["liquidMeasurementNsaMm"] = value
+            feeds_by_code[code]["liquidMeasurementDriver"] = feed_health["derived"].get(driver_key)
+            feeds_by_code[code]["liquidMeasurementSeries"] = series_key
     if feed_health.get("derived", {}).get("jetFuelEiaNsaMm") is not None and "SETG01" in feeds_by_code:
         feeds_by_code["SETG01"]["jetFuelNsaMm"] = feed_health["derived"]["jetFuelEiaNsaMm"]
         feeds_by_code["SETG01"]["jetFuelDriver"] = feed_health["derived"].get("jetFuelEiaDriver")

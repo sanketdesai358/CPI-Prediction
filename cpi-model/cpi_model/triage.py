@@ -13,7 +13,8 @@ from .paths import EXTENDED_REGISTRY_PATH, TRIAGE_REPORT_PATH
 
 TIER1: dict[str, dict[str, Any]] = {
     "SETB01": {"model_type": "measurement_pass_through_gasoline", "input_series": ["EIA weekly retail gasoline", "AAA daily gasoline fallback"], "pass_through_lags": [0], "event_calendar": []},
-    "SEHE01": {"model_type": "measurement_pass_through_fuel_oil", "input_series": ["EIA heating oil retail"], "pass_through_lags": [0, 1], "event_calendar": ["winter-demand-overlay"]},
+    "SETB02": {"model_type": "measurement_pass_through_diesel", "input_series": ["EIA weekly U.S. No. 2 diesel retail"], "pass_through_lags": [0], "event_calendar": []},
+    "SEHE01": {"model_type": "measurement_pass_through_fuel_oil", "input_series": ["EIA New York Harbor No. 2 heating oil spot"], "pass_through_lags": [0], "event_calendar": ["winter-demand-overlay"]},
     "SEHF02": {"model_type": "distributed_lag_utility_gas", "input_series": ["Henry Hub", "EIA retail natural gas"], "pass_through_lags": [1, 2, 3], "event_calendar": ["tariff-filings"]},
     "SEHF01": {"model_type": "tariff_event_electricity", "input_series": ["EIA retail electricity", "state tariff filings"], "pass_through_lags": [0, 1], "event_calendar": ["tariff-filings"]},
     "SEHA": {"model_type": "shelter_tier1_cpi_fallback", "input_series": ["CPI rent history"], "pass_through_lags": [], "event_calendar": ["six-panel-rotation"]},
