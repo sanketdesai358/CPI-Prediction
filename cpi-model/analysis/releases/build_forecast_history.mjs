@@ -6,7 +6,7 @@ const modelRoot = process.env.CPI_MODEL_ROOT
   ? path.resolve(process.env.CPI_MODEL_ROOT)
   : path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/(.:)/, "$1")), "..", "..", "..");
 const workspaceRoot = path.dirname(modelRoot);
-const defaultOutput = path.join(workspaceRoot, "cpi-model-archive", "CPI_Forecast_vs_Actuals.xlsx");
+const defaultOutput = path.join(workspaceRoot, "cpi-model-archive", "Actual_vs_Predicted_June_2026.xlsx");
 const outputPath = path.resolve(process.argv[2] || defaultOutput);
 
 async function loadScores() {

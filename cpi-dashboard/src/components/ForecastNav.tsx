@@ -2,7 +2,6 @@ import Link from "next/link";
 
 const tabs = [
   { href: "/forecast", label: "Current Forecast", key: "forecast" },
-  { href: "/forecast/track", label: "Forecast Track", key: "track" },
   { href: "/forecast/model-divergence", label: "Model Divergence", key: "model-divergence" }
 ] as const;
 

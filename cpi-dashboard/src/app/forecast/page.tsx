@@ -222,10 +222,7 @@ export default function ForecastPage() {
               </Link>
             ))}
           </div>
-          <Link className="mt-3 inline-block text-sm font-medium text-teal hover:underline" href="/forecast/track">
-            Open forecast-vs-actual track
-          </Link>
-          <Link className="ml-4 mt-3 inline-block text-sm font-medium text-teal hover:underline" href="/forecast/model-divergence">
+          <Link className="mt-3 inline-block text-sm font-medium text-teal hover:underline" href="/forecast/model-divergence">
             Open model divergence
           </Link>
         </Panel>
