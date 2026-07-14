@@ -253,9 +253,20 @@ export type ForecastRun = {
 export type ScoreRow = {
   itemCode: string;
   name: string;
-  forecastContribution: number | null;
-  actualContribution: number | null;
+  tier?: number | null;
+  modelType?: string | null;
+  weightRi?: number | null;
+  forecastNsaMm?: number | null;
+  actualNsaMm?: number | null;
+  forecastSaMm?: number | null;
+  actualSaMm?: number | null;
+  forecastContribution?: number | null;
+  actualContribution?: number | null;
   missPp: number | null;
+  contributionErrorPp?: number | null;
+  fallbackUsed?: boolean;
+  feedStatus?: string | null;
+  driverSnapshot?: string | null;
 };
 
 export type ScoreResult = {
@@ -267,6 +278,28 @@ export type ScoreResult = {
     forecastSaMm: number | null;
     actualSaMm: number | null;
     missSaPp: number | null;
+    forecastSaYoy?: number | null;
+    forecastNsaYoy?: number | null;
+    actualSaYoy?: number | null;
+    actualNsaYoy?: number | null;
+  };
+  core?: {
+    forecastNsaMm: number | null;
+    actualNsaMm: number | null;
+    forecastSaMm: number | null;
+    actualSaMm: number | null;
+    forecastSaYoy?: number | null;
+    forecastNsaYoy?: number | null;
+    actualSaYoy?: number | null;
+    actualNsaYoy?: number | null;
+  };
+  summary?: {
+    componentCount: number;
+    scoredComponentCount: number;
+    missingActualCount: number;
+    fallbackCount: number;
+    liveFeedCount: number;
+    topContributionErrors: ScoreRow[];
   };
   rows: ScoreRow[];
 };

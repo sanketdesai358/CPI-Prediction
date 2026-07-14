@@ -22,6 +22,7 @@ OUT_DIR = ROOT / "analysis" / "model_comparison"
 DASHBOARD_OUT = WORKSPACE / "cpi-dashboard" / "src" / "data" / "challenger" / "model-comparison.json"
 LABSTAT_PATH = WORKSPACE / "cpi-excel" / "data" / "raw" / "labstat" / "cu.data.0.Current"
 CHALLENGER_PATH = ROOT / "challenger" / "hrnn" / "results.json"
+CHALLENGER_DASHBOARD_PATH = WORKSPACE / "cpi-dashboard" / "src" / "data" / "challenger" / "results.json"
 EIA_GASOLINE_PATH = ROOT / "data" / "feeds" / "eia" / "gasoline_regular.json"
 
 MODELS = {
@@ -268,6 +269,26 @@ def load_predictions(actual: dict[str, dict[str, float | None]]) -> tuple[dict[s
                 f"Existing challenger/hrnn/results.json starts at {first}; no ~2000 challenger prediction rows are present. "
                 "Regenerate challenger/hrnn/results.json from an artifact with earlier BLS history to extend the line."
             )
+
+    # The current pre-release one-step-ahead challenger values live beside the
+    # dashboard artifact rather than in the historical walk-forward rows.
+    if CHALLENGER_DASHBOARD_PATH.exists():
+        current = read_json(CHALLENGER_DASHBOARD_PATH).get("currentForecast") or {}
+        month = current.get("forecastMonth")
+        headline = next((row for row in current.get("rows", []) if row.get("series") == "headline"), None)
+        if month and headline:
+            slot = predictions.setdefault(month, {})
+            for model in MODELS:
+                values = headline.get(model) or {}
+                sa = values.get("saMm")
+                nsa = values.get("nsaMm")
+                if sa is not None or nsa is not None:
+                    slot[model] = {
+                        "saMm": sa,
+                        "nsaMm": nsa,
+                        "saYoy": values.get("saYoy"),
+                        "nsaYoy": values.get("nsaYoy"),
+                    }
 
     notes.append(
         "The full production model is still omitted. The existing backtest/C/results.json series is a headline "
