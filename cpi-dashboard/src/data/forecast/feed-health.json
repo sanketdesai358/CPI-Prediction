@@ -1,11 +1,11 @@
 {
-  "forecastMonth": "2026-06",
-  "generatedAt": "2026-07-11T14:33:03+00:00",
+  "forecastMonth": "2026-07",
+  "generatedAt": "2026-07-15T13:21:18+00:00",
   "summary": {
-    "componentsTracked": 38,
+    "componentsTracked": 39,
     "live": 29,
     "partial": 3,
-    "fallbackOrBlocked": 6
+    "fallbackOrBlocked": 7
   },
   "components": [
     {
@@ -19,24 +19,44 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-06",
-      "latestValue": 3.777,
+      "lastObservationDate": "2026-07-13",
+      "latestValue": 3.855,
       "unit": "dollars per gallon",
       "observationsUsed": [
         {
-          "date": "2026-07-06",
-          "value": 3.777,
+          "date": "2026-07-13",
+          "value": 3.855,
           "label": "EIA weekly U.S. regular all-formulations retail gasoline"
         },
         {
-          "date": "2026-07-06",
-          "value": 3.911,
+          "date": "2026-07-13",
+          "value": 3.987,
           "label": "EIA weekly U.S. all-grades retail gasoline"
         },
         {
           "date": "2026-07-06",
           "value": 3.266,
           "label": "EIA Los Angeles RBOB regular gasoline spot"
+        }
+      ],
+      "details": null
+    },
+    {
+      "itemCode": "SETB02",
+      "name": "Other motor fuels",
+      "tier": 1,
+      "primaryFeed": "EIA weekly U.S. No. 2 diesel retail",
+      "secondaryFeeds": [],
+      "status": "live",
+      "fallbackUsed": false,
+      "lastObservationDate": "2026-07-13",
+      "latestValue": 4.796,
+      "unit": "dollars per gallon",
+      "observationsUsed": [
+        {
+          "date": "2026-07-13",
+          "value": 4.796,
+          "label": "EIA weekly U.S. No. 2 diesel retail"
         }
       ],
       "details": null
@@ -51,8 +71,8 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-06",
-      "latestValue": 3.206,
+      "lastObservationDate": "2026-07-13",
+      "latestValue": 4.796,
       "unit": "dollars per gallon",
       "observationsUsed": [
         {
@@ -61,8 +81,8 @@
           "label": "EIA New York Harbor No. 2 heating oil spot"
         },
         {
-          "date": "2026-07-06",
-          "value": 4.578,
+          "date": "2026-07-13",
+          "value": 4.796,
           "label": "EIA weekly U.S. No. 2 diesel retail"
         }
       ],
@@ -120,17 +140,17 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-05",
-      "latestValue": 212.61615830326866,
+      "lastObservationDate": "2026-06",
+      "latestValue": 212.85667431944884,
       "unit": "index",
       "observationsUsed": [
         {
-          "date": "2026-05",
-          "value": 212.61615830326866,
+          "date": "2026-06",
+          "value": 212.85667431944884,
           "label": "Manheim UVVI final"
         }
       ],
-      "details": "Loaded public XLSX (https://www.coxautoinc.com/wp-content/uploads/2026/06/May-2026-Manheim-Used-Vehicle-Value-Index.xlsx); add data/manual/manheim_uvvi.csv to override.",
+      "details": "Loaded public XLSX (https://www.coxautoinc.com/wp-content/uploads/2026/07/Manheim-Used-Vehicle-Value-Index-Data.June_.xlsx); add data/manual/manheim_uvvi.csv to override.",
       "points": [
         {
           "date": "1997-01",
@@ -1543,9 +1563,13 @@
         {
           "date": "2026-05",
           "value": 212.61615830326866
+        },
+        {
+          "date": "2026-06",
+          "value": 212.85667431944884
         }
       ],
-      "publicationDate": "2026-06-08",
+      "publicationDate": "2026-07-07",
       "timingEnforced": true,
       "publicationRule": "month-end final assumed published on the 7th of the following month, weekend-adjusted; lag 0 is used only if publication date is before CPI release"
     },
@@ -21597,161 +21621,819 @@
       "secondaryFeeds": [
         "Tier 3 Seasonal AR outage fallback"
       ],
-      "status": "live",
-      "fallbackUsed": false,
+      "status": "fallback",
+      "fallbackUsed": true,
       "lastObservationDate": "2026-07-09",
       "latestValue": 167.95,
       "unit": "ADR index pass-through",
       "observationsUsed": [
         {
-          "date": "2026-06-06",
-          "publicationDate": "2026-06-12",
+          "date": "2022-03-31",
+          "value": 149.38,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2023-11-22",
+          "value": 161.56,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2023-11-22",
+          "value": 156.47,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2023-12-01",
+          "value": 138.29,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2023-12-07",
+          "value": 144.88,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2023-12-20",
+          "value": 151.23,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2023-12-21",
+          "value": 142.62,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2023-12-28",
+          "value": 131.97,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-01-04",
+          "value": 163.58,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-01-18",
+          "value": 151.13,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2024-01-19",
+          "value": 153.84,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-01-25",
+          "value": 142.27,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-02-01",
+          "value": 149.76,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-02-08",
+          "value": 147.99,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-02-15",
+          "value": 160.96,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-02-16",
+          "value": 146.33,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2024-02-22",
+          "value": 162.24,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-02-29",
+          "value": 156.62,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-03-07",
+          "value": 155.29,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-03-14",
+          "value": 156.96,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-03-19",
+          "value": 158.23,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2024-03-21",
+          "value": 163.21,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-03-28",
+          "value": 162.28,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-04-04",
+          "value": 157.14,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-04-11",
+          "value": 156.96,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-04-18",
+          "value": 160.2,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-04-19",
+          "value": 159.79,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2024-04-25",
+          "value": 158.6,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-05-02",
+          "value": 154.44,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-05-09",
+          "value": 159.97,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-05-16",
+          "value": 162.14,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-05-21",
+          "value": 157.31,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2024-05-23",
+          "value": 163.11,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-05-31",
+          "value": 160.67,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-06-06",
+          "value": 150.87,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-06-13",
+          "value": 160.9,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-06-20",
+          "value": 160.4,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2024-06-20",
+          "value": 161.7,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-06-27",
+          "value": 159.88,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-07-03",
+          "value": 162.81,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-07-11",
+          "value": 157.27,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-07-18",
+          "value": 158.21,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-07-23",
+          "value": 161.3,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2024-07-25",
+          "value": 165.91,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-08-01",
+          "value": 164.45,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-08-08",
+          "value": 159.63,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-08-15",
+          "value": 159.49,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-08-21",
+          "value": 161.69,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2024-08-22",
+          "value": 156.35,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-08-29",
+          "value": 154.8,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-09-06",
+          "value": 153.67,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-09-12",
+          "value": 149.67,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-09-19",
+          "value": 157.84,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2024-09-19",
+          "value": 162.05,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-09-26",
+          "value": 168.8,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-10-03",
+          "value": 170.24,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-10-10",
+          "value": 156.25,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-10-17",
+          "value": 166.88,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-10-18",
+          "value": 162.63,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2024-10-31",
+          "value": 168.69,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-11-07",
+          "value": 154.99,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-11-14",
+          "value": 156.11,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-11-21",
+          "value": 164.86,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2024-11-21",
+          "value": 154.96,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-11-27",
+          "value": 150.49,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-12-05",
+          "value": 141.09,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-12-12",
+          "value": 159.77,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-12-18",
+          "value": 152.7,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2024-12-19",
+          "value": 155.21,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2024-12-30",
+          "value": 135.79,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-01-08",
+          "value": 160.96,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-01-16",
+          "value": 144.03,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-01-23",
+          "value": 155.81,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-01-24",
+          "value": 156.67,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2025-01-30",
+          "value": 154.21,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-02-06",
+          "value": 150.25,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-02-13",
+          "value": 156.03,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-02-20",
+          "value": 151.2,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2025-02-21",
+          "value": 164.79,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-02-27",
+          "value": 159.9,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-03-06",
+          "value": 159.26,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-03-13",
+          "value": 160.53,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-03-20",
+          "value": 159.39,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2025-03-21",
+          "value": 162.49,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-03-27",
+          "value": 165.48,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-04-03",
+          "value": 161.65,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-04-10",
+          "value": 160.18,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-04-17",
+          "value": 162.72,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-04-23",
+          "value": 161.78,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2025-04-24",
+          "value": 158.0,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-05-01",
+          "value": 161.98,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-05-08",
+          "value": 164.33,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-05-15",
+          "value": 162.57,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-05-21",
+          "value": 161.28,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2025-05-22",
+          "value": 166.31,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-05-30",
+          "value": 164.57,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-06-05",
+          "value": 151.48,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-06-12",
+          "value": 161.57,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-06-18",
+          "value": 162.72,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2025-06-20",
+          "value": 163.43,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-06-26",
+          "value": 163.77,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-07-03",
+          "value": 163.3,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-07-10",
+          "value": 156.71,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-07-17",
+          "value": 158.42,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-07-21",
+          "value": 162.51,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2025-07-24",
+          "value": 165.49,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-07-31",
+          "value": 164.88,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-08-07",
+          "value": 161.0,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-08-14",
+          "value": 159.61,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-08-21",
+          "value": 157.51,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-08-28",
+          "value": 161.9,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2025-08-29",
+          "value": 155.09,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-09-05",
+          "value": 155.87,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-09-11",
+          "value": 149.52,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-09-18",
+          "value": 162.71,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-09-19",
+          "value": 158.93,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2025-09-25",
+          "value": 168.98,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-10-02",
+          "value": 166.48,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-10-09",
+          "value": 160.62,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-10-16",
+          "value": 171.88,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-10-20",
+          "value": 162.69,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2025-10-23",
+          "value": 173.14,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-10-30",
+          "value": 166.36,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-11-06",
+          "value": 156.09,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-11-13",
+          "value": 162.7,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-11-19",
+          "value": 167.71,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2025-11-20",
+          "value": 154.41,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-12-04",
+          "value": 141.31,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-12-11",
+          "value": 160.11,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-12-18",
+          "value": 156.46,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2025-12-19",
+          "value": 153.77,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2026-01-15",
+          "value": 142.85,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-01-23",
+          "value": 157.21,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-01-29",
+          "value": 152.64,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-02-05",
+          "value": 150.55,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-02-12",
+          "value": 158.69,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-02-20",
+          "value": 167.98,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-02-24",
+          "value": 152.09,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2026-02-27",
+          "value": 164.56,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-03-05",
+          "value": 159.03,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-03-12",
+          "value": 166.47,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-03-19",
+          "value": 167.97,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-04-01",
+          "value": 162.58,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2026-04-02",
+          "value": 170.3,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-04-09",
+          "value": 160.21,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-04-17",
+          "value": 165.23,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-04-23",
+          "value": 167.0,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-04-30",
+          "value": 169.17,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-05-01",
+          "value": 168.06,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2026-05-07",
+          "value": 167.83,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-05-14",
+          "value": 165.75,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-05-21",
+          "value": 173.01,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-05-29",
+          "value": 171.04,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-06-04",
+          "value": 158.53,
+          "label": "CoStar/STR weekly ADR"
+        },
+        {
+          "date": "2026-06-09",
+          "value": 165.9,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2026-06-12",
           "value": 168.43,
-          "occupancy": 67.9,
-          "label": "CoStar/STR weekly U.S. ADR",
-          "url": "https://www.costar.com/products/str-benchmark/resources/press-releases/us-hotel-results-week-ending-6-june"
+          "label": "CoStar/STR weekly ADR"
         },
         {
-          "date": "2026-06-13",
-          "publicationDate": "2026-06-18",
+          "date": "2026-06-18",
           "value": 172.04,
-          "occupancy": 69.9,
-          "label": "CoStar/STR weekly U.S. ADR",
-          "url": "https://www.costar.com/products/str-benchmark/resources/press-releases/us-hotel-results-week-ending-13-june"
+          "label": "CoStar/STR weekly ADR"
         },
         {
-          "date": "2026-06-20",
-          "publicationDate": "2026-06-25",
+          "date": "2026-06-23",
+          "value": 168.51,
+          "label": "CoStar/STR monthly ADR"
+        },
+        {
+          "date": "2026-06-25",
           "value": 178.03,
-          "occupancy": 71.3,
-          "label": "CoStar/STR weekly U.S. ADR",
-          "url": "https://www.costar.com/products/str-benchmark/resources/press-releases/us-hotel-results-week-ending-20-june"
+          "label": "CoStar/STR weekly ADR"
         },
         {
-          "date": "2026-06-27",
-          "publicationDate": "2026-07-02",
+          "date": "2026-07-02",
           "value": 178.82,
-          "occupancy": 72.2,
-          "label": "CoStar/STR weekly U.S. ADR",
-          "url": "https://www.costar.com/products/str-benchmark/resources/press-releases/us-hotel-results-week-ending-27-june"
+          "label": "CoStar/STR weekly ADR"
         },
         {
-          "date": "2026-07-04",
-          "publicationDate": "2026-07-09",
+          "date": "2026-07-09",
           "value": 167.95,
-          "occupancy": 63.5,
-          "label": "CoStar/STR weekly U.S. ADR",
-          "url": "https://www.costar.com/products/str-benchmark/resources/press-releases/us-hotel-results-week-ending-4-july"
+          "label": "CoStar/STR weekly ADR"
         }
       ],
-      "details": "https://www.costar.com/products/str-benchmark/resources/press-releases: HTTPError HTTP Error 403: Forbidden",
-      "lodgingNsaMm": 0.020276923781625822,
-      "lodgingDriver": "CoStar/STR ADR primary: 2026-06 weekly-derived $173.89 vs 2026-05 official $168.51 (+3.19%); 5 weekly prints, 0 carried days; pass-through +2.03%",
-      "lodgingModel": {
-        "features": [
-          "intercept",
-          "adr_blend",
-          "cpi_persistence"
-        ],
-        "coefficients": [
-          0.004510257730962047,
-          0.012905151071051224,
-          0.513919523903831
-        ],
-        "adrBeta": 0.012905151071051224,
-        "adrLagWeights": {
-          "lag0": 0.6,
-          "lag1": 0.4
-        },
-        "r2": 0.31503316381545554,
-        "observations": 25,
-        "walkForwardMae": 0.020088946168677187,
-        "occupancyCandidateWalkForwardMae": 0.020008466299657586,
-        "occupancyCandidateR2": 0.33206960211171677,
-        "occupancyIncluded": false
-      },
-      "lodgingMonthlyNowcast": {
-        "month": "2026-06",
-        "adr": 173.88866666666664,
-        "occupancy": 69.72333333333333,
-        "observedDays": 30,
-        "carriedDays": 0,
-        "asOf": "2026-07-11",
-        "weeklyPrints": [
-          {
-            "cadence": "weekly",
-            "title": "U.S. hotel results for week ending 6 June",
-            "url": "https://www.costar.com/products/str-benchmark/resources/press-releases/us-hotel-results-week-ending-6-june",
-            "publication_date": "2026-06-12",
-            "adr": 168.43,
-            "occupancy": 67.9,
-            "revpar": 114.3,
-            "month": null,
-            "week_start": "2026-05-31",
-            "week_end": "2026-06-06"
-          },
-          {
-            "cadence": "weekly",
-            "title": "U.S. hotel results for week ending 13 June",
-            "url": "https://www.costar.com/products/str-benchmark/resources/press-releases/us-hotel-results-week-ending-13-june",
-            "publication_date": "2026-06-18",
-            "adr": 172.04,
-            "occupancy": 69.9,
-            "revpar": 120.34,
-            "month": null,
-            "week_start": "2026-06-07",
-            "week_end": "2026-06-13"
-          },
-          {
-            "cadence": "weekly",
-            "title": "U.S. hotel results for week ending 20 June",
-            "url": "https://www.costar.com/products/str-benchmark/resources/press-releases/us-hotel-results-week-ending-20-june",
-            "publication_date": "2026-06-25",
-            "adr": 178.03,
-            "occupancy": 71.3,
-            "revpar": 126.86,
-            "month": null,
-            "week_start": "2026-06-14",
-            "week_end": "2026-06-20"
-          },
-          {
-            "cadence": "weekly",
-            "title": "U.S. hotel results for week ending 27 June",
-            "url": "https://www.costar.com/products/str-benchmark/resources/press-releases/us-hotel-results-week-ending-27-june",
-            "publication_date": "2026-07-02",
-            "adr": 178.82,
-            "occupancy": 72.2,
-            "revpar": 129.09,
-            "month": null,
-            "week_start": "2026-06-21",
-            "week_end": "2026-06-27"
-          },
-          {
-            "cadence": "weekly",
-            "title": "U.S. hotel results for week ending 4 July",
-            "url": "https://www.costar.com/products/str-benchmark/resources/press-releases/us-hotel-results-week-ending-4-july",
-            "publication_date": "2026-07-09",
-            "adr": 167.95,
-            "occupancy": 63.5,
-            "revpar": 106.66,
-            "month": null,
-            "week_start": "2026-06-28",
-            "week_end": "2026-07-04"
-          }
-        ]
-      },
-      "priorOfficial": {
-        "cadence": "monthly",
-        "title": "U.S. hotel performance for May 2026",
-        "url": "https://www.costar.com/products/str-benchmark/resources/press-releases/us-hotel-performance-may-2026",
-        "publication_date": "2026-06-23",
-        "adr": 168.51,
-        "occupancy": 65.7,
-        "revpar": 110.76,
-        "month": "2026-05",
-        "week_start": null,
-        "week_end": null
-      }
+      "details": "CoStar ADR unavailable for target month; Tier 3 Seasonal AR outage fallback required."
     },
     {
       "itemCode": "SEME",
@@ -21860,8 +22542,8 @@
           "label": "USDA combined regional caged white Medium eggs midpoint"
         },
         {
-          "date": "2026-05",
-          "value": 2.191,
+          "date": "2026-06",
+          "value": 2.141,
           "label": "BLS AP Eggs, grade A, large, per doz."
         }
       ],
@@ -21877,28 +22559,28 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-10",
-      "latestValue": 382.68,
+      "lastObservationDate": "2026-07-14",
+      "latestValue": 373.95,
       "unit": "dollars per cwt / retail dollars per lb",
       "observationsUsed": [
         {
-          "date": "2026-07-10",
-          "value": 382.68,
+          "date": "2026-07-14",
+          "value": 373.95,
           "label": "USDA boxed beef Choice cutout"
         },
         {
-          "date": "2026-07-10",
-          "value": 368.33,
+          "date": "2026-07-14",
+          "value": 364.41,
           "label": "USDA boxed beef Select cutout"
         },
         {
-          "date": "2026-07-10",
-          "value": 14.35,
+          "date": "2026-07-14",
+          "value": 9.54,
           "label": "USDA boxed beef Choice/Select spread"
         },
         {
-          "date": "2026-05",
-          "value": 6.745,
+          "date": "2026-06",
+          "value": 6.825,
           "label": "BLS AP Ground beef, 100% beef, per lb. (453.6 gm)"
         }
       ],
@@ -21914,48 +22596,48 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-10",
-      "latestValue": 101.34,
+      "lastObservationDate": "2026-07-14",
+      "latestValue": 101.21,
       "unit": "dollars per cwt / retail dollars per lb",
       "observationsUsed": [
         {
-          "date": "2026-07-10",
-          "value": 101.34,
+          "date": "2026-07-14",
+          "value": 101.21,
           "label": "USDA pork cutout carcass"
         },
         {
-          "date": "2026-07-10",
-          "value": 90.8,
+          "date": "2026-07-14",
+          "value": 91.02,
           "label": "USDA pork cutout loin"
         },
         {
-          "date": "2026-07-10",
-          "value": 118.01,
+          "date": "2026-07-14",
+          "value": 114.55,
           "label": "USDA pork cutout butt"
         },
         {
-          "date": "2026-07-10",
-          "value": 71.37,
+          "date": "2026-07-14",
+          "value": 71.1,
           "label": "USDA pork cutout picnic"
         },
         {
-          "date": "2026-07-10",
-          "value": 173.42,
+          "date": "2026-07-14",
+          "value": 170.99,
           "label": "USDA pork cutout rib"
         },
         {
-          "date": "2026-07-10",
-          "value": 97.92,
+          "date": "2026-07-14",
+          "value": 101.31,
           "label": "USDA pork cutout ham"
         },
         {
-          "date": "2026-07-10",
-          "value": 140.88,
+          "date": "2026-07-14",
+          "value": 136.03,
           "label": "USDA pork cutout belly"
         },
         {
-          "date": "2026-05",
-          "value": 6.712,
+          "date": "2026-06",
+          "value": 6.561,
           "label": "BLS AP Bacon, sliced, per lb. (453.6 gm)"
         }
       ],
@@ -22002,8 +22684,8 @@
           "label": "USDA chicken Whole wings"
         },
         {
-          "date": "2026-05",
-          "value": 2.036,
+          "date": "2026-06",
+          "value": 2.044,
           "label": "BLS AP Chicken, fresh, whole, per lb. (453.6 gm)"
         }
       ],
@@ -22039,8 +22721,8 @@
           "label": "USDA Class IV milk price"
         },
         {
-          "date": "2026-05",
-          "value": 4.217,
+          "date": "2026-06",
+          "value": 4.317,
           "label": "BLS AP Milk, fresh, whole, fortified, per gal. (3.8 lit)"
         }
       ],
@@ -22066,8 +22748,8 @@
           "label": "USDA advanced Base Class I milk price"
         },
         {
-          "date": "2026-05",
-          "value": 4.217,
+          "date": "2026-06",
+          "value": 4.317,
           "label": "BLS AP Milk, fresh, whole, fortified, per gal. (3.8 lit)"
         }
       ],
@@ -22103,53 +22785,53 @@
           "label": "USDA Class IV milk price"
         },
         {
-          "date": "2026-05",
-          "value": 2.191,
+          "date": "2026-06",
+          "value": 2.141,
           "label": "BLS AP Eggs, grade A, large, per doz."
         },
         {
-          "date": "2026-05",
-          "value": 4.217,
+          "date": "2026-06",
+          "value": 4.317,
           "label": "BLS AP Milk, fresh, whole, fortified, per gal. (3.8 lit)"
         },
         {
-          "date": "2026-05",
-          "value": 1.83,
+          "date": "2026-06",
+          "value": 1.814,
           "label": "BLS AP Bread, white, pan, per lb. (453.6 gm)"
         },
         {
-          "date": "2026-05",
-          "value": 6.745,
+          "date": "2026-06",
+          "value": 6.825,
           "label": "BLS AP Ground beef, 100% beef, per lb. (453.6 gm)"
         },
         {
-          "date": "2026-05",
-          "value": 6.712,
+          "date": "2026-06",
+          "value": 6.561,
           "label": "BLS AP Bacon, sliced, per lb. (453.6 gm)"
         },
         {
-          "date": "2026-05",
-          "value": 2.036,
+          "date": "2026-06",
+          "value": 2.044,
           "label": "BLS AP Chicken, fresh, whole, per lb. (453.6 gm)"
         },
         {
-          "date": "2026-05",
-          "value": 0.646,
+          "date": "2026-06",
+          "value": 0.645,
           "label": "BLS AP Bananas, per lb. (453.6 gm)"
         },
         {
-          "date": "2026-05",
-          "value": 2.489,
+          "date": "2026-06",
+          "value": 2.154,
           "label": "BLS AP Tomatoes, field grown, per lb. (453.6 gm)"
         },
         {
-          "date": "2026-05",
-          "value": 0.894,
+          "date": "2026-06",
+          "value": 0.923,
           "label": "BLS AP Potatoes, white, per lb. (453.6 gm)"
         },
         {
-          "date": "2026-05",
-          "value": 9.511,
+          "date": "2026-06",
+          "value": 9.457,
           "label": "BLS AP Coffee, 100%, ground roast, all sizes, per lb. (453.6 gm)"
         }
       ],
@@ -22165,13 +22847,13 @@
       ],
       "status": "partial_live_fallback",
       "fallbackUsed": true,
-      "lastObservationDate": "2026-05",
-      "latestValue": 0.646,
+      "lastObservationDate": "2026-06",
+      "latestValue": 0.645,
       "unit": "terminal market price / retail dollars",
       "observationsUsed": [
         {
-          "date": "2026-05",
-          "value": 0.646,
+          "date": "2026-06",
+          "value": 0.645,
           "label": "BLS AP Bananas, per lb. (453.6 gm)"
         }
       ],
@@ -22187,18 +22869,18 @@
       ],
       "status": "partial_live_fallback",
       "fallbackUsed": true,
-      "lastObservationDate": "2026-05",
-      "latestValue": 2.489,
+      "lastObservationDate": "2026-06",
+      "latestValue": 2.154,
       "unit": "terminal market price / retail dollars",
       "observationsUsed": [
         {
-          "date": "2026-05",
-          "value": 2.489,
+          "date": "2026-06",
+          "value": 2.154,
           "label": "BLS AP Tomatoes, field grown, per lb. (453.6 gm)"
         },
         {
-          "date": "2026-05",
-          "value": 0.894,
+          "date": "2026-06",
+          "value": 0.923,
           "label": "BLS AP Potatoes, white, per lb. (453.6 gm)"
         }
       ],
@@ -22214,13 +22896,13 @@
       ],
       "status": "partial_live_fallback",
       "fallbackUsed": true,
-      "lastObservationDate": "2026-05",
-      "latestValue": 9.511,
+      "lastObservationDate": "2026-06",
+      "latestValue": 9.457,
       "unit": "futures settlement / retail dollars per lb",
       "observationsUsed": [
         {
-          "date": "2026-05",
-          "value": 9.511,
+          "date": "2026-06",
+          "value": 9.457,
           "label": "BLS AP Coffee, 100%, ground roast, all sizes, per lb. (453.6 gm)"
         }
       ],
@@ -22278,13 +22960,13 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-11",
-      "latestValue": 3.882,
+      "lastObservationDate": "2026-07-15",
+      "latestValue": 3.89,
       "unit": "dollars per gallon",
       "observationsUsed": [
         {
-          "date": "2026-07-11",
-          "value": 3.882,
+          "date": "2026-07-15",
+          "value": 3.89,
           "label": "AAA current national regular"
         }
       ],
@@ -22300,18 +22982,18 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-10",
-      "latestValue": 140.88,
+      "lastObservationDate": "2026-07-14",
+      "latestValue": 136.03,
       "unit": "dollars per cwt / retail dollars per lb",
       "observationsUsed": [
         {
-          "date": "2026-07-10",
-          "value": 140.88,
+          "date": "2026-07-14",
+          "value": 136.03,
           "label": "USDA pork cutout belly"
         },
         {
-          "date": "2026-05",
-          "value": 6.712,
+          "date": "2026-06",
+          "value": 6.561,
           "label": "BLS AP Bacon, sliced, per lb. (453.6 gm)"
         }
       ],
@@ -22325,13 +23007,13 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-10",
-      "latestValue": 97.92,
+      "lastObservationDate": "2026-07-14",
+      "latestValue": 101.31,
       "unit": "dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-07-10",
-          "value": 97.92,
+          "date": "2026-07-14",
+          "value": 101.31,
           "label": "USDA pork cutout ham"
         }
       ],
@@ -22345,13 +23027,13 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-10",
-      "latestValue": 90.8,
+      "lastObservationDate": "2026-07-14",
+      "latestValue": 91.02,
       "unit": "dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-07-10",
-          "value": 90.8,
+          "date": "2026-07-14",
+          "value": 91.02,
           "label": "USDA pork cutout loin"
         }
       ],
@@ -22365,13 +23047,13 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-10",
-      "latestValue": 101.34,
+      "lastObservationDate": "2026-07-14",
+      "latestValue": 101.21,
       "unit": "dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-07-10",
-          "value": 101.34,
+          "date": "2026-07-14",
+          "value": 101.21,
           "label": "USDA pork cutout carcass"
         }
       ],
@@ -22387,28 +23069,28 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-10",
-      "latestValue": 331.59,
+      "lastObservationDate": "2026-07-14",
+      "latestValue": 326.84,
       "unit": "dollars per cwt / retail dollars per lb",
       "observationsUsed": [
         {
-          "date": "2026-07-10",
-          "value": 331.59,
+          "date": "2026-07-14",
+          "value": 326.84,
           "label": "USDA boxed beef Choice primal Chuck"
         },
         {
-          "date": "2026-07-10",
-          "value": 322.27,
+          "date": "2026-07-14",
+          "value": 318.66,
           "label": "USDA boxed beef Choice primal Round"
         },
         {
-          "date": "2026-07-10",
-          "value": 14.35,
+          "date": "2026-07-14",
+          "value": 9.54,
           "label": "USDA boxed beef Choice/Select spread"
         },
         {
-          "date": "2026-05",
-          "value": 6.745,
+          "date": "2026-06",
+          "value": 6.825,
           "label": "BLS AP Ground beef, 100% beef, per lb. (453.6 gm)"
         }
       ],
@@ -22422,23 +23104,23 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-10",
-      "latestValue": 331.59,
+      "lastObservationDate": "2026-07-14",
+      "latestValue": 326.84,
       "unit": "dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-07-10",
-          "value": 331.59,
+          "date": "2026-07-14",
+          "value": 326.84,
           "label": "USDA boxed beef Choice primal Chuck"
         },
         {
-          "date": "2026-07-10",
-          "value": 322.27,
+          "date": "2026-07-14",
+          "value": 318.66,
           "label": "USDA boxed beef Choice primal Round"
         },
         {
-          "date": "2026-07-10",
-          "value": 14.35,
+          "date": "2026-07-14",
+          "value": 9.54,
           "label": "USDA boxed beef Choice/Select spread"
         }
       ],
@@ -22452,23 +23134,23 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-10",
-      "latestValue": 477.15,
+      "lastObservationDate": "2026-07-14",
+      "latestValue": 466.3,
       "unit": "dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-07-10",
-          "value": 477.15,
+          "date": "2026-07-14",
+          "value": 466.3,
           "label": "USDA boxed beef Choice primal Loin"
         },
         {
-          "date": "2026-07-10",
-          "value": 571.65,
+          "date": "2026-07-14",
+          "value": 542.93,
           "label": "USDA boxed beef Choice primal Rib"
         },
         {
-          "date": "2026-07-10",
-          "value": 14.35,
+          "date": "2026-07-14",
+          "value": 9.54,
           "label": "USDA boxed beef Choice/Select spread"
         }
       ],
@@ -22482,18 +23164,18 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-10",
-      "latestValue": 382.68,
+      "lastObservationDate": "2026-07-14",
+      "latestValue": 373.95,
       "unit": "dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-07-10",
-          "value": 382.68,
+          "date": "2026-07-14",
+          "value": 373.95,
           "label": "USDA boxed beef Choice cutout"
         },
         {
-          "date": "2026-07-10",
-          "value": 14.35,
+          "date": "2026-07-14",
+          "value": 9.54,
           "label": "USDA boxed beef Choice/Select spread"
         }
       ],
@@ -22540,8 +23222,8 @@
           "label": "USDA chicken Whole wings"
         },
         {
-          "date": "2026-05",
-          "value": 2.036,
+          "date": "2026-06",
+          "value": 2.044,
           "label": "BLS AP Chicken, fresh, whole, per lb. (453.6 gm)"
         }
       ],
@@ -23484,13 +24166,17 @@
     "notes": "No fitted ridge profiles are reported until live or cached futures histories are available; USDA food feeds remain primary."
   },
   "derived": {
-    "gasolineEiaNsaMm": -0.09592007590556462,
-    "gasolineEiaDriver": "EIA weekly regular gasoline calendar-month average $4.050/gal vs prior $4.479/gal using 5 weekly prints",
-    "jetFuelEiaNsaMm": -0.22851478164663785,
-    "jetFuelEiaDriver": "EIA Gulf Coast jet fuel calendar-month average $3.042/gal vs prior $3.943/gal using 21 daily prints",
-    "shelterMarketNsaMm": 0.0009556458262015878,
-    "shelterMarketDriver": "lagged external shelter overlay (2024-12 to 2025-12): Zillow ZORI 0.15% avg m/m over 13 lagged obs; Apartment List -0.14% avg m/m over 13 lagged obs; BLS/Cleveland Fed NTRI 0.33% avg m/m over 4 lagged obs",
-    "lodgingCostarNsaMm": 0.020276923781625822,
-    "lodgingCostarDriver": "CoStar/STR ADR primary: 2026-06 weekly-derived $173.89 vs 2026-05 official $168.51 (+3.19%); 5 weekly prints, 0 carried days; pass-through +2.03%"
+    "gasolineEiaNsaMm": -0.05768470960094829,
+    "gasolineEiaDriver": "EIA weekly regular gasoline calendar-month average $3.816/gal vs prior $4.050/gal using 2 weekly prints",
+    "dieselEiaNsaMm": -0.06704088538556463,
+    "dieselEiaDriver": "EIA weekly U.S. No. 2 diesel retail calendar-month average $4.687/gal vs prior $5.024/gal using 2 weekly prints",
+    "heatingOilEiaNsaMm": -0.04948367370485751,
+    "heatingOilEiaDriver": "EIA New York Harbor No. 2 heating oil spot calendar-month average $3.138/gal vs prior $3.302/gal using 3 daily prints",
+    "jetFuelEiaNsaMm": -0.09039671853962472,
+    "jetFuelEiaDriver": "EIA Gulf Coast jet fuel calendar-month average $2.767/gal vs prior $3.042/gal using 3 daily prints",
+    "shelterMarketNsaMm": 0.0027353649185110065,
+    "shelterMarketDriver": "lagged external shelter overlay (2025-01 to 2026-01): Zillow ZORI 0.17% avg m/m over 13 lagged obs; Apartment List -0.11% avg m/m over 13 lagged obs; BLS/Cleveland Fed NTRI 0.98% avg m/m over 3 lagged obs",
+    "lodgingCostarNsaMm": null,
+    "lodgingCostarDriver": null
   }
 }
