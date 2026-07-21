@@ -6,7 +6,7 @@ import { getDashboardData } from "@/lib/data";
 import releaseCalendar from "@/data/release-calendar.json";
 
 export const metadata: Metadata = {
-  title: "CPI Component Dashboard",
+  title: "CPI Component Model",
   description: "Component-level CPI-U dashboard powered by U.S. Bureau of Labor Statistics data."
 };
 
@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="border-b border-line bg-white">
           <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-4 md:flex-row md:items-center md:justify-between">
             <Link href="/" className="focus-ring rounded-sm">
-              <div className="text-lg font-semibold tracking-tight">CPI Component Dashboard</div>
+              <div className="text-lg font-semibold tracking-tight">CPI Component Model</div>
               <div className="text-xs text-muted">U.S. city average, CPI-U</div>
             </Link>
             <nav className="flex flex-wrap gap-2 text-sm">
