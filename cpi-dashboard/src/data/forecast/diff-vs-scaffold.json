@@ -6,11 +6,11 @@
       "itemCode": "SETB01",
       "name": "Gasoline (all types)",
       "modelWeight": 3.851923452427858,
-      "liveNsaMm": -0.05768470960094829,
+      "liveNsaMm": -0.02897817068352415,
       "scaffoldNsaMm": -0.04440027643525725,
-      "deltaContributionPp": -0.05117061966313578,
+      "deltaContributionPp": 0.059404770830923284,
       "flagged": true,
-      "liveDriver": "EIA weekly regular gasoline calendar-month average $3.816/gal vs prior $4.050/gal using 2 weekly prints",
+      "liveDriver": "EIA weekly regular gasoline calendar-month average $3.932/gal vs prior $4.050/gal using 4 weekly prints",
       "scaffoldDriver": "free fallback: recent CPI-timed movement + same-month seasonal average"
     },
     {
@@ -25,36 +25,36 @@
       "scaffoldDriver": "free fallback: recent CPI-timed movement + same-month seasonal average"
     },
     {
+      "itemCode": "SEHE01",
+      "name": "Fuel oil",
+      "modelWeight": 0.10645994902674626,
+      "liveNsaMm": 0.04440294669292383,
+      "scaffoldNsaMm": -0.05663353704669848,
+      "deltaContributionPp": 0.010756338908761869,
+      "flagged": false,
+      "liveDriver": "EIA New York Harbor No. 2 heating oil spot calendar-month average $3.593/gal vs prior $3.302/gal using 13 daily prints; fitted retail pass-through beta 0.504 on 129 prior months; NSA forecast 4.44%",
+      "scaffoldDriver": "free fallback: recent CPI-timed movement + same-month seasonal average"
+    },
+    {
       "itemCode": "SETG01",
       "name": "Airline fares",
       "modelWeight": 1.0909009562757537,
-      "liveNsaMm": -0.018621913327725816,
+      "liveNsaMm": -0.002414957807121575,
       "scaffoldNsaMm": -0.007774307102970848,
-      "deltaContributionPp": -0.011833664003888012,
+      "deltaContributionPp": 0.005846519271857759,
       "flagged": false,
-      "liveDriver": "airfare fallback -0.78% plus guarded jet-fuel pass-through -1.08% from EIA Gulf Coast jet fuel calendar-month average $2.767/gal vs prior $3.042/gal using 3 daily prints",
+      "liveDriver": "airfare fallback -0.78% plus guarded jet-fuel pass-through 0.54% from EIA Gulf Coast jet fuel calendar-month average $3.177/gal vs prior $3.042/gal using 13 daily prints",
       "scaffoldDriver": "free fallback: recent CPI-timed movement + same-month seasonal average"
     },
     {
       "itemCode": "SETB02",
       "name": "Other motor fuels",
       "modelWeight": 0.11907086857380196,
-      "liveNsaMm": -0.060554312624239645,
+      "liveNsaMm": -0.012324816301637738,
       "scaffoldNsaMm": -0.029109223342455824,
-      "deltaContributionPp": -0.00374419409316275,
+      "deltaContributionPp": 0.0019985339248464466,
       "flagged": false,
-      "liveDriver": "EIA weekly U.S. No. 2 diesel retail calendar-month average $4.687/gal vs prior $5.024/gal using 2 weekly prints; fitted retail pass-through beta 0.903 on 129 prior months; NSA forecast -6.06%",
-      "scaffoldDriver": "free fallback: recent CPI-timed movement + same-month seasonal average"
-    },
-    {
-      "itemCode": "SEHE01",
-      "name": "Fuel oil",
-      "modelWeight": 0.10645994902674626,
-      "liveNsaMm": -0.024925175958927726,
-      "scaffoldNsaMm": -0.05663353704669848,
-      "deltaContributionPp": 0.003375670505125739,
-      "flagged": false,
-      "liveDriver": "EIA New York Harbor No. 2 heating oil spot calendar-month average $3.138/gal vs prior $3.302/gal using 3 daily prints; fitted retail pass-through beta 0.504 on 129 prior months; NSA forecast -2.49%",
+      "liveDriver": "EIA weekly U.S. No. 2 diesel retail calendar-month average $4.955/gal vs prior $5.024/gal using 4 weekly prints; fitted retail pass-through beta 0.903 on 129 prior months; NSA forecast -1.23%",
       "scaffoldDriver": "free fallback: recent CPI-timed movement + same-month seasonal average"
     },
     {
@@ -94,11 +94,11 @@
       "itemCode": "SEFH",
       "name": "Eggs",
       "modelWeight": 0.11245857718425134,
-      "liveNsaMm": -0.006179020956125041,
+      "liveNsaMm": -0.007266168843448984,
       "scaffoldNsaMm": -0.007671217625512818,
-      "deltaContributionPp": 0.00016781031431842815,
+      "deltaContributionPp": 4.555120972111264e-05,
       "flagged": false,
-      "liveDriver": "EGGS commodity-complex factor: cuts USDA combined regional caged white Large eggs midpoint, USDA combined regional caged white Extra Large eggs midpoint, USDA combined regional caged white Medium eggs midpoint; lag 0, loading 1.00; live cut adjustment 0.21 pp",
+      "liveDriver": "EGGS commodity-complex factor: cuts USDA combined regional caged white Large eggs midpoint, USDA combined regional caged white Extra Large eggs midpoint, USDA combined regional caged white Medium eggs midpoint; lag 0, loading 1.00; live cut adjustment 0.10 pp",
       "scaffoldDriver": "free fallback: recent CPI-timed movement + same-month seasonal average"
     },
     {

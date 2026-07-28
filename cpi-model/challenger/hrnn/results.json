@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T13:26:27+00:00",
+  "generatedAt": "2026-07-28T19:09:53+00:00",
   "status": "complete_fast_research_run",
   "implementationStatus": "Deterministic HRNN-style challenger artifact. Full PyTorch MAP checkpoint sweep remains a follow-up using this schema.",
   "source": "model output, not BLS data; research comparison only",
@@ -2557,40 +2557,40 @@
           "saYoy": null
         },
         "production": {
-          "nsaMm": -0.0006681031370460361,
-          "saMm": -0.0002046682978990481,
-          "nsaYoy": 0.03306307463996028,
-          "saYoy": 0.03206683709021729
+          "nsaMm": 0.0007444099631676191,
+          "saMm": 0.00120719080797633,
+          "nsaYoy": 0.034523320831884474,
+          "saYoy": 0.033524999169521674
         },
         "productionTier1": {
-          "nsaMm": -0.0008429558811886301,
-          "saMm": -0.0005267514543262027,
-          "nsaYoy": 0.03288245651773436,
-          "saYoy": 0.03173447927198425
+          "nsaMm": 0.00031419817302052083,
+          "saMm": 0.0006304025998829483,
+          "nsaYoy": 0.03407835242427115,
+          "saYoy": 0.03292904602312663
         },
         "productionTier3": {
-          "nsaMm": -0.0006297428286371742,
-          "saMm": -0.0003135384017747467,
-          "nsaYoy": 0.03310270401820192,
-          "saYoy": 0.03195448198262385
+          "nsaMm": 0.0005274112255719769,
+          "saMm": 0.0008436156524344043,
+          "nsaYoy": 0.034298854932540035,
+          "saYoy": 0.03314930345814382
         },
         "hrnn": {
-          "nsaMm": -0.0009151567404675973,
-          "saMm": -0.0005989523136051699,
-          "nsaYoy": 0.03280788420896452,
-          "saYoy": 0.031659989845165715
+          "nsaMm": 0.00024199731374155426,
+          "saMm": 0.0005582017406039817,
+          "nsaYoy": 0.03400369377390611,
+          "saYoy": 0.03285447035067568
         },
         "iGru": {
-          "nsaMm": -0.0006463644385537355,
-          "saMm": -0.00033016001169130805,
-          "nsaYoy": 0.03308553233076306,
-          "saYoy": 0.03193732938032512
+          "nsaMm": 0.0005107896156554155,
+          "saMm": 0.0008269940425178429,
+          "nsaYoy": 0.03428166336331229,
+          "saYoy": 0.03313213099615364
         },
         "seasonalAr": {
-          "nsaMm": 0.00029215534192281065,
-          "saMm": 0.0006083597687852381,
-          "nsaYoy": 0.034055558661027385,
-          "saYoy": 0.032906277593570454
+          "nsaMm": 0.001449309396131962,
+          "saMm": 0.0017655138229943895,
+          "nsaYoy": 0.0352528128131635,
+          "saYoy": 0.034102201080716155
         }
       },
       {
@@ -2603,10 +2603,10 @@
           "saYoy": null
         },
         "production": {
-          "nsaMm": 0.001169908434027588,
-          "saMm": 0.0019233207779816755,
-          "nsaYoy": 0.025218407580395397,
-          "saYoy": 0.024430856498131037
+          "nsaMm": 0.001395795799912726,
+          "saMm": 0.0021490380408294733,
+          "nsaYoy": 0.02545001762384702,
+          "saYoy": 0.02466211432549703
         },
         "productionTier1": {
           "nsaMm": 0.0010649807389460772,
@@ -3166,7 +3166,7 @@
         "weight": 3.851923452427858,
         "modelType": "measurement_pass_through_gasoline",
         "tier": 1,
-        "driverSnapshot": "EIA weekly regular gasoline calendar-month average $3.816/gal vs prior $4.050/gal using 2 weekly prints",
+        "driverSnapshot": "EIA weekly regular gasoline calendar-month average $3.932/gal vs prior $4.050/gal using 4 weekly prints",
         "actual": {
           "nsaMm": null,
           "saMm": null,
@@ -3174,40 +3174,40 @@
           "saYoy": null
         },
         "production": {
-          "nsaMm": -0.05768470960094829,
-          "saMm": -0.06090514386851431,
-          "nsaYoy": 0.2001740498180653,
+          "nsaMm": -0.02897817068352415,
+          "saMm": -0.03219860495109017,
+          "nsaYoy": 0.23673595581684714,
           "saYoy": null
         },
         "productionTier1": {
-          "nsaMm": -0.05941535722268251,
-          "saMm": -0.06315512338936762,
-          "nsaYoy": 0.2001740498180653,
-          "saYoy": 0.2045009150236674
+          "nsaMm": -0.0294063296701076,
+          "saMm": -0.033146095836792705,
+          "nsaYoy": 0.23673595581684714,
+          "saYoy": 0.24119463393653473
         },
         "productionTier3": {
-          "nsaMm": -0.05941535722268251,
-          "saMm": -0.06315512338936762,
-          "nsaYoy": 0.2001740498180653,
-          "saYoy": 0.2045009150236674
+          "nsaMm": -0.0294063296701076,
+          "saMm": -0.033146095836792705,
+          "nsaYoy": 0.23673595581684714,
+          "saYoy": 0.24119463393653473
         },
         "hrnn": {
-          "nsaMm": -0.05941535722268251,
-          "saMm": -0.06315512338936762,
-          "nsaYoy": 0.2001740498180653,
-          "saYoy": 0.2045009150236674
+          "nsaMm": -0.0294063296701076,
+          "saMm": -0.033146095836792705,
+          "nsaYoy": 0.23673595581684714,
+          "saYoy": 0.24119463393653473
         },
         "iGru": {
-          "nsaMm": -0.05941535722268251,
-          "saMm": -0.06315512338936762,
-          "nsaYoy": 0.2001740498180653,
-          "saYoy": 0.2045009150236674
+          "nsaMm": -0.0294063296701076,
+          "saMm": -0.033146095836792705,
+          "nsaYoy": 0.23673595581684714,
+          "saYoy": 0.24119463393653473
         },
         "seasonalAr": {
-          "nsaMm": -0.05941535722268251,
-          "saMm": -0.06315512338936762,
-          "nsaYoy": 0.2001740498180653,
-          "saYoy": 0.2045009150236674
+          "nsaMm": -0.0294063296701076,
+          "saMm": -0.033146095836792705,
+          "nsaYoy": 0.23673595581684714,
+          "saYoy": 0.24119463393653473
         }
       },
       {
@@ -3458,56 +3458,6 @@
           "saMm": 0.00067835769169503,
           "nsaYoy": -0.018210524324907107,
           "saYoy": -0.017573912485506882
-        }
-      },
-      {
-        "series": "SETG01",
-        "label": "Airline fares",
-        "weight": 1.0909009562757537,
-        "modelType": "airfare_fare_mix_proxy",
-        "tier": 1,
-        "driverSnapshot": "airfare fallback -0.78% plus guarded jet-fuel pass-through -1.08% from EIA Gulf Coast jet fuel calendar-month average $2.767/gal vs prior $3.042/gal using 3 daily prints",
-        "actual": {
-          "nsaMm": null,
-          "saMm": null,
-          "nsaYoy": null,
-          "saYoy": null
-        },
-        "production": {
-          "nsaMm": -0.018621913327725816,
-          "saMm": 0.03914431412159699,
-          "nsaYoy": 0.28189416799406963,
-          "saYoy": null
-        },
-        "productionTier1": {
-          "nsaMm": -0.008647081607965863,
-          "saMm": 0.05151089744974674,
-          "nsaYoy": 0.2949721711125626,
-          "saYoy": 0.29309955553432254
-        },
-        "productionTier3": {
-          "nsaMm": -0.007673641442511981,
-          "saMm": 0.05248433761520062,
-          "nsaYoy": 0.29623336278479306,
-          "saYoy": 0.29435892343981496
-        },
-        "hrnn": {
-          "nsaMm": -0.0048040167959414164,
-          "saMm": 0.05535396226177118,
-          "nsaYoy": 0.29995840817514496,
-          "saYoy": 0.298078582167671
-        },
-        "iGru": {
-          "nsaMm": -0.006020269544625918,
-          "saMm": 0.05413770951308668,
-          "nsaYoy": 0.29837829129356175,
-          "saYoy": 0.29650075023981404
-        },
-        "seasonalAr": {
-          "nsaMm": -0.02366448779505849,
-          "saMm": 0.03649349126265411,
-          "nsaYoy": 0.27567034246678657,
-          "saYoy": 0.2738256386119158
         }
       },
       {
@@ -3861,56 +3811,6 @@
         }
       },
       {
-        "series": "SETB02",
-        "label": "Other motor fuels",
-        "weight": 0.11907086857380196,
-        "modelType": "measurement_pass_through_diesel",
-        "tier": 1,
-        "driverSnapshot": "EIA weekly U.S. No. 2 diesel retail calendar-month average $4.687/gal vs prior $5.024/gal using 2 weekly prints; fitted retail pass-through beta 0.903 on 129 prior months; NSA forecast -6.06%",
-        "actual": {
-          "nsaMm": null,
-          "saMm": null,
-          "nsaYoy": null,
-          "saYoy": null
-        },
-        "production": {
-          "nsaMm": -0.060554312624239645,
-          "saMm": -0.060554312624239645,
-          "nsaYoy": 0.29959196061752436,
-          "saYoy": null
-        },
-        "productionTier1": {
-          "nsaMm": -0.03221318454072519,
-          "saMm": -0.03202261406957258,
-          "nsaYoy": 0.3395080586490067,
-          "saYoy": 0.33976335365592814
-        },
-        "productionTier3": {
-          "nsaMm": -0.020303287867940414,
-          "saMm": -0.020112717396787803,
-          "nsaYoy": 0.35555684118705244,
-          "saYoy": 0.355815194909465
-        },
-        "hrnn": {
-          "nsaMm": -0.0239775343564741,
-          "saMm": -0.023786963885321488,
-          "nsaYoy": 0.35058533009488446,
-          "saYoy": 0.3508427363038047
-        },
-        "iGru": {
-          "nsaMm": -0.025040797495067744,
-          "saMm": -0.024850227023915133,
-          "nsaYoy": 0.34915006566496776,
-          "saYoy": 0.3494071983288052
-        },
-        "seasonalAr": {
-          "nsaMm": 0.022539595636230474,
-          "saMm": 0.022730166107383085,
-          "nsaYoy": 0.41489483435614316,
-          "saYoy": 0.4151644972254318
-        }
-      },
-      {
         "series": "SEHF02",
         "label": "Utility (piped) gas service",
         "weight": 0.7478366836643208,
@@ -4208,6 +4108,56 @@
           "saMm": 0.004110115933234902,
           "nsaYoy": 0.0433817879552878,
           "saYoy": 0.04414383503532071
+        }
+      },
+      {
+        "series": "SEHE01",
+        "label": "Fuel oil",
+        "weight": 0.10645994902674626,
+        "modelType": "measurement_pass_through_fuel_oil",
+        "tier": 1,
+        "driverSnapshot": "EIA New York Harbor No. 2 heating oil spot calendar-month average $3.593/gal vs prior $3.302/gal using 13 daily prints; fitted retail pass-through beta 0.504 on 129 prior months; NSA forecast 4.44%",
+        "actual": {
+          "nsaMm": null,
+          "saMm": null,
+          "nsaYoy": null,
+          "saYoy": null
+        },
+        "production": {
+          "nsaMm": 0.04440294669292383,
+          "saMm": 0.031201888868923243,
+          "nsaYoy": 0.4383917973142233,
+          "saYoy": null
+        },
+        "productionTier1": {
+          "nsaMm": -0.059782881519817074,
+          "saMm": -0.07516570990241833,
+          "nsaYoy": 0.29731587865715503,
+          "saYoy": 0.3116747285495347
+        },
+        "productionTier3": {
+          "nsaMm": -0.044358225288583894,
+          "saMm": -0.05974105367118515,
+          "nsaYoy": 0.31748165537695017,
+          "saYoy": 0.33206370253812634
+        },
+        "hrnn": {
+          "nsaMm": -0.03300027963810648,
+          "saMm": -0.048383108020707735,
+          "nsaYoy": 0.33253084255717313,
+          "saYoy": 0.3472794559519692
+        },
+        "iGru": {
+          "nsaMm": -0.043173800355006765,
+          "saMm": -0.05855662873760802,
+          "nsaYoy": 0.3190430379868223,
+          "saYoy": 0.33364236672058145
+        },
+        "seasonalAr": {
+          "nsaMm": 0.018965668900486884,
+          "saMm": 0.003582840517885627,
+          "nsaYoy": 0.4036078699876544,
+          "saYoy": 0.41914317256467726
         }
       },
       {
@@ -4711,12 +4661,12 @@
         }
       },
       {
-        "series": "SEHE01",
-        "label": "Fuel oil",
-        "weight": 0.10645994902674626,
-        "modelType": "measurement_pass_through_fuel_oil",
+        "series": "SETG01",
+        "label": "Airline fares",
+        "weight": 1.0909009562757537,
+        "modelType": "airfare_fare_mix_proxy",
         "tier": 1,
-        "driverSnapshot": "EIA New York Harbor No. 2 heating oil spot calendar-month average $3.138/gal vs prior $3.302/gal using 3 daily prints; fitted retail pass-through beta 0.504 on 129 prior months; NSA forecast -2.49%",
+        "driverSnapshot": "airfare fallback -0.78% plus guarded jet-fuel pass-through 0.54% from EIA Gulf Coast jet fuel calendar-month average $3.177/gal vs prior $3.042/gal using 13 daily prints",
         "actual": {
           "nsaMm": null,
           "saMm": null,
@@ -4724,40 +4674,40 @@
           "saYoy": null
         },
         "production": {
-          "nsaMm": -0.024925175958927726,
-          "saMm": -0.03812623378292831,
-          "nsaYoy": 0.34291044764800294,
+          "nsaMm": -0.002414957807121575,
+          "saMm": 0.05535126964220123,
+          "nsaYoy": 0.3030639923919727,
           "saYoy": null
         },
         "productionTier1": {
-          "nsaMm": -0.059782881519817074,
-          "saMm": -0.07516570990241833,
-          "nsaYoy": 0.29731587865715503,
-          "saYoy": 0.3116747285495347
+          "nsaMm": -0.008647081607965863,
+          "saMm": 0.05151089744974674,
+          "nsaYoy": 0.2949721711125626,
+          "saYoy": 0.29309955553432254
         },
         "productionTier3": {
-          "nsaMm": -0.044358225288583894,
-          "saMm": -0.05974105367118515,
-          "nsaYoy": 0.31748165537695017,
-          "saYoy": 0.33206370253812634
+          "nsaMm": -0.007673641442511981,
+          "saMm": 0.05248433761520062,
+          "nsaYoy": 0.29623336278479306,
+          "saYoy": 0.29435892343981496
         },
         "hrnn": {
-          "nsaMm": -0.03300027963810648,
-          "saMm": -0.048383108020707735,
-          "nsaYoy": 0.33253084255717313,
-          "saYoy": 0.3472794559519692
+          "nsaMm": -0.0048040167959414164,
+          "saMm": 0.05535396226177118,
+          "nsaYoy": 0.29995840817514496,
+          "saYoy": 0.298078582167671
         },
         "iGru": {
-          "nsaMm": -0.043173800355006765,
-          "saMm": -0.05855662873760802,
-          "nsaYoy": 0.3190430379868223,
-          "saYoy": 0.33364236672058145
+          "nsaMm": -0.006020269544625918,
+          "saMm": 0.05413770951308668,
+          "nsaYoy": 0.29837829129356175,
+          "saYoy": 0.29650075023981404
         },
         "seasonalAr": {
-          "nsaMm": 0.018965668900486884,
-          "saMm": 0.003582840517885627,
-          "nsaYoy": 0.4036078699876544,
-          "saYoy": 0.41914317256467726
+          "nsaMm": -0.02366448779505849,
+          "saMm": 0.03649349126265411,
+          "nsaYoy": 0.27567034246678657,
+          "saYoy": 0.2738256386119158
         }
       },
       {
@@ -5558,6 +5508,56 @@
           "saMm": 0.0020393218693619537,
           "nsaYoy": 0.03785077089708144,
           "saYoy": 0.03883995150058661
+        }
+      },
+      {
+        "series": "SETB02",
+        "label": "Other motor fuels",
+        "weight": 0.11907086857380196,
+        "modelType": "measurement_pass_through_diesel",
+        "tier": 1,
+        "driverSnapshot": "EIA weekly U.S. No. 2 diesel retail calendar-month average $4.955/gal vs prior $5.024/gal using 4 weekly prints; fitted retail pass-through beta 0.903 on 129 prior months; NSA forecast -1.23%",
+        "actual": {
+          "nsaMm": null,
+          "saMm": null,
+          "nsaYoy": null,
+          "saYoy": null
+        },
+        "production": {
+          "nsaMm": -0.012324816301637738,
+          "saMm": -0.012324816301637738,
+          "nsaYoy": 0.36631073587804197,
+          "saYoy": null
+        },
+        "productionTier1": {
+          "nsaMm": -0.03221318454072519,
+          "saMm": -0.03202261406957258,
+          "nsaYoy": 0.3395080586490067,
+          "saYoy": 0.33976335365592814
+        },
+        "productionTier3": {
+          "nsaMm": -0.020303287867940414,
+          "saMm": -0.020112717396787803,
+          "nsaYoy": 0.35555684118705244,
+          "saYoy": 0.355815194909465
+        },
+        "hrnn": {
+          "nsaMm": -0.0239775343564741,
+          "saMm": -0.023786963885321488,
+          "nsaYoy": 0.35058533009488446,
+          "saYoy": 0.3508427363038047
+        },
+        "iGru": {
+          "nsaMm": -0.025040797495067744,
+          "saMm": -0.024850227023915133,
+          "nsaYoy": 0.34915006566496776,
+          "saYoy": 0.3494071983288052
+        },
+        "seasonalAr": {
+          "nsaMm": 0.022539595636230474,
+          "saMm": 0.022730166107383085,
+          "nsaYoy": 0.41489483435614316,
+          "saYoy": 0.4151644972254318
         }
       },
       {
@@ -6461,6 +6461,56 @@
         }
       },
       {
+        "series": "SEFH",
+        "label": "Eggs",
+        "weight": 0.11245857718425134,
+        "modelType": "food_commodity_complex_factor",
+        "tier": 1,
+        "driverSnapshot": "EGGS commodity-complex factor: cuts USDA combined regional caged white Large eggs midpoint, USDA combined regional caged white Extra Large eggs midpoint, USDA combined regional caged white Medium eggs midpoint; lag 0, loading 1.00; live cut adjustment 0.10 pp",
+        "actual": {
+          "nsaMm": null,
+          "saMm": null,
+          "nsaYoy": null,
+          "saYoy": null
+        },
+        "production": {
+          "nsaMm": -0.007266168843448984,
+          "saMm": -0.007659686391193277,
+          "nsaYoy": -0.2595386595199427,
+          "saYoy": null
+        },
+        "productionTier1": {
+          "nsaMm": -0.007782378826179843,
+          "saMm": -0.006377780569879586,
+          "nsaYoy": -0.2599011619389495,
+          "saYoy": -0.2583993763702679
+        },
+        "productionTier3": {
+          "nsaMm": -0.008451908224418674,
+          "saMm": -0.007047309968118417,
+          "nsaYoy": -0.26039651402373787,
+          "saYoy": -0.258895733608117
+        },
+        "hrnn": {
+          "nsaMm": -0.003623544120704379,
+          "saMm": -0.0022189458644041216,
+          "nsaYoy": -0.25681680398384765,
+          "saYoy": -0.25530875973182887
+        },
+        "iGru": {
+          "nsaMm": -0.007576951477735667,
+          "saMm": -0.00617235322143541,
+          "nsaYoy": -0.25974910977975874,
+          "saYoy": -0.2582470156715596
+        },
+        "seasonalAr": {
+          "nsaMm": -0.005060552196242152,
+          "saMm": -0.0036559539399418947,
+          "nsaYoy": -0.2578839972717951,
+          "saYoy": -0.2563781185352403
+        }
+      },
+      {
         "series": "SEFL03",
         "label": "Tomatoes",
         "weight": 0.06775003622207919,
@@ -6708,56 +6758,6 @@
           "saMm": 0.0042018619363665966,
           "nsaYoy": 0.03366772684280983,
           "saYoy": 0.033683952830656505
-        }
-      },
-      {
-        "series": "SEFH",
-        "label": "Eggs",
-        "weight": 0.11245857718425134,
-        "modelType": "food_commodity_complex_factor",
-        "tier": 1,
-        "driverSnapshot": "EGGS commodity-complex factor: cuts USDA combined regional caged white Large eggs midpoint, USDA combined regional caged white Extra Large eggs midpoint, USDA combined regional caged white Medium eggs midpoint; lag 0, loading 1.00; live cut adjustment 0.21 pp",
-        "actual": {
-          "nsaMm": null,
-          "saMm": null,
-          "nsaYoy": null,
-          "saYoy": null
-        },
-        "production": {
-          "nsaMm": -0.006179020956125041,
-          "saMm": -0.006572538503869334,
-          "nsaYoy": -0.2587277765252429,
-          "saYoy": null
-        },
-        "productionTier1": {
-          "nsaMm": -0.007782378826179843,
-          "saMm": -0.006377780569879586,
-          "nsaYoy": -0.2599011619389495,
-          "saYoy": -0.2583993763702679
-        },
-        "productionTier3": {
-          "nsaMm": -0.008451908224418674,
-          "saMm": -0.007047309968118417,
-          "nsaYoy": -0.26039651402373787,
-          "saYoy": -0.258895733608117
-        },
-        "hrnn": {
-          "nsaMm": -0.003623544120704379,
-          "saMm": -0.0022189458644041216,
-          "nsaYoy": -0.25681680398384765,
-          "saYoy": -0.25530875973182887
-        },
-        "iGru": {
-          "nsaMm": -0.007576951477735667,
-          "saMm": -0.00617235322143541,
-          "nsaYoy": -0.25974910977975874,
-          "saYoy": -0.2582470156715596
-        },
-        "seasonalAr": {
-          "nsaMm": -0.005060552196242152,
-          "saMm": -0.0036559539399418947,
-          "nsaYoy": -0.2578839972717951,
-          "saYoy": -0.2563781185352403
         }
       },
       {
@@ -183179,7 +183179,7 @@
     "The current BLS hierarchy is applied across history; historical parent changes are documented rather than reconstructed."
   ],
   "runtime": {
-    "seconds": 100.809,
+    "seconds": 46.788,
     "checkpointReuse": "quarter labels are deterministic; neural warm-start checkpoints not emitted by the fast runner"
   }
 }
