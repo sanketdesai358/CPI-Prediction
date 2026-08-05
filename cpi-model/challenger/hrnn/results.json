@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28T19:09:53+00:00",
+  "generatedAt": "2026-08-05T13:39:53+00:00",
   "status": "complete_fast_research_run",
   "implementationStatus": "Deterministic HRNN-style challenger artifact. Full PyTorch MAP checkpoint sweep remains a follow-up using this schema.",
   "source": "model output, not BLS data; research comparison only",
@@ -2557,10 +2557,10 @@
           "saYoy": null
         },
         "production": {
-          "nsaMm": 0.0007444099631676191,
-          "saMm": 0.00120719080797633,
-          "nsaYoy": 0.034523320831884474,
-          "saYoy": 0.033524999169521674
+          "nsaMm": 0.000828693890332894,
+          "saMm": 0.001291435740821136,
+          "nsaYoy": 0.034610518194724715,
+          "saYoy": 0.033612072081344424
         },
         "productionTier1": {
           "nsaMm": 0.00031419817302052083,
@@ -2603,10 +2603,10 @@
           "saYoy": null
         },
         "production": {
-          "nsaMm": 0.001395795799912726,
-          "saMm": 0.0021490380408294733,
-          "nsaYoy": 0.02545001762384702,
-          "saYoy": 0.02466211432549703
+          "nsaMm": 0.0014744070906013405,
+          "saMm": 0.0022275901427934552,
+          "nsaYoy": 0.025530632741856962,
+          "saYoy": 0.024742606849766924
         },
         "productionTier1": {
           "nsaMm": 0.0010649807389460772,
@@ -3811,6 +3811,56 @@
         }
       },
       {
+        "series": "SEHE01",
+        "label": "Fuel oil",
+        "weight": 0.10645994902674626,
+        "modelType": "measurement_pass_through_fuel_oil",
+        "tier": 1,
+        "driverSnapshot": "EIA New York Harbor No. 2 heating oil spot calendar-month average $3.733/gal vs prior $3.302/gal using 18 daily prints; fitted retail pass-through beta 0.504 on 129 prior months; NSA forecast 6.58%",
+        "actual": {
+          "nsaMm": null,
+          "saMm": null,
+          "nsaYoy": null,
+          "saYoy": null
+        },
+        "production": {
+          "nsaMm": 0.06582178862601715,
+          "saMm": 0.05262073080201656,
+          "nsaYoy": 0.4678906479657712,
+          "saYoy": null
+        },
+        "productionTier1": {
+          "nsaMm": -0.059782881519817074,
+          "saMm": -0.07516570990241833,
+          "nsaYoy": 0.29731587865715503,
+          "saYoy": 0.3116747285495347
+        },
+        "productionTier3": {
+          "nsaMm": -0.044358225288583894,
+          "saMm": -0.05974105367118515,
+          "nsaYoy": 0.31748165537695017,
+          "saYoy": 0.33206370253812634
+        },
+        "hrnn": {
+          "nsaMm": -0.03300027963810648,
+          "saMm": -0.048383108020707735,
+          "nsaYoy": 0.33253084255717313,
+          "saYoy": 0.3472794559519692
+        },
+        "iGru": {
+          "nsaMm": -0.043173800355006765,
+          "saMm": -0.05855662873760802,
+          "nsaYoy": 0.3190430379868223,
+          "saYoy": 0.33364236672058145
+        },
+        "seasonalAr": {
+          "nsaMm": 0.018965668900486884,
+          "saMm": 0.003582840517885627,
+          "nsaYoy": 0.4036078699876544,
+          "saYoy": 0.41914317256467726
+        }
+      },
+      {
         "series": "SEHF02",
         "label": "Utility (piped) gas service",
         "weight": 0.7478366836643208,
@@ -4111,56 +4161,6 @@
         }
       },
       {
-        "series": "SEHE01",
-        "label": "Fuel oil",
-        "weight": 0.10645994902674626,
-        "modelType": "measurement_pass_through_fuel_oil",
-        "tier": 1,
-        "driverSnapshot": "EIA New York Harbor No. 2 heating oil spot calendar-month average $3.593/gal vs prior $3.302/gal using 13 daily prints; fitted retail pass-through beta 0.504 on 129 prior months; NSA forecast 4.44%",
-        "actual": {
-          "nsaMm": null,
-          "saMm": null,
-          "nsaYoy": null,
-          "saYoy": null
-        },
-        "production": {
-          "nsaMm": 0.04440294669292383,
-          "saMm": 0.031201888868923243,
-          "nsaYoy": 0.4383917973142233,
-          "saYoy": null
-        },
-        "productionTier1": {
-          "nsaMm": -0.059782881519817074,
-          "saMm": -0.07516570990241833,
-          "nsaYoy": 0.29731587865715503,
-          "saYoy": 0.3116747285495347
-        },
-        "productionTier3": {
-          "nsaMm": -0.044358225288583894,
-          "saMm": -0.05974105367118515,
-          "nsaYoy": 0.31748165537695017,
-          "saYoy": 0.33206370253812634
-        },
-        "hrnn": {
-          "nsaMm": -0.03300027963810648,
-          "saMm": -0.048383108020707735,
-          "nsaYoy": 0.33253084255717313,
-          "saYoy": 0.3472794559519692
-        },
-        "iGru": {
-          "nsaMm": -0.043173800355006765,
-          "saMm": -0.05855662873760802,
-          "nsaYoy": 0.3190430379868223,
-          "saYoy": 0.33364236672058145
-        },
-        "seasonalAr": {
-          "nsaMm": 0.018965668900486884,
-          "saMm": 0.003582840517885627,
-          "nsaYoy": 0.4036078699876544,
-          "saYoy": 0.41914317256467726
-        }
-      },
-      {
         "series": "SEMD",
         "label": "Hospital and related services",
         "weight": 2.606924578999596,
@@ -4308,6 +4308,56 @@
           "saMm": 0.0013468147806049132,
           "nsaYoy": 0.006665000509083363,
           "saYoy": 0.006009814977779415
+        }
+      },
+      {
+        "series": "SETG01",
+        "label": "Airline fares",
+        "weight": 1.0909009562757537,
+        "modelType": "airfare_fare_mix_proxy",
+        "tier": 1,
+        "driverSnapshot": "airfare fallback -0.78% plus guarded jet-fuel pass-through 1.10% from EIA Gulf Coast jet fuel calendar-month average $3.320/gal vs prior $3.042/gal using 18 daily prints",
+        "actual": {
+          "nsaMm": null,
+          "saMm": null,
+          "nsaYoy": null,
+          "saYoy": null
+        },
+        "production": {
+          "nsaMm": 0.003226099948411552,
+          "saMm": 0.06099232739773436,
+          "nsaYoy": 0.3104324461371093,
+          "saYoy": null
+        },
+        "productionTier1": {
+          "nsaMm": -0.008647081607965863,
+          "saMm": 0.05151089744974674,
+          "nsaYoy": 0.2949721711125626,
+          "saYoy": 0.29309955553432254
+        },
+        "productionTier3": {
+          "nsaMm": -0.007673641442511981,
+          "saMm": 0.05248433761520062,
+          "nsaYoy": 0.29623336278479306,
+          "saYoy": 0.29435892343981496
+        },
+        "hrnn": {
+          "nsaMm": -0.0048040167959414164,
+          "saMm": 0.05535396226177118,
+          "nsaYoy": 0.29995840817514496,
+          "saYoy": 0.298078582167671
+        },
+        "iGru": {
+          "nsaMm": -0.006020269544625918,
+          "saMm": 0.05413770951308668,
+          "nsaYoy": 0.29837829129356175,
+          "saYoy": 0.29650075023981404
+        },
+        "seasonalAr": {
+          "nsaMm": -0.02366448779505849,
+          "saMm": 0.03649349126265411,
+          "nsaYoy": 0.27567034246678657,
+          "saYoy": 0.2738256386119158
         }
       },
       {
@@ -4658,56 +4708,6 @@
           "saMm": -0.0013717069450990896,
           "nsaYoy": 0.10032385295456558,
           "saYoy": 0.10613239971709376
-        }
-      },
-      {
-        "series": "SETG01",
-        "label": "Airline fares",
-        "weight": 1.0909009562757537,
-        "modelType": "airfare_fare_mix_proxy",
-        "tier": 1,
-        "driverSnapshot": "airfare fallback -0.78% plus guarded jet-fuel pass-through 0.54% from EIA Gulf Coast jet fuel calendar-month average $3.177/gal vs prior $3.042/gal using 13 daily prints",
-        "actual": {
-          "nsaMm": null,
-          "saMm": null,
-          "nsaYoy": null,
-          "saYoy": null
-        },
-        "production": {
-          "nsaMm": -0.002414957807121575,
-          "saMm": 0.05535126964220123,
-          "nsaYoy": 0.3030639923919727,
-          "saYoy": null
-        },
-        "productionTier1": {
-          "nsaMm": -0.008647081607965863,
-          "saMm": 0.05151089744974674,
-          "nsaYoy": 0.2949721711125626,
-          "saYoy": 0.29309955553432254
-        },
-        "productionTier3": {
-          "nsaMm": -0.007673641442511981,
-          "saMm": 0.05248433761520062,
-          "nsaYoy": 0.29623336278479306,
-          "saYoy": 0.29435892343981496
-        },
-        "hrnn": {
-          "nsaMm": -0.0048040167959414164,
-          "saMm": 0.05535396226177118,
-          "nsaYoy": 0.29995840817514496,
-          "saYoy": 0.298078582167671
-        },
-        "iGru": {
-          "nsaMm": -0.006020269544625918,
-          "saMm": 0.05413770951308668,
-          "nsaYoy": 0.29837829129356175,
-          "saYoy": 0.29650075023981404
-        },
-        "seasonalAr": {
-          "nsaMm": -0.02366448779505849,
-          "saMm": 0.03649349126265411,
-          "nsaYoy": 0.27567034246678657,
-          "saYoy": 0.2738256386119158
         }
       },
       {
@@ -6474,9 +6474,9 @@
           "saYoy": null
         },
         "production": {
-          "nsaMm": -0.007266168843448984,
-          "saMm": -0.007659686391193277,
-          "nsaYoy": -0.2595386595199427,
+          "nsaMm": -0.007257805096490347,
+          "saMm": -0.00765132264423464,
+          "nsaYoy": -0.25953242115967945,
           "saYoy": null
         },
         "productionTier1": {
@@ -183179,7 +183179,7 @@
     "The current BLS hierarchy is applied across history; historical parent changes are documented rather than reconstructed."
   ],
   "runtime": {
-    "seconds": 46.788,
+    "seconds": 49.371,
     "checkpointReuse": "quarter labels are deterministic; neural warm-start checkpoints not emitted by the fast runner"
   }
 }
