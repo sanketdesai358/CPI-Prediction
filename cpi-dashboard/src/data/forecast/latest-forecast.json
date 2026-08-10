@@ -1,28 +1,28 @@
 {
   "forecastMonth": "2026-07",
-  "generatedAt": "2026-08-05T13:37:47+00:00",
+  "generatedAt": "2026-08-10T15:47:05+00:00",
   "dataThrough": "2026-06",
   "source": "model output, not BLS data",
   "headline": {
-    "nsaMm": 0.0008290373519831365,
-    "saMm": 0.0012922700030508385,
-    "nsaYoy": 0.034610518194724715,
-    "saYoy": 0.033612072081344424,
+    "nsaMm": 0.0008437689787806979,
+    "saMm": 0.0013070016298484,
+    "nsaYoy": 0.03462574706545718,
+    "saYoy": 0.03362727921691855,
     "saInterval": {
-      "p10": -0.002043231199772625,
-      "p50": 0.0012922700030508385,
-      "p90": 0.004627771205874302
+      "p10": -0.0020284995729750637,
+      "p50": 0.0013070016298484,
+      "p90": 0.0046425028326718635
     }
   },
   "core": {
-    "nsaMm": 0.0014754945631291429,
-    "saMm": 0.002230073065017657,
-    "nsaYoy": 0.025530632741856962,
-    "saYoy": 0.024742606849766924,
+    "nsaMm": 0.001479824830618396,
+    "saMm": 0.0022344033325069103,
+    "nsaYoy": 0.025535067021060343,
+    "saYoy": 0.02474703438563397,
     "saInterval": {
-      "p10": 0.00023973575945563774,
-      "p50": 0.002230073065017657,
-      "p90": 0.004220410370579676
+      "p10": 0.000244066026944891,
+      "p50": 0.0022344033325069103,
+      "p90": 0.0042247406380689296
     }
   },
   "baseEffects": [
@@ -270,8 +270,8 @@
             "label": "EIA weekly U.S. all-grades retail gasoline"
           },
           {
-            "date": "2026-07-27",
-            "value": 3.504,
+            "date": "2026-08-03",
+            "value": 3.328,
             "label": "EIA Los Angeles RBOB regular gasoline spot"
           }
         ],
@@ -414,18 +414,40 @@
       "contribution_pp": -0.029171899027403903
     },
     {
+      "itemCode": "SAE2",
+      "name": "Communication",
+      "tier": 3,
+      "modelType": "ets_partial_pool",
+      "model_weight": 3.140483721229906,
+      "blsCurrentRi": 3.140483721229906,
+      "forecast_nsa_mm": -0.00675681806214448,
+      "forecast_sa_mm": -0.007064583368270509,
+      "fallback_nsa_mm": -0.00675681806214448,
+      "fallback_driver": "seasonal AR partial-pooling fallback",
+      "is_core": true,
+      "driverSnapshot": "seasonal AR partial-pooling fallback",
+      "feedStatus": null,
+      "inputSeries": [],
+      "passThroughLags": [],
+      "eventCalendar": [],
+      "sigma": 0.005049513331775578,
+      "component_yoy": -0.026015363922336943,
+      "commodityModel": null,
+      "contribution_pp": -0.02121967713147694
+    },
+    {
       "itemCode": "SETA02",
       "name": "Used cars and trucks",
       "tier": 1,
       "modelType": "used_vehicle_lag_kernel",
       "model_weight": 2.678613833618483,
       "blsCurrentRi": 2.678613833618483,
-      "forecast_nsa_mm": 0.008855869215675431,
-      "forecast_sa_mm": -0.0008471826340395415,
+      "forecast_nsa_mm": 0.0076557671560917,
+      "forecast_sa_mm": -0.0020472846936232724,
       "fallback_nsa_mm": 0.01341823727993558,
       "fallback_driver": "free fallback: recent CPI-timed movement + same-month seasonal average",
       "is_core": true,
-      "driverSnapshot": "SETA02 SA model: rho 0.47 * prior CPI SA -0.23 pp + Manheim m2 signal +0.00 pp * volatility scale 0.71 + level gap z=-1.07, mean-reversion adj +0.02 pp; timing m0 2026-07 unavailable in Manheim feed; m2 2026-05 +0.32% pub 2026-06-08; omitted unavailable m0. Compared against CUSR0000SETA02; no asymmetry term kept. SA forecast converted to NSA using the component's historical SA/NSA offset.",
+      "driverSnapshot": "SETA02 SA model: rho 0.47 * prior CPI SA -0.23 pp + Manheim m0, m2 signal -0.17 pp * volatility scale 0.71 + level gap z=-1.07, mean-reversion adj +0.02 pp; timing m0 2026-07 -1.36% pub 2026-08-07; m2 2026-05 +0.32% pub 2026-06-08. Compared against CUSR0000SETA02; no asymmetry term kept. SA forecast converted to NSA using the component's historical SA/NSA offset.",
       "feedStatus": {
         "itemCode": "SETA02",
         "name": "Used cars and trucks",
@@ -436,17 +458,17 @@
         ],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-06",
-        "latestValue": 212.85667431944884,
+        "lastObservationDate": "2026-07",
+        "latestValue": 209.97048212528682,
         "unit": "index",
         "observationsUsed": [
           {
-            "date": "2026-06",
-            "value": 212.85667431944884,
+            "date": "2026-07",
+            "value": 209.97048212528682,
             "label": "Manheim UVVI final"
           }
         ],
-        "details": "Loaded public XLSX (https://www.coxautoinc.com/wp-content/uploads/2026/07/Manheim-Used-Vehicle-Value-Index-Data.June_.xlsx); add data/manual/manheim_uvvi.csv to override.",
+        "details": "Loaded public XLSX (https://www.coxautoinc.com/wp-content/uploads/2026/08/July-2026-Manheim-Used-Vehicle-Value-Index.xlsx); add data/manual/manheim_uvvi.csv to override.",
         "points": [
           {
             "date": "1997-01",
@@ -1863,9 +1885,13 @@
           {
             "date": "2026-06",
             "value": 212.85667431944884
+          },
+          {
+            "date": "2026-07",
+            "value": 209.97048212528682
           }
         ],
-        "publicationDate": "2026-07-07",
+        "publicationDate": "2026-08-07",
         "timingEnforced": true,
         "publicationRule": "month-end final assumed published on the 7th of the following month, weekend-adjusted; lag 0 is used only if publication date is before CPI release"
       },
@@ -1882,31 +1908,9 @@
         "retail-wholesale level-gap guard"
       ],
       "sigma": 0.02146474485526012,
-      "component_yoy": -0.017000408222919927,
+      "component_yoy": -0.018169752497616654,
       "commodityModel": null,
-      "contribution_pp": 0.023721453789824275
-    },
-    {
-      "itemCode": "SAE2",
-      "name": "Communication",
-      "tier": 3,
-      "modelType": "ets_partial_pool",
-      "model_weight": 3.140483721229906,
-      "blsCurrentRi": 3.140483721229906,
-      "forecast_nsa_mm": -0.00675681806214448,
-      "forecast_sa_mm": -0.007064583368270509,
-      "fallback_nsa_mm": -0.00675681806214448,
-      "fallback_driver": "seasonal AR partial-pooling fallback",
-      "is_core": true,
-      "driverSnapshot": "seasonal AR partial-pooling fallback",
-      "feedStatus": null,
-      "inputSeries": [],
-      "passThroughLags": [],
-      "eventCalendar": [],
-      "sigma": 0.005049513331775578,
-      "component_yoy": -0.026015363922336943,
-      "commodityModel": null,
-      "contribution_pp": -0.02121967713147694
+      "contribution_pp": 0.02050684381126926
     },
     {
       "itemCode": "SEHA",
@@ -2878,6 +2882,63 @@
       "contribution_pp": 0.00814005508936504
     },
     {
+      "itemCode": "SEHE01",
+      "name": "Fuel oil",
+      "tier": 1,
+      "modelType": "measurement_pass_through_fuel_oil",
+      "model_weight": 0.10645994902674626,
+      "blsCurrentRi": 0.10645994902674626,
+      "forecast_nsa_mm": 0.07644772907781146,
+      "forecast_sa_mm": 0.06324667125381088,
+      "fallback_nsa_mm": -0.05663353704669848,
+      "fallback_driver": "free fallback: recent CPI-timed movement + same-month seasonal average",
+      "is_core": false,
+      "driverSnapshot": "EIA New York Harbor No. 2 heating oil spot calendar-month average $3.803/gal vs prior $3.302/gal using 22 daily prints; fitted retail pass-through beta 0.504 on 129 prior months; NSA forecast 7.64%",
+      "feedStatus": {
+        "itemCode": "SEHE01",
+        "name": "Fuel oil",
+        "tier": 1,
+        "primaryFeed": "EIA heating oil spot",
+        "secondaryFeeds": [
+          "EIA diesel"
+        ],
+        "status": "live",
+        "fallbackUsed": false,
+        "lastObservationDate": "2026-08-03",
+        "latestValue": 3.768,
+        "unit": "dollars per gallon",
+        "observationsUsed": [
+          {
+            "date": "2026-08-03",
+            "value": 3.768,
+            "label": "EIA New York Harbor No. 2 heating oil spot"
+          },
+          {
+            "date": "2026-08-03",
+            "value": 5.348,
+            "label": "EIA weekly U.S. No. 2 diesel retail"
+          }
+        ],
+        "details": null,
+        "liquidMeasurementNsaMm": 0.15177082349979565,
+        "liquidMeasurementDriver": "EIA New York Harbor No. 2 heating oil spot calendar-month average $3.803/gal vs prior $3.302/gal using 22 daily prints",
+        "liquidMeasurementSeries": "heating_oil"
+      },
+      "inputSeries": [
+        "EIA New York Harbor No. 2 heating oil spot"
+      ],
+      "passThroughLags": [
+        0
+      ],
+      "eventCalendar": [
+        "winter-demand-overlay"
+      ],
+      "sigma": 0.06441578723355405,
+      "component_yoy": 0.48252510072464894,
+      "commodityModel": null,
+      "contribution_pp": 0.008138621340834316
+    },
+    {
       "itemCode": "SEFV01",
       "name": "Full service meals and snacks",
       "tier": 3,
@@ -2900,454 +2961,18 @@
       "contribution_pp": 0.007797100842368416
     },
     {
-      "itemCode": "SEHE01",
-      "name": "Fuel oil",
-      "tier": 1,
-      "modelType": "measurement_pass_through_fuel_oil",
-      "model_weight": 0.10645994902674626,
-      "blsCurrentRi": 0.10645994902674626,
-      "forecast_nsa_mm": 0.06582178862601715,
-      "forecast_sa_mm": 0.05262073080201656,
-      "fallback_nsa_mm": -0.05663353704669848,
-      "fallback_driver": "free fallback: recent CPI-timed movement + same-month seasonal average",
-      "is_core": false,
-      "driverSnapshot": "EIA New York Harbor No. 2 heating oil spot calendar-month average $3.733/gal vs prior $3.302/gal using 18 daily prints; fitted retail pass-through beta 0.504 on 129 prior months; NSA forecast 6.58%",
-      "feedStatus": {
-        "itemCode": "SEHE01",
-        "name": "Fuel oil",
-        "tier": 1,
-        "primaryFeed": "EIA heating oil spot",
-        "secondaryFeeds": [
-          "EIA diesel"
-        ],
-        "status": "live",
-        "fallbackUsed": false,
-        "lastObservationDate": "2026-08-03",
-        "latestValue": 5.348,
-        "unit": "dollars per gallon",
-        "observationsUsed": [
-          {
-            "date": "2026-07-27",
-            "value": 3.998,
-            "label": "EIA New York Harbor No. 2 heating oil spot"
-          },
-          {
-            "date": "2026-08-03",
-            "value": 5.348,
-            "label": "EIA weekly U.S. No. 2 diesel retail"
-          }
-        ],
-        "details": null,
-        "liquidMeasurementNsaMm": 0.13067526248990435,
-        "liquidMeasurementDriver": "EIA New York Harbor No. 2 heating oil spot calendar-month average $3.733/gal vs prior $3.302/gal using 18 daily prints",
-        "liquidMeasurementSeries": "heating_oil"
-      },
-      "inputSeries": [
-        "EIA New York Harbor No. 2 heating oil spot"
-      ],
-      "passThroughLags": [
-        0
-      ],
-      "eventCalendar": [
-        "winter-demand-overlay"
-      ],
-      "sigma": 0.06441578723355405,
-      "component_yoy": 0.4678906479657712,
-      "commodityModel": null,
-      "contribution_pp": 0.007007384261975052
-    },
-    {
-      "itemCode": "SEHF02",
-      "name": "Utility (piped) gas service",
-      "tier": 1,
-      "modelType": "distributed_lag_utility_gas",
-      "model_weight": 0.7478366836643208,
-      "blsCurrentRi": 0.7478366836643208,
-      "forecast_nsa_mm": 0.007860965238099357,
-      "forecast_sa_mm": 0.008566958379170639,
-      "fallback_nsa_mm": 0.007860965238099357,
-      "fallback_driver": "free fallback: recent CPI-timed movement + same-month seasonal average",
-      "is_core": false,
-      "driverSnapshot": "free fallback: recent CPI-timed movement + same-month seasonal average",
-      "feedStatus": {
-        "itemCode": "SEHF02",
-        "name": "Utility (piped) gas service",
-        "tier": 1,
-        "primaryFeed": "EIA Henry Hub",
-        "secondaryFeeds": [
-          "FRED mirror"
-        ],
-        "status": "live",
-        "fallbackUsed": false,
-        "lastObservationDate": "2026-07-27",
-        "latestValue": 2.63,
-        "unit": "dollars per MMBtu",
-        "observationsUsed": [
-          {
-            "date": "2026-07-27",
-            "value": 2.63,
-            "label": "EIA Henry Hub natural gas spot"
-          }
-        ],
-        "details": null
-      },
-      "inputSeries": [
-        "Henry Hub",
-        "EIA retail natural gas"
-      ],
-      "passThroughLags": [
-        1,
-        2,
-        3
-      ],
-      "eventCalendar": [
-        "tariff-filings"
-      ],
-      "sigma": 0.024618474631845043,
-      "component_yoy": 0.04593711117127253,
-      "commodityModel": null,
-      "contribution_pp": 0.005878718174060731
-    },
-    {
-      "itemCode": "SEAC03",
-      "name": "Women's suits and separates",
-      "tier": 3,
-      "modelType": "seasonal_ar_partial_pool",
-      "model_weight": 0.3854245563967802,
-      "blsCurrentRi": 0.3854245563967802,
-      "forecast_nsa_mm": -0.014954385872397412,
-      "forecast_sa_mm": 0.017414914017734186,
-      "fallback_nsa_mm": -0.014954385872397412,
-      "fallback_driver": "seasonal AR partial-pooling fallback",
-      "is_core": true,
-      "driverSnapshot": "seasonal AR partial-pooling fallback",
-      "feedStatus": null,
-      "inputSeries": [],
-      "passThroughLags": [],
-      "eventCalendar": [],
-      "sigma": 0.03588464754287365,
-      "component_yoy": 0.07752122435641051,
-      "commodityModel": null,
-      "contribution_pp": -0.005763787541055049
-    },
-    {
-      "itemCode": "SEFK04",
-      "name": "Other fresh fruits",
-      "tier": 3,
-      "modelType": "seasonal_ar_partial_pool",
-      "model_weight": 0.3073033683278478,
-      "blsCurrentRi": 0.3073033683278478,
-      "forecast_nsa_mm": -0.018190488989085606,
-      "forecast_sa_mm": -0.0005546775530733683,
-      "fallback_nsa_mm": -0.018190488989085606,
-      "fallback_driver": "seasonal AR partial-pooling fallback",
-      "is_core": false,
-      "driverSnapshot": "seasonal AR partial-pooling fallback",
-      "feedStatus": null,
-      "inputSeries": [],
-      "passThroughLags": [],
-      "eventCalendar": [],
-      "sigma": 0.029614737539904828,
-      "component_yoy": 0.016389551212663278,
-      "commodityModel": null,
-      "contribution_pp": -0.005589998537876634
-    },
-    {
-      "itemCode": "SERC",
-      "name": "Sporting goods",
-      "tier": 3,
-      "modelType": "ets_partial_pool",
-      "model_weight": 0.5302466604881334,
-      "blsCurrentRi": 0.5302466604881334,
-      "forecast_nsa_mm": 0.009874719244208744,
-      "forecast_sa_mm": 0.009874719244208744,
-      "fallback_nsa_mm": 0.009874719244208744,
-      "fallback_driver": "seasonal AR partial-pooling fallback",
-      "is_core": true,
-      "driverSnapshot": "seasonal AR partial-pooling fallback",
-      "feedStatus": null,
-      "inputSeries": [],
-      "passThroughLags": [],
-      "eventCalendar": [],
-      "sigma": 0.008943719561715796,
-      "component_yoy": 0.051892308290239164,
-      "commodityModel": null,
-      "contribution_pp": 0.005236036902499591
-    },
-    {
-      "itemCode": "SEFV02",
-      "name": "Limited service meals and snacks",
-      "tier": 3,
-      "modelType": "seasonal_ar_partial_pool",
-      "model_weight": 2.645070776000799,
-      "blsCurrentRi": 2.645070776000799,
-      "forecast_nsa_mm": 0.0019036082286957709,
-      "forecast_sa_mm": 0.0017529041271426317,
-      "fallback_nsa_mm": 0.0019036082286957709,
-      "fallback_driver": "seasonal AR partial-pooling fallback",
-      "is_core": false,
-      "driverSnapshot": "seasonal AR partial-pooling fallback",
-      "feedStatus": null,
-      "inputSeries": [],
-      "passThroughLags": [],
-      "eventCalendar": [],
-      "sigma": 0.0022178161323599815,
-      "component_yoy": 0.0313737065623203,
-      "commodityModel": null,
-      "contribution_pp": 0.0050351784946778295
-    },
-    {
-      "itemCode": "SERE",
-      "name": "Other recreational goods",
-      "tier": 3,
-      "modelType": "seasonal_ar_partial_pool",
-      "model_weight": 0.39082482791891693,
-      "blsCurrentRi": 0.39082482791891693,
-      "forecast_nsa_mm": 0.01216514220389718,
-      "forecast_sa_mm": 0.017375281719622812,
-      "fallback_nsa_mm": 0.01216514220389718,
-      "fallback_driver": "seasonal AR partial-pooling fallback",
-      "is_core": true,
-      "driverSnapshot": "seasonal AR partial-pooling fallback",
-      "feedStatus": null,
-      "inputSeries": [],
-      "passThroughLags": [],
-      "eventCalendar": [],
-      "sigma": 0.009196398853410385,
-      "component_yoy": 0.05715772615737302,
-      "commodityModel": null,
-      "contribution_pp": 0.004754439608447269
-    },
-    {
-      "itemCode": "SEMD",
-      "name": "Hospital and related services",
-      "tier": 3,
-      "modelType": "sarima_partial_pool",
-      "model_weight": 2.606924578999596,
-      "blsCurrentRi": 2.606924578999596,
-      "forecast_nsa_mm": 0.0017434163722751484,
-      "forecast_sa_mm": 0.0019211367005337943,
-      "fallback_nsa_mm": 0.0017434163722751484,
-      "fallback_driver": "seasonal AR partial-pooling fallback",
-      "is_core": true,
-      "driverSnapshot": "seasonal AR partial-pooling fallback",
-      "feedStatus": null,
-      "inputSeries": [],
-      "passThroughLags": [],
-      "eventCalendar": [],
-      "sigma": 0.004660133911821447,
-      "component_yoy": 0.05189927410580841,
-      "commodityModel": null,
-      "contribution_pp": 0.004544954992314394
-    },
-    {
-      "itemCode": "SEFJ02",
-      "name": "Cheese and related products",
-      "tier": 1,
-      "modelType": "food_commodity_complex_factor",
-      "model_weight": 0.25027162802491,
-      "blsCurrentRi": 0.25027162802491,
-      "forecast_nsa_mm": 0.0164288637693909,
-      "forecast_sa_mm": 0.0164288637693909,
-      "fallback_nsa_mm": 0.0164288637693909,
-      "fallback_driver": "free fallback: recent CPI-timed movement + same-month seasonal average",
-      "is_core": false,
-      "driverSnapshot": "Commodity-complex mapping documented but dropped because it did not improve window-C error; using prior fallback. Candidate cuts: USDA NDPSR Cheddar 40-pound blocks",
-      "feedStatus": {
-        "itemCode": "SEFJ02",
-        "name": "Cheese and related products",
-        "tier": 1,
-        "primaryFeed": "USDA NDPSR cheddar block price",
-        "secondaryFeeds": [
-          "BLS dairy AP validators"
-        ],
-        "status": "live",
-        "fallbackUsed": false,
-        "lastObservationDate": "2026-08-01",
-        "latestValue": 18.76,
-        "unit": "dollars per lb",
-        "observationsUsed": [
-          {
-            "date": "2026-08-01",
-            "value": 18.76,
-            "label": "USDA advanced Base Class I milk price"
-          },
-          {
-            "date": "2026-06-01",
-            "value": 15.98,
-            "label": "USDA Class III milk price"
-          },
-          {
-            "date": "2026-06-01",
-            "value": 20.96,
-            "label": "USDA Class IV milk price"
-          },
-          {
-            "date": "2026-06",
-            "value": 2.141,
-            "label": "BLS AP Eggs, grade A, large, per doz."
-          },
-          {
-            "date": "2026-06",
-            "value": 4.317,
-            "label": "BLS AP Milk, fresh, whole, fortified, per gal. (3.8 lit)"
-          },
-          {
-            "date": "2026-06",
-            "value": 1.814,
-            "label": "BLS AP Bread, white, pan, per lb. (453.6 gm)"
-          },
-          {
-            "date": "2026-06",
-            "value": 6.825,
-            "label": "BLS AP Ground beef, 100% beef, per lb. (453.6 gm)"
-          },
-          {
-            "date": "2026-06",
-            "value": 6.561,
-            "label": "BLS AP Bacon, sliced, per lb. (453.6 gm)"
-          },
-          {
-            "date": "2026-06",
-            "value": 2.044,
-            "label": "BLS AP Chicken, fresh, whole, per lb. (453.6 gm)"
-          },
-          {
-            "date": "2026-06",
-            "value": 0.645,
-            "label": "BLS AP Bananas, per lb. (453.6 gm)"
-          },
-          {
-            "date": "2026-06",
-            "value": 2.154,
-            "label": "BLS AP Tomatoes, field grown, per lb. (453.6 gm)"
-          },
-          {
-            "date": "2026-06",
-            "value": 0.923,
-            "label": "BLS AP Potatoes, white, per lb. (453.6 gm)"
-          },
-          {
-            "date": "2026-06",
-            "value": 9.457,
-            "label": "BLS AP Coffee, 100%, ground roast, all sizes, per lb. (453.6 gm)"
-          }
-        ],
-        "details": "Parsed official AMS dairy PDFs."
-      },
-      "inputSeries": [
-        "USDA granular cut/feed",
-        "BLS average-price validator",
-        "CPI complex latent factor"
-      ],
-      "passThroughLags": [
-        0,
-        1,
-        2,
-        3
-      ],
-      "eventCalendar": [
-        "commodity-complex-pass-through"
-      ],
-      "sigma": 0.008879240482585373,
-      "component_yoy": -0.016431071962281663,
-      "commodityModel": {
-        "complex": "DAIRY",
-        "latentFactor": "USDA NDPSR Cheddar 40-pound blocks",
-        "mappedCuts": [
-          "USDA NDPSR Cheddar 40-pound blocks"
-        ],
-        "selectedLag": 0,
-        "estimatedLoading": 1.2428159433375763,
-        "lagCorrelation": 0.7580477922165996,
-        "liveCutAdjustment": 0.0,
-        "validation": {
-          "validator": null,
-          "wholesaleApCorrelation": null,
-          "apCpiCorrelation": null,
-          "note": "Wholesale-to-AP correlation requires a historical USDA cut archive; AP-to-CPI correlation uses local BLS AP validator history where available."
-        },
-        "decision": "granular_dropped_window_c",
-        "notes": "NDPSR cheddar blocks map to cheese and related products; CME spot cheese can be added when available.",
-        "windowC": {
-          "itemCode": "SEFJ02",
-          "name": "Cheese and related products",
-          "complex": "DAIRY",
-          "mappedCuts": [
-            "USDA NDPSR Cheddar 40-pound blocks"
-          ],
-          "withoutGranularMae": 0.007318202402998506,
-          "withGranularMae": 0.008105467019296295,
-          "winner": "composite_only",
-          "kept": false,
-          "validation": {
-            "validator": null,
-            "wholesaleApCorrelation": null,
-            "apCpiCorrelation": null,
-            "note": "Wholesale-to-AP correlation requires a historical USDA cut archive; AP-to-CPI correlation uses local BLS AP validator history where available."
-          }
-        }
-      },
-      "contribution_pp": 0.00411167848216492
-    },
-    {
-      "itemCode": "SETA01",
-      "name": "New vehicles",
-      "tier": 1,
-      "modelType": "new_vehicle_transaction_proxy",
-      "model_weight": 3.7515235829467,
-      "blsCurrentRi": 3.7515235829467,
-      "forecast_nsa_mm": 0.000985241705453152,
-      "forecast_sa_mm": 0.0005483727247687281,
-      "fallback_nsa_mm": 0.000985241705453152,
-      "fallback_driver": "free fallback: recent CPI-timed movement + same-month seasonal average",
-      "is_core": true,
-      "driverSnapshot": "free fallback: recent CPI-timed movement + same-month seasonal average",
-      "feedStatus": {
-        "itemCode": "SETA01",
-        "name": "New vehicles",
-        "tier": 1,
-        "primaryFeed": "public ATP proxy",
-        "secondaryFeeds": [
-          "J.D. Power PIN if licensed"
-        ],
-        "status": "fallback",
-        "fallbackUsed": true,
-        "lastObservationDate": null,
-        "latestValue": null,
-        "unit": "index / price proxy",
-        "observationsUsed": [],
-        "details": null
-      },
-      "inputSeries": [
-        "J.D. Power PIN if licensed",
-        "Cox/KBB ATP fallback"
-      ],
-      "passThroughLags": [
-        0,
-        1
-      ],
-      "eventCalendar": [
-        "model-year-changeover"
-      ],
-      "sigma": 0.004394948446002602,
-      "component_yoy": 0.005295943175873674,
-      "commodityModel": null,
-      "contribution_pp": 0.003696157492910126
-    },
-    {
       "itemCode": "SETG01",
       "name": "Airline fares",
       "tier": 1,
       "modelType": "airfare_fare_mix_proxy",
       "model_weight": 1.0909009562757537,
       "blsCurrentRi": 1.0909009562757537,
-      "forecast_nsa_mm": 0.003226099948411552,
-      "forecast_sa_mm": 0.06099232739773436,
+      "forecast_nsa_mm": 0.006483137240580526,
+      "forecast_sa_mm": 0.06424936468990333,
       "fallback_nsa_mm": -0.007774307102970848,
       "fallback_driver": "free fallback: recent CPI-timed movement + same-month seasonal average",
       "is_core": true,
-      "driverSnapshot": "airfare fallback -0.78% plus guarded jet-fuel pass-through 1.10% from EIA Gulf Coast jet fuel calendar-month average $3.320/gal vs prior $3.042/gal using 18 daily prints",
+      "driverSnapshot": "airfare fallback -0.78% plus guarded jet-fuel pass-through 1.43% from EIA Gulf Coast jet fuel calendar-month average $3.403/gal vs prior $3.042/gal using 22 daily prints",
       "feedStatus": {
         "itemCode": "SETG01",
         "name": "Airline fares",
@@ -3358,38 +2983,18 @@
         ],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-07-27",
-        "latestValue": 3.582,
+        "lastObservationDate": "2026-08-03",
+        "latestValue": 3.506,
         "unit": "dollars per gallon",
         "observationsUsed": [
           {
-            "date": "2026-07-27",
-            "value": 3.582,
+            "date": "2026-08-03",
+            "value": 3.506,
             "label": "EIA Gulf Coast kerosene-type jet fuel spot"
           }
         ],
         "details": null,
         "points": [
-          {
-            "date": "2006-09-06",
-            "value": 1.966
-          },
-          {
-            "date": "2006-09-07",
-            "value": 1.958
-          },
-          {
-            "date": "2006-09-08",
-            "value": 1.914
-          },
-          {
-            "date": "2006-09-11",
-            "value": 1.851
-          },
-          {
-            "date": "2006-09-12",
-            "value": 1.723
-          },
           {
             "date": "2006-09-13",
             "value": 1.736
@@ -23369,10 +22974,30 @@
           {
             "date": "2026-07-27",
             "value": 3.582
+          },
+          {
+            "date": "2026-07-28",
+            "value": 3.712
+          },
+          {
+            "date": "2026-07-29",
+            "value": 3.825
+          },
+          {
+            "date": "2026-07-30",
+            "value": 3.681
+          },
+          {
+            "date": "2026-07-31",
+            "value": 3.88
+          },
+          {
+            "date": "2026-08-03",
+            "value": 3.506
           }
         ],
-        "jetFuelNsaMm": 0.09167005876152001,
-        "jetFuelDriver": "EIA Gulf Coast jet fuel calendar-month average $3.320/gal vs prior $3.042/gal using 18 daily prints"
+        "jetFuelNsaMm": 0.11881203619626146,
+        "jetFuelDriver": "EIA Gulf Coast jet fuel calendar-month average $3.403/gal vs prior $3.042/gal using 22 daily prints"
       },
       "inputSeries": [
         "web fare scrape fallback",
@@ -23387,9 +23012,378 @@
         "holiday-travel"
       ],
       "sigma": 0.05247267569938699,
-      "component_yoy": 0.3104324461371093,
+      "component_yoy": 0.31468684835626637,
       "commodityModel": null,
-      "contribution_pp": 0.003519355518763322
+      "contribution_pp": 0.007072460615416247
+    },
+    {
+      "itemCode": "SEHF02",
+      "name": "Utility (piped) gas service",
+      "tier": 1,
+      "modelType": "distributed_lag_utility_gas",
+      "model_weight": 0.7478366836643208,
+      "blsCurrentRi": 0.7478366836643208,
+      "forecast_nsa_mm": 0.007860965238099357,
+      "forecast_sa_mm": 0.008566958379170639,
+      "fallback_nsa_mm": 0.007860965238099357,
+      "fallback_driver": "free fallback: recent CPI-timed movement + same-month seasonal average",
+      "is_core": false,
+      "driverSnapshot": "free fallback: recent CPI-timed movement + same-month seasonal average",
+      "feedStatus": {
+        "itemCode": "SEHF02",
+        "name": "Utility (piped) gas service",
+        "tier": 1,
+        "primaryFeed": "EIA Henry Hub",
+        "secondaryFeeds": [
+          "FRED mirror"
+        ],
+        "status": "live",
+        "fallbackUsed": false,
+        "lastObservationDate": "2026-08-03",
+        "latestValue": 2.81,
+        "unit": "dollars per MMBtu",
+        "observationsUsed": [
+          {
+            "date": "2026-08-03",
+            "value": 2.81,
+            "label": "EIA Henry Hub natural gas spot"
+          }
+        ],
+        "details": null
+      },
+      "inputSeries": [
+        "Henry Hub",
+        "EIA retail natural gas"
+      ],
+      "passThroughLags": [
+        1,
+        2,
+        3
+      ],
+      "eventCalendar": [
+        "tariff-filings"
+      ],
+      "sigma": 0.024618474631845043,
+      "component_yoy": 0.04593711117127253,
+      "commodityModel": null,
+      "contribution_pp": 0.005878718174060731
+    },
+    {
+      "itemCode": "SEAC03",
+      "name": "Women's suits and separates",
+      "tier": 3,
+      "modelType": "seasonal_ar_partial_pool",
+      "model_weight": 0.3854245563967802,
+      "blsCurrentRi": 0.3854245563967802,
+      "forecast_nsa_mm": -0.014954385872397412,
+      "forecast_sa_mm": 0.017414914017734186,
+      "fallback_nsa_mm": -0.014954385872397412,
+      "fallback_driver": "seasonal AR partial-pooling fallback",
+      "is_core": true,
+      "driverSnapshot": "seasonal AR partial-pooling fallback",
+      "feedStatus": null,
+      "inputSeries": [],
+      "passThroughLags": [],
+      "eventCalendar": [],
+      "sigma": 0.03588464754287365,
+      "component_yoy": 0.07752122435641051,
+      "commodityModel": null,
+      "contribution_pp": -0.005763787541055049
+    },
+    {
+      "itemCode": "SEFK04",
+      "name": "Other fresh fruits",
+      "tier": 3,
+      "modelType": "seasonal_ar_partial_pool",
+      "model_weight": 0.3073033683278478,
+      "blsCurrentRi": 0.3073033683278478,
+      "forecast_nsa_mm": -0.018190488989085606,
+      "forecast_sa_mm": -0.0005546775530733683,
+      "fallback_nsa_mm": -0.018190488989085606,
+      "fallback_driver": "seasonal AR partial-pooling fallback",
+      "is_core": false,
+      "driverSnapshot": "seasonal AR partial-pooling fallback",
+      "feedStatus": null,
+      "inputSeries": [],
+      "passThroughLags": [],
+      "eventCalendar": [],
+      "sigma": 0.029614737539904828,
+      "component_yoy": 0.016389551212663278,
+      "commodityModel": null,
+      "contribution_pp": -0.005589998537876634
+    },
+    {
+      "itemCode": "SERC",
+      "name": "Sporting goods",
+      "tier": 3,
+      "modelType": "ets_partial_pool",
+      "model_weight": 0.5302466604881334,
+      "blsCurrentRi": 0.5302466604881334,
+      "forecast_nsa_mm": 0.009874719244208744,
+      "forecast_sa_mm": 0.009874719244208744,
+      "fallback_nsa_mm": 0.009874719244208744,
+      "fallback_driver": "seasonal AR partial-pooling fallback",
+      "is_core": true,
+      "driverSnapshot": "seasonal AR partial-pooling fallback",
+      "feedStatus": null,
+      "inputSeries": [],
+      "passThroughLags": [],
+      "eventCalendar": [],
+      "sigma": 0.008943719561715796,
+      "component_yoy": 0.051892308290239164,
+      "commodityModel": null,
+      "contribution_pp": 0.005236036902499591
+    },
+    {
+      "itemCode": "SEFV02",
+      "name": "Limited service meals and snacks",
+      "tier": 3,
+      "modelType": "seasonal_ar_partial_pool",
+      "model_weight": 2.645070776000799,
+      "blsCurrentRi": 2.645070776000799,
+      "forecast_nsa_mm": 0.0019036082286957709,
+      "forecast_sa_mm": 0.0017529041271426317,
+      "fallback_nsa_mm": 0.0019036082286957709,
+      "fallback_driver": "seasonal AR partial-pooling fallback",
+      "is_core": false,
+      "driverSnapshot": "seasonal AR partial-pooling fallback",
+      "feedStatus": null,
+      "inputSeries": [],
+      "passThroughLags": [],
+      "eventCalendar": [],
+      "sigma": 0.0022178161323599815,
+      "component_yoy": 0.0313737065623203,
+      "commodityModel": null,
+      "contribution_pp": 0.0050351784946778295
+    },
+    {
+      "itemCode": "SERE",
+      "name": "Other recreational goods",
+      "tier": 3,
+      "modelType": "seasonal_ar_partial_pool",
+      "model_weight": 0.39082482791891693,
+      "blsCurrentRi": 0.39082482791891693,
+      "forecast_nsa_mm": 0.01216514220389718,
+      "forecast_sa_mm": 0.017375281719622812,
+      "fallback_nsa_mm": 0.01216514220389718,
+      "fallback_driver": "seasonal AR partial-pooling fallback",
+      "is_core": true,
+      "driverSnapshot": "seasonal AR partial-pooling fallback",
+      "feedStatus": null,
+      "inputSeries": [],
+      "passThroughLags": [],
+      "eventCalendar": [],
+      "sigma": 0.009196398853410385,
+      "component_yoy": 0.05715772615737302,
+      "commodityModel": null,
+      "contribution_pp": 0.004754439608447269
+    },
+    {
+      "itemCode": "SEMD",
+      "name": "Hospital and related services",
+      "tier": 3,
+      "modelType": "sarima_partial_pool",
+      "model_weight": 2.606924578999596,
+      "blsCurrentRi": 2.606924578999596,
+      "forecast_nsa_mm": 0.0017434163722751484,
+      "forecast_sa_mm": 0.0019211367005337943,
+      "fallback_nsa_mm": 0.0017434163722751484,
+      "fallback_driver": "seasonal AR partial-pooling fallback",
+      "is_core": true,
+      "driverSnapshot": "seasonal AR partial-pooling fallback",
+      "feedStatus": null,
+      "inputSeries": [],
+      "passThroughLags": [],
+      "eventCalendar": [],
+      "sigma": 0.004660133911821447,
+      "component_yoy": 0.05189927410580841,
+      "commodityModel": null,
+      "contribution_pp": 0.004544954992314394
+    },
+    {
+      "itemCode": "SEFJ02",
+      "name": "Cheese and related products",
+      "tier": 1,
+      "modelType": "food_commodity_complex_factor",
+      "model_weight": 0.25027162802491,
+      "blsCurrentRi": 0.25027162802491,
+      "forecast_nsa_mm": 0.0164288637693909,
+      "forecast_sa_mm": 0.0164288637693909,
+      "fallback_nsa_mm": 0.0164288637693909,
+      "fallback_driver": "free fallback: recent CPI-timed movement + same-month seasonal average",
+      "is_core": false,
+      "driverSnapshot": "Commodity-complex mapping documented but dropped because it did not improve window-C error; using prior fallback. Candidate cuts: USDA NDPSR Cheddar 40-pound blocks",
+      "feedStatus": {
+        "itemCode": "SEFJ02",
+        "name": "Cheese and related products",
+        "tier": 1,
+        "primaryFeed": "USDA NDPSR cheddar block price",
+        "secondaryFeeds": [
+          "BLS dairy AP validators"
+        ],
+        "status": "live",
+        "fallbackUsed": false,
+        "lastObservationDate": "2026-08-01",
+        "latestValue": 1.55,
+        "unit": "dollars per lb",
+        "observationsUsed": [
+          {
+            "date": "2026-08-01",
+            "value": 1.55,
+            "label": "USDA NDPSR Cheddar 40-pound blocks"
+          },
+          {
+            "date": "2026-06",
+            "value": 2.141,
+            "label": "BLS AP Eggs, grade A, large, per doz."
+          },
+          {
+            "date": "2026-06",
+            "value": 4.317,
+            "label": "BLS AP Milk, fresh, whole, fortified, per gal. (3.8 lit)"
+          },
+          {
+            "date": "2026-06",
+            "value": 1.814,
+            "label": "BLS AP Bread, white, pan, per lb. (453.6 gm)"
+          },
+          {
+            "date": "2026-06",
+            "value": 6.825,
+            "label": "BLS AP Ground beef, 100% beef, per lb. (453.6 gm)"
+          },
+          {
+            "date": "2026-06",
+            "value": 6.561,
+            "label": "BLS AP Bacon, sliced, per lb. (453.6 gm)"
+          },
+          {
+            "date": "2026-06",
+            "value": 2.044,
+            "label": "BLS AP Chicken, fresh, whole, per lb. (453.6 gm)"
+          },
+          {
+            "date": "2026-06",
+            "value": 0.645,
+            "label": "BLS AP Bananas, per lb. (453.6 gm)"
+          },
+          {
+            "date": "2026-06",
+            "value": 2.154,
+            "label": "BLS AP Tomatoes, field grown, per lb. (453.6 gm)"
+          },
+          {
+            "date": "2026-06",
+            "value": 0.923,
+            "label": "BLS AP Potatoes, white, per lb. (453.6 gm)"
+          },
+          {
+            "date": "2026-06",
+            "value": 9.457,
+            "label": "BLS AP Coffee, 100%, ground roast, all sizes, per lb. (453.6 gm)"
+          }
+        ],
+        "details": "Parsed official AMS dairy PDFs."
+      },
+      "inputSeries": [
+        "USDA granular cut/feed",
+        "BLS average-price validator",
+        "CPI complex latent factor"
+      ],
+      "passThroughLags": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "eventCalendar": [
+        "commodity-complex-pass-through"
+      ],
+      "sigma": 0.008879240482585373,
+      "component_yoy": -0.016431071962281663,
+      "commodityModel": {
+        "complex": "DAIRY",
+        "latentFactor": "USDA NDPSR Cheddar 40-pound blocks",
+        "mappedCuts": [
+          "USDA NDPSR Cheddar 40-pound blocks"
+        ],
+        "selectedLag": 0,
+        "estimatedLoading": 1.2428159433375763,
+        "lagCorrelation": 0.7580477922165996,
+        "liveCutAdjustment": 0.0,
+        "validation": {
+          "validator": null,
+          "wholesaleApCorrelation": null,
+          "apCpiCorrelation": null,
+          "note": "Wholesale-to-AP correlation requires a historical USDA cut archive; AP-to-CPI correlation uses local BLS AP validator history where available."
+        },
+        "decision": "granular_dropped_window_c",
+        "notes": "NDPSR cheddar blocks map to cheese and related products; CME spot cheese can be added when available.",
+        "windowC": {
+          "itemCode": "SEFJ02",
+          "name": "Cheese and related products",
+          "complex": "DAIRY",
+          "mappedCuts": [
+            "USDA NDPSR Cheddar 40-pound blocks"
+          ],
+          "withoutGranularMae": 0.007318202402998506,
+          "withGranularMae": 0.008105467019296295,
+          "winner": "composite_only",
+          "kept": false,
+          "validation": {
+            "validator": null,
+            "wholesaleApCorrelation": null,
+            "apCpiCorrelation": null,
+            "note": "Wholesale-to-AP correlation requires a historical USDA cut archive; AP-to-CPI correlation uses local BLS AP validator history where available."
+          }
+        }
+      },
+      "contribution_pp": 0.00411167848216492
+    },
+    {
+      "itemCode": "SETA01",
+      "name": "New vehicles",
+      "tier": 1,
+      "modelType": "new_vehicle_transaction_proxy",
+      "model_weight": 3.7515235829467,
+      "blsCurrentRi": 3.7515235829467,
+      "forecast_nsa_mm": 0.000985241705453152,
+      "forecast_sa_mm": 0.0005483727247687281,
+      "fallback_nsa_mm": 0.000985241705453152,
+      "fallback_driver": "free fallback: recent CPI-timed movement + same-month seasonal average",
+      "is_core": true,
+      "driverSnapshot": "free fallback: recent CPI-timed movement + same-month seasonal average",
+      "feedStatus": {
+        "itemCode": "SETA01",
+        "name": "New vehicles",
+        "tier": 1,
+        "primaryFeed": "public ATP proxy",
+        "secondaryFeeds": [
+          "J.D. Power PIN if licensed"
+        ],
+        "status": "fallback",
+        "fallbackUsed": true,
+        "lastObservationDate": null,
+        "latestValue": null,
+        "unit": "index / price proxy",
+        "observationsUsed": [],
+        "details": null
+      },
+      "inputSeries": [
+        "J.D. Power PIN if licensed",
+        "Cox/KBB ATP fallback"
+      ],
+      "passThroughLags": [
+        0,
+        1
+      ],
+      "eventCalendar": [
+        "model-year-changeover"
+      ],
+      "sigma": 0.004394948446002602,
+      "component_yoy": 0.005295943175873674,
+      "commodityModel": null,
+      "contribution_pp": 0.003696157492910126
     },
     {
       "itemCode": "SEFN03",
@@ -23546,23 +23540,23 @@
         ],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-08-04",
-        "latestValue": 315.79,
+        "lastObservationDate": "2026-08-07",
+        "latestValue": 317.77,
         "unit": "dollars per cwt / retail dollars per lb",
         "observationsUsed": [
           {
-            "date": "2026-08-04",
-            "value": 315.79,
+            "date": "2026-08-07",
+            "value": 317.77,
             "label": "USDA boxed beef Choice primal Chuck"
           },
           {
-            "date": "2026-08-04",
-            "value": 312.51,
+            "date": "2026-08-07",
+            "value": 307.34,
             "label": "USDA boxed beef Choice primal Round"
           },
           {
-            "date": "2026-08-04",
-            "value": 23.15,
+            "date": "2026-08-07",
+            "value": 11.99,
             "label": "USDA boxed beef Choice/Select spread"
           },
           {
@@ -24021,23 +24015,23 @@
         "secondaryFeeds": [],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-08-04",
-        "latestValue": 445.72,
+        "lastObservationDate": "2026-08-07",
+        "latestValue": 441.96,
         "unit": "dollars per cwt",
         "observationsUsed": [
           {
-            "date": "2026-08-04",
-            "value": 445.72,
+            "date": "2026-08-07",
+            "value": 441.96,
             "label": "USDA boxed beef Choice primal Loin"
           },
           {
-            "date": "2026-08-04",
-            "value": 602.18,
+            "date": "2026-08-07",
+            "value": 571.44,
             "label": "USDA boxed beef Choice primal Rib"
           },
           {
-            "date": "2026-08-04",
-            "value": 23.15,
+            "date": "2026-08-07",
+            "value": 11.99,
             "label": "USDA boxed beef Choice/Select spread"
           }
         ],
@@ -24403,23 +24397,18 @@
         "status": "live",
         "fallbackUsed": false,
         "lastObservationDate": "2026-08-01",
-        "latestValue": 18.76,
+        "latestValue": 0.657,
         "unit": "dollars per lb",
         "observationsUsed": [
           {
             "date": "2026-08-01",
-            "value": 18.76,
-            "label": "USDA advanced Base Class I milk price"
+            "value": 0.657,
+            "label": "USDA NDPSR Dry whey"
           },
           {
-            "date": "2026-06-01",
-            "value": 15.98,
-            "label": "USDA Class III milk price"
-          },
-          {
-            "date": "2026-06-01",
-            "value": 20.96,
-            "label": "USDA Class IV milk price"
+            "date": "2026-08-01",
+            "value": 1.52,
+            "label": "USDA NDPSR Nonfat dry milk"
           }
         ],
         "details": "Parsed official AMS dairy PDFs."
@@ -24450,7 +24439,7 @@
         "selectedLag": 0,
         "estimatedLoading": 1.5,
         "lagCorrelation": 0.48857500920932123,
-        "liveCutAdjustment": 0.0,
+        "liveCutAdjustment": -0.002,
         "validation": {
           "validator": null,
           "wholesaleApCorrelation": null,
@@ -24502,18 +24491,18 @@
         "secondaryFeeds": [],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-08-04",
-        "latestValue": 369.65,
+        "lastObservationDate": "2026-08-07",
+        "latestValue": 364.36,
         "unit": "dollars per cwt",
         "observationsUsed": [
           {
-            "date": "2026-08-04",
-            "value": 369.65,
+            "date": "2026-08-07",
+            "value": 364.36,
             "label": "USDA boxed beef Choice cutout"
           },
           {
-            "date": "2026-08-04",
-            "value": 23.15,
+            "date": "2026-08-07",
+            "value": 11.99,
             "label": "USDA boxed beef Choice/Select spread"
           }
         ],
@@ -24707,23 +24696,23 @@
         "secondaryFeeds": [],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-08-04",
-        "latestValue": 315.79,
+        "lastObservationDate": "2026-08-07",
+        "latestValue": 317.77,
         "unit": "dollars per cwt",
         "observationsUsed": [
           {
-            "date": "2026-08-04",
-            "value": 315.79,
+            "date": "2026-08-07",
+            "value": 317.77,
             "label": "USDA boxed beef Choice primal Chuck"
           },
           {
-            "date": "2026-08-04",
-            "value": 312.51,
+            "date": "2026-08-07",
+            "value": 307.34,
             "label": "USDA boxed beef Choice primal Round"
           },
           {
-            "date": "2026-08-04",
-            "value": 23.15,
+            "date": "2026-08-07",
+            "value": 11.99,
             "label": "USDA boxed beef Choice/Select spread"
           }
         ],
@@ -24834,33 +24823,33 @@
         ],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-07-31",
-        "latestValue": 118.04,
+        "lastObservationDate": "2026-08-07",
+        "latestValue": 116.92,
         "unit": "cents per lb / retail dollars per lb",
         "observationsUsed": [
           {
-            "date": "2026-07-31",
-            "value": 118.04,
+            "date": "2026-08-07",
+            "value": 116.92,
             "label": "USDA chicken National composite whole bird"
           },
           {
-            "date": "2026-07-31",
-            "value": 116.7,
+            "date": "2026-08-07",
+            "value": 115.5,
             "label": "USDA chicken National composite WOGS"
           },
           {
-            "date": "2026-07-31",
-            "value": 122.41,
+            "date": "2026-08-07",
+            "value": 121.35,
             "label": "USDA chicken Boneless skinless breast"
           },
           {
-            "date": "2026-07-31",
-            "value": 55.68,
+            "date": "2026-08-07",
+            "value": 53.75,
             "label": "USDA chicken Leg quarters bulk"
           },
           {
-            "date": "2026-07-31",
-            "value": 123.68,
+            "date": "2026-08-07",
+            "value": 125.18,
             "label": "USDA chicken Whole wings"
           },
           {
@@ -24900,7 +24889,7 @@
         "selectedLag": 0,
         "estimatedLoading": 1.0784951988318214,
         "lagCorrelation": 0.9368194952737748,
-        "liveCutAdjustment": -0.0009096916299559487,
+        "liveCutAdjustment": -0.000887786520697913,
         "validation": {
           "validator": "chicken",
           "wholesaleApCorrelation": null,
@@ -24985,12 +24974,12 @@
       "modelType": "food_commodity_complex_factor",
       "model_weight": 0.11245857718425134,
       "blsCurrentRi": 0.11245857718425134,
-      "forecast_nsa_mm": -0.007257805096490347,
-      "forecast_sa_mm": -0.00765132264423464,
+      "forecast_nsa_mm": -0.007227300684245004,
+      "forecast_sa_mm": -0.007620818231989297,
       "fallback_nsa_mm": -0.007671217625512818,
       "fallback_driver": "free fallback: recent CPI-timed movement + same-month seasonal average",
       "is_core": false,
-      "driverSnapshot": "EGGS commodity-complex factor: cuts USDA combined regional caged white Large eggs midpoint, USDA combined regional caged white Extra Large eggs midpoint, USDA combined regional caged white Medium eggs midpoint; lag 0, loading 1.00; live cut adjustment 0.10 pp",
+      "driverSnapshot": "EGGS commodity-complex factor: cuts USDA combined regional caged white Large eggs midpoint, USDA combined regional caged white Extra Large eggs midpoint, USDA combined regional caged white Medium eggs midpoint; lag 0, loading 1.00; live cut adjustment 0.11 pp",
       "feedStatus": {
         "itemCode": "SEFH",
         "name": "Eggs",
@@ -25002,37 +24991,37 @@
         ],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-08-01",
-        "latestValue": 145.0,
+        "lastObservationDate": "2026-08-08",
+        "latestValue": 142.0,
         "unit": "cents per dozen / retail dollars",
         "observationsUsed": [
           {
-            "date": "2026-08-01",
-            "value": 145.0,
+            "date": "2026-08-08",
+            "value": 142.0,
             "label": "USDA combined regional caged white Extra Large eggs average"
           },
           {
-            "date": "2026-08-01",
-            "value": 142.0,
+            "date": "2026-08-08",
+            "value": 139.0,
             "label": "USDA combined regional caged white Extra Large eggs midpoint"
           },
           {
-            "date": "2026-08-01",
-            "value": 138.94,
+            "date": "2026-08-08",
+            "value": 135.94,
             "label": "USDA combined regional caged white Large eggs average"
           },
           {
-            "date": "2026-08-01",
-            "value": 137.0,
+            "date": "2026-08-08",
+            "value": 134.0,
             "label": "USDA combined regional caged white Large eggs midpoint"
           },
           {
-            "date": "2026-08-01",
+            "date": "2026-08-08",
             "value": 51.75,
             "label": "USDA combined regional caged white Medium eggs average"
           },
           {
-            "date": "2026-08-01",
+            "date": "2026-08-08",
             "value": 51.0,
             "label": "USDA combined regional caged white Medium eggs midpoint"
           },
@@ -25059,7 +25048,7 @@
         "commodity-complex-pass-through"
       ],
       "sigma": 0.052046972406549735,
-      "component_yoy": -0.25953242115967945,
+      "component_yoy": -0.25950966849700907,
       "commodityModel": {
         "complex": "EGGS",
         "latentFactor": "USDA combined regional caged white Large eggs midpoint",
@@ -25071,7 +25060,7 @@
         "selectedLag": 0,
         "estimatedLoading": 1.0,
         "lagCorrelation": 1.0,
-        "liveCutAdjustment": 0.001029197080291971,
+        "liveCutAdjustment": 0.0010597014925373134,
         "validation": {
           "validator": "eggs",
           "wholesaleApCorrelation": null,
@@ -25101,7 +25090,7 @@
           }
         }
       },
-      "contribution_pp": -0.0008162024346319124
+      "contribution_pp": -0.0008127719518329593
     },
     {
       "itemCode": "SEFL03",
@@ -25190,13 +25179,13 @@
         "secondaryFeeds": [],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-08-04",
-        "latestValue": 90.24,
+        "lastObservationDate": "2026-08-07",
+        "latestValue": 92.61,
         "unit": "dollars per cwt",
         "observationsUsed": [
           {
-            "date": "2026-08-04",
-            "value": 90.24,
+            "date": "2026-08-07",
+            "value": 92.61,
             "label": "USDA pork cutout loin"
           }
         ],
@@ -25465,13 +25454,13 @@
         "secondaryFeeds": [],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-08-04",
-        "latestValue": 81.31,
+        "lastObservationDate": "2026-08-07",
+        "latestValue": 82.81,
         "unit": "dollars per cwt",
         "observationsUsed": [
           {
-            "date": "2026-08-04",
-            "value": 81.31,
+            "date": "2026-08-07",
+            "value": 82.81,
             "label": "USDA pork cutout ham"
           }
         ],
@@ -25599,13 +25588,13 @@
         ],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-08-04",
-        "latestValue": 161.48,
+        "lastObservationDate": "2026-08-07",
+        "latestValue": 165.28,
         "unit": "dollars per cwt / retail dollars per lb",
         "observationsUsed": [
           {
-            "date": "2026-08-04",
-            "value": 161.48,
+            "date": "2026-08-07",
+            "value": 165.28,
             "label": "USDA pork cutout belly"
           },
           {
@@ -25890,13 +25879,13 @@
         "secondaryFeeds": [],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-08-04",
-        "latestValue": 99.83,
+        "lastObservationDate": "2026-08-07",
+        "latestValue": 101.5,
         "unit": "dollars per cwt",
         "observationsUsed": [
           {
-            "date": "2026-08-04",
-            "value": 99.83,
+            "date": "2026-08-07",
+            "value": 101.5,
             "label": "USDA pork cutout carcass"
           }
         ],
@@ -26331,23 +26320,13 @@
         "status": "live",
         "fallbackUsed": false,
         "lastObservationDate": "2026-08-01",
-        "latestValue": 18.76,
+        "latestValue": 1.57,
         "unit": "dollars per lb",
         "observationsUsed": [
           {
             "date": "2026-08-01",
-            "value": 18.76,
-            "label": "USDA advanced Base Class I milk price"
-          },
-          {
-            "date": "2026-06-01",
-            "value": 15.98,
-            "label": "USDA Class III milk price"
-          },
-          {
-            "date": "2026-06-01",
-            "value": 20.96,
-            "label": "USDA Class IV milk price"
+            "value": 1.57,
+            "label": "USDA NDPSR Butter"
           }
         ],
         "details": "Parsed official AMS dairy PDFs."
@@ -26670,18 +26649,28 @@
         "secondaryFeeds": [],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-06-01",
-        "latestValue": 15.98,
+        "lastObservationDate": "2026-08-01",
+        "latestValue": 0.657,
         "unit": "dollars per lb / dollars per cwt",
         "observationsUsed": [
           {
-            "date": "2026-06-01",
-            "value": 15.98,
+            "date": "2026-08-01",
+            "value": 0.657,
+            "label": "USDA NDPSR Dry whey"
+          },
+          {
+            "date": "2026-08-01",
+            "value": 1.52,
+            "label": "USDA NDPSR Nonfat dry milk"
+          },
+          {
+            "date": "2026-07-01",
+            "value": 15.52,
             "label": "USDA Class III milk price"
           },
           {
-            "date": "2026-06-01",
-            "value": 20.96,
+            "date": "2026-07-01",
+            "value": 18.34,
             "label": "USDA Class IV milk price"
           }
         ],
@@ -26715,7 +26704,7 @@
         "selectedLag": 0,
         "estimatedLoading": 1.3011635731286513,
         "lagCorrelation": 0.6242100760153673,
-        "liveCutAdjustment": 0.0,
+        "liveCutAdjustment": 0.002,
         "validation": {
           "validator": null,
           "wholesaleApCorrelation": null,
@@ -26815,23 +26804,23 @@
         ],
         "status": "live",
         "fallbackUsed": false,
-        "lastObservationDate": "2026-07-31",
-        "latestValue": 122.41,
+        "lastObservationDate": "2026-08-07",
+        "latestValue": 121.35,
         "unit": "cents per lb",
         "observationsUsed": [
           {
-            "date": "2026-07-31",
-            "value": 122.41,
+            "date": "2026-08-07",
+            "value": 121.35,
             "label": "USDA chicken Boneless skinless breast"
           },
           {
-            "date": "2026-07-31",
-            "value": 55.68,
+            "date": "2026-08-07",
+            "value": 53.75,
             "label": "USDA chicken Leg quarters bulk"
           },
           {
-            "date": "2026-07-31",
-            "value": 123.68,
+            "date": "2026-08-07",
+            "value": 125.18,
             "label": "USDA chicken Whole wings"
           }
         ],
@@ -26969,9 +26958,9 @@
       "name": "All items",
       "parent": null,
       "weight": 100.0,
-      "forecast_nsa_mm": 0.0008239794640307734,
-      "forecast_sa_mm": 0.0012872121150984755,
-      "contribution_pp": 0.12872121150984756,
+      "forecast_nsa_mm": 0.0008384855654826201,
+      "forecast_sa_mm": 0.0013017182165503223,
+      "contribution_pp": 0.13017182165503222,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 8 child projections",
       "childProjectionCount": 8,
@@ -27086,9 +27075,9 @@
       "name": "Housing",
       "parent": "SA0",
       "weight": 44.148660966847714,
-      "forecast_nsa_mm": 0.003268774679434354,
-      "forecast_sa_mm": 0.0035099702725378034,
-      "contribution_pp": 0.15496048756598554,
+      "forecast_nsa_mm": 0.00329438510276368,
+      "forecast_sa_mm": 0.003535580695867129,
+      "contribution_pp": 0.1560911534627694,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 3 child projections",
       "childProjectionCount": 3,
@@ -27229,9 +27218,9 @@
       "name": "Transportation",
       "parent": "SA0",
       "weight": 17.164164479565564,
-      "forecast_nsa_mm": -0.0051410563175705365,
-      "forecast_sa_mm": -0.005113629779493945,
-      "contribution_pp": -0.08777118262283866,
+      "forecast_nsa_mm": -0.005122616096041018,
+      "forecast_sa_mm": -0.005095189557964426,
+      "contribution_pp": -0.08745467162746637,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 2 child projections",
       "childProjectionCount": 2,
@@ -27242,9 +27231,9 @@
       "name": "Private transportation",
       "parent": "SAT",
       "weight": 15.482098013560506,
-      "forecast_nsa_mm": -0.006095910035616234,
-      "forecast_sa_mm": -0.008869087509293813,
-      "contribution_pp": -0.13731208210973203,
+      "forecast_nsa_mm": -0.006305728400282775,
+      "forecast_sa_mm": -0.009078905873960354,
+      "contribution_pp": -0.1405605105965444,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 6 child projections",
       "childProjectionCount": 6,
@@ -27255,9 +27244,9 @@
       "name": "Food and beverages",
       "parent": "SA0",
       "weight": 14.345090140914877,
-      "forecast_nsa_mm": 0.0023775289253704633,
-      "forecast_sa_mm": 0.002034583957356316,
-      "contribution_pp": 0.029186290267535664,
+      "forecast_nsa_mm": 0.002377768084551197,
+      "forecast_sa_mm": 0.00203482311653705,
+      "contribution_pp": 0.029189721027541318,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 1 child projections",
       "childProjectionCount": 1,
@@ -27268,9 +27257,9 @@
       "name": "Food",
       "parent": "SAF",
       "weight": 13.52150624849638,
-      "forecast_nsa_mm": 0.0023775289253704633,
-      "forecast_sa_mm": 0.0019729047289136813,
-      "contribution_pp": 0.026676643619694396,
+      "forecast_nsa_mm": 0.002377768084551197,
+      "forecast_sa_mm": 0.001973143888094415,
+      "contribution_pp": 0.02667987741205107,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 3 child projections",
       "childProjectionCount": 3,
@@ -27372,9 +27361,9 @@
       "name": "Food at home",
       "parent": "SAF1",
       "weight": 8.230958757154728,
-      "forecast_nsa_mm": 0.0024176148553371767,
-      "forecast_sa_mm": 0.0017183339785865137,
-      "contribution_pp": 0.01414353610876319,
+      "forecast_nsa_mm": 0.0024180316386407125,
+      "forecast_sa_mm": 0.0017187507618900495,
+      "contribution_pp": 0.014146966634945263,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 6 child projections",
       "childProjectionCount": 6,
@@ -27424,9 +27413,9 @@
       "name": "New and used motor vehicles",
       "parent": "SAT1",
       "weight": 7.044596739361258,
-      "forecast_nsa_mm": 0.005675834623241154,
-      "forecast_sa_mm": 0.0005932671232210356,
-      "contribution_pp": 0.004179327641813141,
+      "forecast_nsa_mm": 0.005214708635816662,
+      "forecast_sa_mm": 0.00013214113579654296,
+      "contribution_pp": 0.0009308810143678197,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 4 child projections",
       "childProjectionCount": 4,
@@ -27515,9 +27504,9 @@
       "name": "Fuels and utilities",
       "parent": "SAH",
       "weight": 4.601482159576604,
-      "forecast_nsa_mm": 0.010710325494142038,
-      "forecast_sa_mm": 0.010841513896111666,
-      "contribution_pp": 0.04988703277575968,
+      "forecast_nsa_mm": 0.010956043712916731,
+      "forecast_sa_mm": 0.01108723211488636,
+      "contribution_pp": 0.051017700775734365,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 2 child projections",
       "childProjectionCount": 2,
@@ -27593,9 +27582,9 @@
       "name": "Household energy",
       "parent": "SAH2",
       "weight": 3.4613180507733468,
-      "forecast_nsa_mm": 0.013164024017627177,
-      "forecast_sa_mm": 0.013367944785878253,
-      "contribution_pp": 0.04627070858910184,
+      "forecast_nsa_mm": 0.013490683137689974,
+      "forecast_sa_mm": 0.01369460390594105,
+      "contribution_pp": 0.04740137969782493,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 2 child projections",
       "childProjectionCount": 2,
@@ -27671,11 +27660,11 @@
       "name": "Used cars and trucks",
       "parent": "SETA",
       "weight": 2.678613833618483,
-      "forecast_nsa_mm": 0.008855869215675431,
-      "forecast_sa_mm": -0.0008471826340395415,
-      "contribution_pp": -0.0022692751231396606,
+      "forecast_nsa_mm": 0.0076557671560917,
+      "forecast_sa_mm": -0.0020472846936232724,
+      "contribution_pp": -0.005483885101694675,
       "projectionSource": "model",
-      "projectionSourceDetail": "SETA02 SA model: rho 0.47 * prior CPI SA -0.23 pp + Manheim m2 signal +0.00 pp * volatility scale 0.71 + level gap z=-1.07, mean-reversion adj +0.02 pp; timing m0 2026-07 unavailable in Manheim feed; m2 2026-05 +0.32% pub 2026-06-08; omitted unavailable m0. Compared against CUSR0000SETA02; no asymmetry term kept. SA forecast converted to NSA using the component's historical SA/NSA offset.",
+      "projectionSourceDetail": "SETA02 SA model: rho 0.47 * prior CPI SA -0.23 pp + Manheim m0, m2 signal -0.17 pp * volatility scale 0.71 + level gap z=-1.07, mean-reversion adj +0.02 pp; timing m0 2026-07 -1.36% pub 2026-08-07; m2 2026-05 +0.32% pub 2026-06-08. Compared against CUSR0000SETA02; no asymmetry term kept. SA forecast converted to NSA using the component's historical SA/NSA offset.",
       "childProjectionCount": 0,
       "displayInHeatmap": true
     },
@@ -27827,9 +27816,9 @@
       "name": "Meats, poultry, fish, and eggs",
       "parent": "SAF11",
       "weight": 1.959085139909483,
-      "forecast_nsa_mm": 0.003805284428044114,
-      "forecast_sa_mm": 0.0006511044757335376,
-      "contribution_pp": 0.0012755691029381281,
+      "forecast_nsa_mm": 0.003807035509700285,
+      "forecast_sa_mm": 0.0006528555573897085,
+      "contribution_pp": 0.0012789996209895008,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 2 child projections",
       "childProjectionCount": 2,
@@ -27892,9 +27881,9 @@
       "name": "Public transportation",
       "parent": "SAT",
       "weight": 1.6831180300418438,
-      "forecast_nsa_mm": 0.0036421297617970786,
-      "forecast_sa_mm": 0.041499213418765085,
-      "contribution_pp": 0.06984807433767794,
+      "forecast_nsa_mm": 0.00576019801941642,
+      "forecast_sa_mm": 0.04361728167638443,
+      "contribution_pp": 0.07341303321093637,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 3 child projections",
       "childProjectionCount": 3,
@@ -28074,11 +28063,11 @@
       "name": "Airline fares",
       "parent": "SETG",
       "weight": 1.0909009562757537,
-      "forecast_nsa_mm": 0.003226099948411552,
-      "forecast_sa_mm": 0.06099232739773436,
-      "contribution_pp": 0.06653658828367226,
+      "forecast_nsa_mm": 0.006483137240580526,
+      "forecast_sa_mm": 0.06424936468990333,
+      "contribution_pp": 0.07008969338032518,
       "projectionSource": "model",
-      "projectionSourceDetail": "airfare fallback -0.78% plus guarded jet-fuel pass-through 1.10% from EIA Gulf Coast jet fuel calendar-month average $3.320/gal vs prior $3.042/gal using 18 daily prints",
+      "projectionSourceDetail": "airfare fallback -0.78% plus guarded jet-fuel pass-through 1.43% from EIA Gulf Coast jet fuel calendar-month average $3.403/gal vs prior $3.042/gal using 22 daily prints",
       "childProjectionCount": 0,
       "displayInHeatmap": true
     },
@@ -29595,9 +29584,9 @@
       "name": "Fuel oil and other fuels",
       "parent": "SAH21",
       "weight": 0.16169338499524427,
-      "forecast_nsa_mm": 0.04201245006252494,
-      "forecast_sa_mm": 0.04082413680121912,
-      "contribution_pp": 0.006600992868898044,
+      "forecast_nsa_mm": 0.04900521324240195,
+      "forecast_sa_mm": 0.04781689998109613,
+      "contribution_pp": 0.0077316764179224656,
       "projectionSource": "aggregate",
       "projectionSourceDetail": "weighted sum of 2 child projections",
       "childProjectionCount": 2,
@@ -29920,11 +29909,11 @@
       "name": "Eggs",
       "parent": "SAF112",
       "weight": 0.11245857718425134,
-      "forecast_nsa_mm": -0.007257805096490347,
-      "forecast_sa_mm": -0.00765132264423464,
-      "contribution_pp": -0.0008604568581482713,
+      "forecast_nsa_mm": -0.007227300684245004,
+      "forecast_sa_mm": -0.007620818231989297,
+      "contribution_pp": -0.0008570263753493182,
       "projectionSource": "model",
-      "projectionSourceDetail": "EGGS commodity-complex factor: cuts USDA combined regional caged white Large eggs midpoint, USDA combined regional caged white Extra Large eggs midpoint, USDA combined regional caged white Medium eggs midpoint; lag 0, loading 1.00; live cut adjustment 0.10 pp",
+      "projectionSourceDetail": "EGGS commodity-complex factor: cuts USDA combined regional caged white Large eggs midpoint, USDA combined regional caged white Extra Large eggs midpoint, USDA combined regional caged white Medium eggs midpoint; lag 0, loading 1.00; live cut adjustment 0.11 pp",
       "childProjectionCount": 0,
       "displayInHeatmap": true
     },
@@ -29985,11 +29974,11 @@
       "name": "Fuel oil",
       "parent": "SEHE",
       "weight": 0.10645994902674626,
-      "forecast_nsa_mm": 0.06582178862601715,
-      "forecast_sa_mm": 0.05262073080201656,
-      "contribution_pp": 0.00560200031893282,
+      "forecast_nsa_mm": 0.07644772907781146,
+      "forecast_sa_mm": 0.06324667125381088,
+      "contribution_pp": 0.0067332373977920836,
       "projectionSource": "model",
-      "projectionSourceDetail": "EIA New York Harbor No. 2 heating oil spot calendar-month average $3.733/gal vs prior $3.302/gal using 18 daily prints; fitted retail pass-through beta 0.504 on 129 prior months; NSA forecast 6.58%",
+      "projectionSourceDetail": "EIA New York Harbor No. 2 heating oil spot calendar-month average $3.803/gal vs prior $3.302/gal using 22 daily prints; fitted retail pass-through beta 0.504 on 129 prior months; NSA forecast 7.64%",
       "childProjectionCount": 0,
       "displayInHeatmap": true
     },
@@ -32173,12 +32162,12 @@
       {
         "horizon": 1,
         "label": "t+1",
-        "foodNsaMm": 0.002432937115693621,
-        "headlineContributionPp": 0.03339833099470802,
+        "foodNsaMm": 0.0024331870128794304,
+        "headlineContributionPp": 0.03340176147750697,
         "interval": {
-          "p10": 0.0009329371156936209,
-          "p50": 0.002432937115693621,
-          "p90": 0.0039329371156936205
+          "p10": 0.0009331870128794304,
+          "p50": 0.0024331870128794304,
+          "p90": 0.0039331870128794305
         },
         "components": [
           {
@@ -32330,12 +32319,12 @@
       {
         "horizon": 2,
         "label": "t+2",
-        "foodNsaMm": 0.0021896434041242586,
-        "headlineContributionPp": 0.030058497895237214,
+        "foodNsaMm": 0.0021898683115914876,
+        "headlineContributionPp": 0.030061585329756273,
         "interval": {
-          "p10": -0.0008103565958757415,
-          "p50": 0.0021896434041242586,
-          "p90": 0.005189643404124259
+          "p10": -0.0008101316884085124,
+          "p50": 0.0021898683115914876,
+          "p90": 0.005189868311591487
         },
         "components": [
           {
@@ -32487,12 +32476,12 @@
       {
         "horizon": 3,
         "label": "t+3",
-        "foodNsaMm": 0.0019463496925548965,
-        "headlineContributionPp": 0.02671866479576641,
+        "foodNsaMm": 0.0019465496103035444,
+        "headlineContributionPp": 0.026721409182005575,
         "interval": {
-          "p10": -0.0025536503074451043,
-          "p50": 0.0019463496925548965,
-          "p90": 0.006446349692554897
+          "p10": -0.002553450389696456,
+          "p50": 0.0019465496103035444,
+          "p90": 0.006446549610303545
         },
         "components": [
           {
@@ -32644,12 +32633,12 @@
       {
         "horizon": 4,
         "label": "t+4",
-        "foodNsaMm": 0.0017030559809855345,
-        "headlineContributionPp": 0.02337883169629561,
+        "foodNsaMm": 0.001703230909015601,
+        "headlineContributionPp": 0.023381233034254875,
         "interval": {
-          "p10": -0.004296944019014466,
-          "p50": 0.0017030559809855345,
-          "p90": 0.0077030559809855344
+          "p10": -0.0042967690909843995,
+          "p50": 0.001703230909015601,
+          "p90": 0.007703230909015601
         },
         "components": [
           {
@@ -32801,12 +32790,12 @@
       {
         "horizon": 5,
         "label": "t+5",
-        "foodNsaMm": 0.0014597622694161726,
-        "headlineContributionPp": 0.02003899859682481,
+        "foodNsaMm": 0.0014599122077276583,
+        "headlineContributionPp": 0.02004105688650418,
         "interval": {
-          "p10": -0.006040237730583827,
-          "p50": 0.0014597622694161726,
-          "p90": 0.008959762269416173
+          "p10": -0.006040087792272341,
+          "p50": 0.0014599122077276583,
+          "p90": 0.008959912207727658
         },
         "components": [
           {
@@ -32958,12 +32947,12 @@
       {
         "horizon": 6,
         "label": "t+6",
-        "foodNsaMm": 0.0012164685578468105,
-        "headlineContributionPp": 0.01669916549735401,
+        "foodNsaMm": 0.0012165935064397152,
+        "headlineContributionPp": 0.016700880738753483,
         "interval": {
-          "p10": -0.007783531442153191,
-          "p50": 0.0012164685578468105,
-          "p90": 0.010216468557846812
+          "p10": -0.007783406493560286,
+          "p50": 0.0012165935064397152,
+          "p90": 0.010216593506439716
         },
         "components": [
           {

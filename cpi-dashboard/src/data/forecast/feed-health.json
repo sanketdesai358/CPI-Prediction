@@ -1,6 +1,6 @@
 {
   "forecastMonth": "2026-07",
-  "generatedAt": "2026-08-05T13:38:28+00:00",
+  "generatedAt": "2026-08-10T15:47:49+00:00",
   "summary": {
     "componentsTracked": 39,
     "live": 29,
@@ -34,8 +34,8 @@
           "label": "EIA weekly U.S. all-grades retail gasoline"
         },
         {
-          "date": "2026-07-27",
-          "value": 3.504,
+          "date": "2026-08-03",
+          "value": 3.328,
           "label": "EIA Los Angeles RBOB regular gasoline spot"
         }
       ],
@@ -72,12 +72,12 @@
       "status": "live",
       "fallbackUsed": false,
       "lastObservationDate": "2026-08-03",
-      "latestValue": 5.348,
+      "latestValue": 3.768,
       "unit": "dollars per gallon",
       "observationsUsed": [
         {
-          "date": "2026-07-27",
-          "value": 3.998,
+          "date": "2026-08-03",
+          "value": 3.768,
           "label": "EIA New York Harbor No. 2 heating oil spot"
         },
         {
@@ -98,13 +98,13 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-27",
-      "latestValue": 2.63,
+      "lastObservationDate": "2026-08-03",
+      "latestValue": 2.81,
       "unit": "dollars per MMBtu",
       "observationsUsed": [
         {
-          "date": "2026-07-27",
-          "value": 2.63,
+          "date": "2026-08-03",
+          "value": 2.81,
           "label": "EIA Henry Hub natural gas spot"
         }
       ],
@@ -140,17 +140,17 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-06",
-      "latestValue": 212.85667431944884,
+      "lastObservationDate": "2026-07",
+      "latestValue": 209.97048212528682,
       "unit": "index",
       "observationsUsed": [
         {
-          "date": "2026-06",
-          "value": 212.85667431944884,
+          "date": "2026-07",
+          "value": 209.97048212528682,
           "label": "Manheim UVVI final"
         }
       ],
-      "details": "Loaded public XLSX (https://www.coxautoinc.com/wp-content/uploads/2026/07/Manheim-Used-Vehicle-Value-Index-Data.June_.xlsx); add data/manual/manheim_uvvi.csv to override.",
+      "details": "Loaded public XLSX (https://www.coxautoinc.com/wp-content/uploads/2026/08/July-2026-Manheim-Used-Vehicle-Value-Index.xlsx); add data/manual/manheim_uvvi.csv to override.",
       "points": [
         {
           "date": "1997-01",
@@ -1567,9 +1567,13 @@
         {
           "date": "2026-06",
           "value": 212.85667431944884
+        },
+        {
+          "date": "2026-07",
+          "value": 209.97048212528682
         }
       ],
-      "publicationDate": "2026-07-07",
+      "publicationDate": "2026-08-07",
       "timingEnforced": true,
       "publicationRule": "month-end final assumed published on the 7th of the following month, weekend-adjusted; lag 0 is used only if publication date is before CPI release"
     },
@@ -1599,38 +1603,18 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-27",
-      "latestValue": 3.582,
+      "lastObservationDate": "2026-08-03",
+      "latestValue": 3.506,
       "unit": "dollars per gallon",
       "observationsUsed": [
         {
-          "date": "2026-07-27",
-          "value": 3.582,
+          "date": "2026-08-03",
+          "value": 3.506,
           "label": "EIA Gulf Coast kerosene-type jet fuel spot"
         }
       ],
       "details": null,
       "points": [
-        {
-          "date": "2006-09-06",
-          "value": 1.966
-        },
-        {
-          "date": "2006-09-07",
-          "value": 1.958
-        },
-        {
-          "date": "2006-09-08",
-          "value": 1.914
-        },
-        {
-          "date": "2006-09-11",
-          "value": 1.851
-        },
-        {
-          "date": "2006-09-12",
-          "value": 1.723
-        },
         {
           "date": "2006-09-13",
           "value": 1.736
@@ -21610,6 +21594,26 @@
         {
           "date": "2026-07-27",
           "value": 3.582
+        },
+        {
+          "date": "2026-07-28",
+          "value": 3.712
+        },
+        {
+          "date": "2026-07-29",
+          "value": 3.825
+        },
+        {
+          "date": "2026-07-30",
+          "value": 3.681
+        },
+        {
+          "date": "2026-07-31",
+          "value": 3.88
+        },
+        {
+          "date": "2026-08-03",
+          "value": 3.506
         }
       ]
     },
@@ -22507,37 +22511,37 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-08-01",
-      "latestValue": 145.0,
+      "lastObservationDate": "2026-08-08",
+      "latestValue": 142.0,
       "unit": "cents per dozen / retail dollars",
       "observationsUsed": [
         {
-          "date": "2026-08-01",
-          "value": 145.0,
+          "date": "2026-08-08",
+          "value": 142.0,
           "label": "USDA combined regional caged white Extra Large eggs average"
         },
         {
-          "date": "2026-08-01",
-          "value": 142.0,
+          "date": "2026-08-08",
+          "value": 139.0,
           "label": "USDA combined regional caged white Extra Large eggs midpoint"
         },
         {
-          "date": "2026-08-01",
-          "value": 138.94,
+          "date": "2026-08-08",
+          "value": 135.94,
           "label": "USDA combined regional caged white Large eggs average"
         },
         {
-          "date": "2026-08-01",
-          "value": 137.0,
+          "date": "2026-08-08",
+          "value": 134.0,
           "label": "USDA combined regional caged white Large eggs midpoint"
         },
         {
-          "date": "2026-08-01",
+          "date": "2026-08-08",
           "value": 51.75,
           "label": "USDA combined regional caged white Medium eggs average"
         },
         {
-          "date": "2026-08-01",
+          "date": "2026-08-08",
           "value": 51.0,
           "label": "USDA combined regional caged white Medium eggs midpoint"
         },
@@ -22559,23 +22563,23 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-08-04",
-      "latestValue": 369.65,
+      "lastObservationDate": "2026-08-07",
+      "latestValue": 364.36,
       "unit": "dollars per cwt / retail dollars per lb",
       "observationsUsed": [
         {
-          "date": "2026-08-04",
-          "value": 369.65,
+          "date": "2026-08-07",
+          "value": 364.36,
           "label": "USDA boxed beef Choice cutout"
         },
         {
-          "date": "2026-08-04",
-          "value": 346.5,
+          "date": "2026-08-07",
+          "value": 352.37,
           "label": "USDA boxed beef Select cutout"
         },
         {
-          "date": "2026-08-04",
-          "value": 23.15,
+          "date": "2026-08-07",
+          "value": 11.99,
           "label": "USDA boxed beef Choice/Select spread"
         },
         {
@@ -22596,43 +22600,43 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-08-04",
-      "latestValue": 99.83,
+      "lastObservationDate": "2026-08-07",
+      "latestValue": 101.5,
       "unit": "dollars per cwt / retail dollars per lb",
       "observationsUsed": [
         {
-          "date": "2026-08-04",
-          "value": 99.83,
+          "date": "2026-08-07",
+          "value": 101.5,
           "label": "USDA pork cutout carcass"
         },
         {
-          "date": "2026-08-04",
-          "value": 90.24,
+          "date": "2026-08-07",
+          "value": 92.61,
           "label": "USDA pork cutout loin"
         },
         {
-          "date": "2026-08-04",
-          "value": 113.55,
+          "date": "2026-08-07",
+          "value": 116.42,
           "label": "USDA pork cutout butt"
         },
         {
-          "date": "2026-08-04",
-          "value": 71.64,
+          "date": "2026-08-07",
+          "value": 71.47,
           "label": "USDA pork cutout picnic"
         },
         {
-          "date": "2026-08-04",
-          "value": 160.41,
+          "date": "2026-08-07",
+          "value": 160.38,
           "label": "USDA pork cutout rib"
         },
         {
-          "date": "2026-08-04",
-          "value": 81.31,
+          "date": "2026-08-07",
+          "value": 82.81,
           "label": "USDA pork cutout ham"
         },
         {
-          "date": "2026-08-04",
-          "value": 161.48,
+          "date": "2026-08-07",
+          "value": 165.28,
           "label": "USDA pork cutout belly"
         },
         {
@@ -22654,33 +22658,33 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-31",
-      "latestValue": 118.04,
+      "lastObservationDate": "2026-08-07",
+      "latestValue": 116.92,
       "unit": "cents per lb / retail dollars per lb",
       "observationsUsed": [
         {
-          "date": "2026-07-31",
-          "value": 118.04,
+          "date": "2026-08-07",
+          "value": 116.92,
           "label": "USDA chicken National composite whole bird"
         },
         {
-          "date": "2026-07-31",
-          "value": 116.7,
+          "date": "2026-08-07",
+          "value": 115.5,
           "label": "USDA chicken National composite WOGS"
         },
         {
-          "date": "2026-07-31",
-          "value": 122.41,
+          "date": "2026-08-07",
+          "value": 121.35,
           "label": "USDA chicken Boneless skinless breast"
         },
         {
-          "date": "2026-07-31",
-          "value": 55.68,
+          "date": "2026-08-07",
+          "value": 53.75,
           "label": "USDA chicken Leg quarters bulk"
         },
         {
-          "date": "2026-07-31",
-          "value": 123.68,
+          "date": "2026-08-07",
+          "value": 125.18,
           "label": "USDA chicken Whole wings"
         },
         {
@@ -22702,22 +22706,42 @@
       "status": "live",
       "fallbackUsed": false,
       "lastObservationDate": "2026-08-01",
-      "latestValue": 18.76,
+      "latestValue": 1.57,
       "unit": "dollars per lb / dollars per cwt",
       "observationsUsed": [
+        {
+          "date": "2026-08-01",
+          "value": 1.57,
+          "label": "USDA NDPSR Butter"
+        },
+        {
+          "date": "2026-08-01",
+          "value": 1.55,
+          "label": "USDA NDPSR Cheddar 40-pound blocks"
+        },
+        {
+          "date": "2026-08-01",
+          "value": 0.657,
+          "label": "USDA NDPSR Dry whey"
+        },
+        {
+          "date": "2026-08-01",
+          "value": 1.52,
+          "label": "USDA NDPSR Nonfat dry milk"
+        },
         {
           "date": "2026-08-01",
           "value": 18.76,
           "label": "USDA advanced Base Class I milk price"
         },
         {
-          "date": "2026-06-01",
-          "value": 15.98,
+          "date": "2026-07-01",
+          "value": 15.52,
           "label": "USDA Class III milk price"
         },
         {
-          "date": "2026-06-01",
-          "value": 20.96,
+          "date": "2026-07-01",
+          "value": 18.34,
           "label": "USDA Class IV milk price"
         },
         {
@@ -22766,23 +22790,13 @@
       "status": "live",
       "fallbackUsed": false,
       "lastObservationDate": "2026-08-01",
-      "latestValue": 18.76,
+      "latestValue": 1.55,
       "unit": "dollars per lb",
       "observationsUsed": [
         {
           "date": "2026-08-01",
-          "value": 18.76,
-          "label": "USDA advanced Base Class I milk price"
-        },
-        {
-          "date": "2026-06-01",
-          "value": 15.98,
-          "label": "USDA Class III milk price"
-        },
-        {
-          "date": "2026-06-01",
-          "value": 20.96,
-          "label": "USDA Class IV milk price"
+          "value": 1.55,
+          "label": "USDA NDPSR Cheddar 40-pound blocks"
         },
         {
           "date": "2026-06",
@@ -22935,18 +22949,18 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-27",
-      "latestValue": 2.63,
+      "lastObservationDate": "2026-08-03",
+      "latestValue": 2.81,
       "unit": "various",
       "observationsUsed": [
         {
-          "date": "2026-07-27",
-          "value": 2.63,
+          "date": "2026-08-03",
+          "value": 2.81,
           "label": "FRED Henry Hub Natural Gas Spot Price"
         },
         {
-          "date": "2026-07-27",
-          "value": 84.25,
+          "date": "2026-08-03",
+          "value": 81.96,
           "label": "FRED WTI crude oil spot price"
         }
       ],
@@ -22960,13 +22974,13 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-08-05",
-      "latestValue": 4.0801,
+      "lastObservationDate": "2026-08-10",
+      "latestValue": 4.0091,
       "unit": "dollars per gallon",
       "observationsUsed": [
         {
-          "date": "2026-08-05",
-          "value": 4.0801,
+          "date": "2026-08-10",
+          "value": 4.0091,
           "label": "AAA current national regular"
         }
       ],
@@ -22982,13 +22996,13 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-08-04",
-      "latestValue": 161.48,
+      "lastObservationDate": "2026-08-07",
+      "latestValue": 165.28,
       "unit": "dollars per cwt / retail dollars per lb",
       "observationsUsed": [
         {
-          "date": "2026-08-04",
-          "value": 161.48,
+          "date": "2026-08-07",
+          "value": 165.28,
           "label": "USDA pork cutout belly"
         },
         {
@@ -23007,13 +23021,13 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-08-04",
-      "latestValue": 81.31,
+      "lastObservationDate": "2026-08-07",
+      "latestValue": 82.81,
       "unit": "dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-08-04",
-          "value": 81.31,
+          "date": "2026-08-07",
+          "value": 82.81,
           "label": "USDA pork cutout ham"
         }
       ],
@@ -23027,13 +23041,13 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-08-04",
-      "latestValue": 90.24,
+      "lastObservationDate": "2026-08-07",
+      "latestValue": 92.61,
       "unit": "dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-08-04",
-          "value": 90.24,
+          "date": "2026-08-07",
+          "value": 92.61,
           "label": "USDA pork cutout loin"
         }
       ],
@@ -23047,13 +23061,13 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-08-04",
-      "latestValue": 99.83,
+      "lastObservationDate": "2026-08-07",
+      "latestValue": 101.5,
       "unit": "dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-08-04",
-          "value": 99.83,
+          "date": "2026-08-07",
+          "value": 101.5,
           "label": "USDA pork cutout carcass"
         }
       ],
@@ -23069,23 +23083,23 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-08-04",
-      "latestValue": 315.79,
+      "lastObservationDate": "2026-08-07",
+      "latestValue": 317.77,
       "unit": "dollars per cwt / retail dollars per lb",
       "observationsUsed": [
         {
-          "date": "2026-08-04",
-          "value": 315.79,
+          "date": "2026-08-07",
+          "value": 317.77,
           "label": "USDA boxed beef Choice primal Chuck"
         },
         {
-          "date": "2026-08-04",
-          "value": 312.51,
+          "date": "2026-08-07",
+          "value": 307.34,
           "label": "USDA boxed beef Choice primal Round"
         },
         {
-          "date": "2026-08-04",
-          "value": 23.15,
+          "date": "2026-08-07",
+          "value": 11.99,
           "label": "USDA boxed beef Choice/Select spread"
         },
         {
@@ -23104,23 +23118,23 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-08-04",
-      "latestValue": 315.79,
+      "lastObservationDate": "2026-08-07",
+      "latestValue": 317.77,
       "unit": "dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-08-04",
-          "value": 315.79,
+          "date": "2026-08-07",
+          "value": 317.77,
           "label": "USDA boxed beef Choice primal Chuck"
         },
         {
-          "date": "2026-08-04",
-          "value": 312.51,
+          "date": "2026-08-07",
+          "value": 307.34,
           "label": "USDA boxed beef Choice primal Round"
         },
         {
-          "date": "2026-08-04",
-          "value": 23.15,
+          "date": "2026-08-07",
+          "value": 11.99,
           "label": "USDA boxed beef Choice/Select spread"
         }
       ],
@@ -23134,23 +23148,23 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-08-04",
-      "latestValue": 445.72,
+      "lastObservationDate": "2026-08-07",
+      "latestValue": 441.96,
       "unit": "dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-08-04",
-          "value": 445.72,
+          "date": "2026-08-07",
+          "value": 441.96,
           "label": "USDA boxed beef Choice primal Loin"
         },
         {
-          "date": "2026-08-04",
-          "value": 602.18,
+          "date": "2026-08-07",
+          "value": 571.44,
           "label": "USDA boxed beef Choice primal Rib"
         },
         {
-          "date": "2026-08-04",
-          "value": 23.15,
+          "date": "2026-08-07",
+          "value": 11.99,
           "label": "USDA boxed beef Choice/Select spread"
         }
       ],
@@ -23164,18 +23178,18 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-08-04",
-      "latestValue": 369.65,
+      "lastObservationDate": "2026-08-07",
+      "latestValue": 364.36,
       "unit": "dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-08-04",
-          "value": 369.65,
+          "date": "2026-08-07",
+          "value": 364.36,
           "label": "USDA boxed beef Choice cutout"
         },
         {
-          "date": "2026-08-04",
-          "value": 23.15,
+          "date": "2026-08-07",
+          "value": 11.99,
           "label": "USDA boxed beef Choice/Select spread"
         }
       ],
@@ -23192,33 +23206,33 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-31",
-      "latestValue": 118.04,
+      "lastObservationDate": "2026-08-07",
+      "latestValue": 116.92,
       "unit": "cents per lb / retail dollars per lb",
       "observationsUsed": [
         {
-          "date": "2026-07-31",
-          "value": 118.04,
+          "date": "2026-08-07",
+          "value": 116.92,
           "label": "USDA chicken National composite whole bird"
         },
         {
-          "date": "2026-07-31",
-          "value": 116.7,
+          "date": "2026-08-07",
+          "value": 115.5,
           "label": "USDA chicken National composite WOGS"
         },
         {
-          "date": "2026-07-31",
-          "value": 122.41,
+          "date": "2026-08-07",
+          "value": 121.35,
           "label": "USDA chicken Boneless skinless breast"
         },
         {
-          "date": "2026-07-31",
-          "value": 55.68,
+          "date": "2026-08-07",
+          "value": 53.75,
           "label": "USDA chicken Leg quarters bulk"
         },
         {
-          "date": "2026-07-31",
-          "value": 123.68,
+          "date": "2026-08-07",
+          "value": 125.18,
           "label": "USDA chicken Whole wings"
         },
         {
@@ -23239,23 +23253,23 @@
       ],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-07-31",
-      "latestValue": 122.41,
+      "lastObservationDate": "2026-08-07",
+      "latestValue": 121.35,
       "unit": "cents per lb",
       "observationsUsed": [
         {
-          "date": "2026-07-31",
-          "value": 122.41,
+          "date": "2026-08-07",
+          "value": 121.35,
           "label": "USDA chicken Boneless skinless breast"
         },
         {
-          "date": "2026-07-31",
-          "value": 55.68,
+          "date": "2026-08-07",
+          "value": 53.75,
           "label": "USDA chicken Leg quarters bulk"
         },
         {
-          "date": "2026-07-31",
-          "value": 123.68,
+          "date": "2026-08-07",
+          "value": 125.18,
           "label": "USDA chicken Whole wings"
         }
       ],
@@ -23270,23 +23284,18 @@
       "status": "live",
       "fallbackUsed": false,
       "lastObservationDate": "2026-08-01",
-      "latestValue": 18.76,
+      "latestValue": 0.657,
       "unit": "dollars per lb",
       "observationsUsed": [
         {
           "date": "2026-08-01",
-          "value": 18.76,
-          "label": "USDA advanced Base Class I milk price"
+          "value": 0.657,
+          "label": "USDA NDPSR Dry whey"
         },
         {
-          "date": "2026-06-01",
-          "value": 15.98,
-          "label": "USDA Class III milk price"
-        },
-        {
-          "date": "2026-06-01",
-          "value": 20.96,
-          "label": "USDA Class IV milk price"
+          "date": "2026-08-01",
+          "value": 1.52,
+          "label": "USDA NDPSR Nonfat dry milk"
         }
       ],
       "details": "Parsed official AMS dairy PDFs."
@@ -23299,18 +23308,28 @@
       "secondaryFeeds": [],
       "status": "live",
       "fallbackUsed": false,
-      "lastObservationDate": "2026-06-01",
-      "latestValue": 15.98,
+      "lastObservationDate": "2026-08-01",
+      "latestValue": 0.657,
       "unit": "dollars per lb / dollars per cwt",
       "observationsUsed": [
         {
-          "date": "2026-06-01",
-          "value": 15.98,
+          "date": "2026-08-01",
+          "value": 0.657,
+          "label": "USDA NDPSR Dry whey"
+        },
+        {
+          "date": "2026-08-01",
+          "value": 1.52,
+          "label": "USDA NDPSR Nonfat dry milk"
+        },
+        {
+          "date": "2026-07-01",
+          "value": 15.52,
           "label": "USDA Class III milk price"
         },
         {
-          "date": "2026-06-01",
-          "value": 20.96,
+          "date": "2026-07-01",
+          "value": 18.34,
           "label": "USDA Class IV milk price"
         }
       ],
@@ -23325,23 +23344,13 @@
       "status": "live",
       "fallbackUsed": false,
       "lastObservationDate": "2026-08-01",
-      "latestValue": 18.76,
+      "latestValue": 1.57,
       "unit": "dollars per lb",
       "observationsUsed": [
         {
           "date": "2026-08-01",
-          "value": 18.76,
-          "label": "USDA advanced Base Class I milk price"
-        },
-        {
-          "date": "2026-06-01",
-          "value": 15.98,
-          "label": "USDA Class III milk price"
-        },
-        {
-          "date": "2026-06-01",
-          "value": 20.96,
-          "label": "USDA Class IV milk price"
+          "value": 1.57,
+          "label": "USDA NDPSR Butter"
         }
       ],
       "details": "Parsed official AMS dairy PDFs."
@@ -24170,10 +24179,10 @@
     "gasolineEiaDriver": "EIA weekly regular gasoline calendar-month average $3.932/gal vs prior $4.050/gal using 4 weekly prints",
     "dieselEiaNsaMm": -0.013645049564074863,
     "dieselEiaDriver": "EIA weekly U.S. No. 2 diesel retail calendar-month average $4.955/gal vs prior $5.024/gal using 4 weekly prints",
-    "heatingOilEiaNsaMm": 0.13067526248990435,
-    "heatingOilEiaDriver": "EIA New York Harbor No. 2 heating oil spot calendar-month average $3.733/gal vs prior $3.302/gal using 18 daily prints",
-    "jetFuelEiaNsaMm": 0.09167005876152001,
-    "jetFuelEiaDriver": "EIA Gulf Coast jet fuel calendar-month average $3.320/gal vs prior $3.042/gal using 18 daily prints",
+    "heatingOilEiaNsaMm": 0.15177082349979565,
+    "heatingOilEiaDriver": "EIA New York Harbor No. 2 heating oil spot calendar-month average $3.803/gal vs prior $3.302/gal using 22 daily prints",
+    "jetFuelEiaNsaMm": 0.11881203619626146,
+    "jetFuelEiaDriver": "EIA Gulf Coast jet fuel calendar-month average $3.403/gal vs prior $3.042/gal using 22 daily prints",
     "shelterMarketNsaMm": 0.002732513663748191,
     "shelterMarketDriver": "lagged external shelter overlay (2025-01 to 2026-01): Zillow ZORI 0.17% avg m/m over 13 lagged obs; Apartment List -0.11% avg m/m over 13 lagged obs; BLS/Cleveland Fed NTRI 0.98% avg m/m over 3 lagged obs",
     "lodgingCostarNsaMm": null,
